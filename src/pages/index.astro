@@ -1,0 +1,89 @@
+---
+import {useTranslations} from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+import beilschmidtAvatar from '../images/team/Beilschmidt.png';
+import droennerAvatar from '../images/team/Drönner.jpg';
+import mattigAvatar from '../images/team/Mattig.png';
+import seegerAvatar from '../images/team/Seeger.jpg';
+import schweitzerAvatar from '../images/team/Schweitzer.png';
+
+import Hero from '../components/Hero.astro';
+import Spacer from '../components/Spacer.astro';
+import Section from '../components/Section.astro';
+import {Solutions} from '../components/solutions/index.astro';
+import {Services} from '../components/services/index.astro';
+import {Image} from 'astro:assets';
+import Logos from '../components/Logos.astro';
+import News from '../components/News.astro';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout>
+    <Hero />
+    <Services />
+    <Section bg="beach">
+        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">
+            {t('contact.slogan')}
+        </p>
+        <p class="mx-auto">
+            <a
+                href="#"
+                class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
+            >
+                {t('contact.button')}
+            </a>
+        </p>
+    </Section>
+    <!-- <Section> -->
+    <h2 class="mx-auto max-w-6xl px-8 pt-16 text-3xl font-semibold">{t('solutions.title')}</h2>
+    <Solutions />
+    <!-- </Section> -->
+    <Section bg="green" />
+    <Section>
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
+            <div class="hidden grid-cols-6 justify-items-center gap-8 lg:grid">
+                <Image
+                    class="col-span-2 col-start-2 inline-block size-32 rounded-full"
+                    src={beilschmidtAvatar}
+                    alt="Christian Beilschmidt"
+                />
+                <Image class="col-span-2 inline-block size-32 rounded-full" src={droennerAvatar} alt="Johannes Drönner" />
+                <Image class="col-span-2 inline-block size-32 rounded-full" src={mattigAvatar} alt="Michael Mattig" />
+                <Image class="col-span-2 inline-block size-32 rounded-full" src={schweitzerAvatar} alt="Philip Schweitzer" />
+                <Image class="col-span-2 inline-block size-32 rounded-full" src={seegerAvatar} alt="Bernhard Seeger" />
+            </div>
+            <div class="w-full">
+                <h2 class="text-3xl font-semibold">Unser Team</h2>
+                <hr class="border-main-green my-8 w-16 border-1" />
+                <p class="mx-auto pb-8">{t('team.shortSlogan')}</p>
+                <p class="mx-auto">
+                    <a
+                        href="#"
+                        class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-gray-200 p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    >
+                        {t('team.link')}
+                    </a>
+                </p>
+            </div>
+            <!-- ... -->
+        </div>
+    </Section>
+    <Section bg="blue" box> Die Geo Engine: Unser Technologiestack </Section>
+    <News />
+    <Logos />
+    <Section bg="lightblue">
+        <p class="mx-auto -mt-16 pb-8 text-2xl font-medium text-white text-shadow-lg">
+            {t('contact.slogan2')}
+        </p>
+        <p class="mx-auto -mb-16">
+            <a
+                href="#"
+                class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+            >
+                {t('contact.button')}
+            </a>
+        </p>
+    </Section>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import {getCollection} from 'astro:content';
+import {useTranslations} from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+const t = useTranslations(Astro.currentLocale);
+
+const publications = await getCollection('publications');
+---
+
+<Layout>
+    <section>
+        <ul class="list-disc pl-16">
+            {
+                publications.map((publication) => (
+                    <li class="py-1">
+                        {publication.data.authors}:<br />
+                        <a href={publication.data.url} target="_blank" class="text-main-green hover:underline">
+                            {publication.data.title}
+                        </a>
+                        <br />
+                        {publication.data.source}
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+</Layout>

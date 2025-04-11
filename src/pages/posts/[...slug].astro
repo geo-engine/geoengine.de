@@ -1,0 +1,26 @@
+---
+import {getCollection, render} from 'astro:content';
+import Post from '../../components/Post.astro';
+import {defaultLang} from '../../i18n/translations';
+
+export async function getStaticPaths() {
+    const pages = await getCollection('posts');
+
+    const paths = pages.map((page) => {
+        const [lang, ...slug] = page.slug.split('/');
+        return {params: {lang, slug: slug.join('/') || undefined}, props: page};
+    });
+
+    return paths.filter((path) => {
+        const {lang} = path.params;
+        return lang === defaultLang;
+    });
+}
+
+const {slug} = Astro.params;
+
+const page = Astro.props;
+const {Content} = await render(page);
+---
+
+<Post date={page.data.date} title={page.data.title} image={page.data.image} lang={defaultLang}><Content /></Post>
