@@ -1,45 +1,50 @@
 ---
 import {getCollection} from 'astro:content';
-import {useTranslations} from '../i18n/utils';
-import {Picture} from 'astro:assets';
+import {asLocale, slugToPostLink, useTranslations} from '../i18n/utils';
+import {Image} from 'astro:assets';
 
-const t = useTranslations(Astro.currentLocale);
+const pageLang = Astro.currentLocale;
+const t = useTranslations(pageLang);
 
-const pages = await getCollection('posts');
-
-pages.sort((a, b) => {
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+const pages = await getCollection('posts', (entry) => {
+    const [lang, ...slug] = entry.slug.split('/');
+    if (lang !== pageLang) {
+        return undefined;
+    }
+    return entry;
 });
 
-pages.length = Math.min(pages.length, 3);
+pages.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const paths = pages.map((page) => {
-    const [lang, ...slug] = page.slug.split('/');
-    return {params: {lang, slug: slug.join('/') || undefined}, props: page};
-});
-
-const lang = 'de';
-
-const p = paths.filter((path) => {
-    const {lang: l} = path.params;
-    return l === lang;
-});
+const paths = pages
+    .map((page) => {
+        const [lang, ...slug] = page.slug.split('/');
+        if (slug.length === 0) {
+            throw new Error(`Empty slug: ${page.slug}`);
+        }
+        return {params: {lang: asLocale(lang), slug: slug.join('/')}, props: page};
+    })
+    .slice(0, 3); // Limit to 3 posts
 
 const newsItems: Array<{
     title: string;
     date: string;
     image: ImageMetadata;
     abstract: string;
-}> = p.map((page) => {
+    link: string;
+}> = paths.map((page) => {
+    console.log(page.params.slug);
+    console.log(page.params.lang);
     return {
         title: page.props.data.title,
-        date: page.props.data.date.toLocaleDateString(lang, {
+        date: page.props.data.date.toLocaleDateString(pageLang, {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
         }),
         image: page.props.data.image,
         abstract: page.props.body.slice(0, 200) + '…',
+        link: slugToPostLink(page.params.lang, page.params.slug),
     };
 });
 ---
@@ -62,11 +67,9 @@ const newsItems: Array<{
             newsItems.map((news) => (
                 <a
                     class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-                    href="#"
+                    href={news.link}
                 >
-                    <div class="aspect-w-16 aspect-h-11">
-                        <Picture class="w-full rounded-xl object-cover" src={news.image} alt={news.title} />
-                    </div>
+                    <Image class="aspect-video w-full rounded-xl object-cover" src={news.image} alt={news.title} />
                     <div class="my-6">
                         <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">{news.title}</h3>
                         <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>

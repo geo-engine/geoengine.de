@@ -1,15 +1,27 @@
 ---
+import {getRelativeLocaleUrl} from 'astro:i18n';
 import Logo from '../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
+import {currentLanguage, useTranslations, useLocalePages} from '../i18n/utils';
+import {Icon} from 'astro-icon/components';
 
 const logoHeightPx = 74;
 const logoWidthPx = logoHeightPx * (1920 / 498);
+
+const currentLang = currentLanguage(Astro.currentLocale);
+
+const t = useTranslations(Astro.currentLocale);
+const p = useLocalePages(Astro.currentLocale);
 ---
 
 <header class="sticky z-50 flex w-full flex-wrap bg-black md:flex-nowrap md:justify-start">
     <nav class="relative mx-auto w-full max-w-5xl px-4 py-2 sm:px-6 md:flex md:items-center md:justify-between md:gap-3 lg:px-8">
         <!-- Logo w/ Collapse Button -->
         <div class="flex items-center justify-between">
-            <a class="flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-hidden" href="#" aria-label="Geo Engine">
+            <a
+                class="flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-hidden"
+                href={getRelativeLocaleUrl(currentLang, '/')}
+                aria-label="Geo Engine"
+            >
                 <Logo height={logoHeightPx} width={logoWidthPx} />
             </a>
 
@@ -71,79 +83,36 @@ const logoWidthPx = logoHeightPx * (1920 / 498);
             >
                 <div class="flex flex-col gap-0.5 py-2 md:flex-row md:items-center md:justify-end md:gap-1 md:py-0">
                     <a class="flex items-center p-2 text-sm text-white focus:text-white focus:outline-hidden" href="#" aria-current="page">
-                        <svg
-                            class="me-3 block size-4 shrink-0 md:me-2 md:hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path
-                                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                            ></path></svg
-                        >
-                        Landing
+                        <Icon name="mdi:service-toolbox" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
+                        {t('nav.services')}
                     </a>
 
-                    <a class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden" href="#">
-                        <svg
-                            class="me-3 block size-4 shrink-0 md:me-2 md:hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg
-                        >
-                        Account
+                    <a
+                        class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
+                        href={p('references')}
+                    >
+                        <Icon name="mdi:file-document-box-multiple-outline" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
+                        {t('nav.references')}
                     </a>
 
-                    <a class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden" href="#">
-                        <svg
-                            class="me-3 block size-4 shrink-0 md:me-2 md:hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path d="M12 12h.01"></path><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path
-                                d="M22 13a18.15 18.15 0 0 1-20 0"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg
-                        >
-                        Work
+                    <a
+                        class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
+                        href={p('about')}
+                    >
+                        <Icon name="mdi:people-group" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
+                        {t('nav.about')}
                     </a>
 
-                    <a class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden" href="#">
-                        <svg
-                            class="me-3 block size-4 shrink-0 md:me-2 md:hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path
-                                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                            ></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg
-                        >
-                        Blog
+                    <a
+                        class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
+                        href={p('contact')}
+                    >
+                        <Icon name="mdi:contact-mail-outline" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
+                        {t('nav.contact')}
                     </a>
 
                     <!-- Button Group -->
+                    <!-- TODO: search -->
                     <div
                         class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-start-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
                     >

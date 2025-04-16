@@ -1,5 +1,5 @@
 ---
-import {useTranslations} from '../i18n/utils';
+import {useLocalePages, useTranslations} from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
 
 import beilschmidtAvatar from '../images/team/Beilschmidt.png';
@@ -7,6 +7,7 @@ import droennerAvatar from '../images/team/Drönner.jpg';
 import mattigAvatar from '../images/team/Mattig.png';
 import seegerAvatar from '../images/team/Seeger.jpg';
 import schweitzerAvatar from '../images/team/Schweitzer.png';
+import geoEngineArchitecture from '../images/geoengine-architecture.svg';
 
 import Hero from '../components/Hero.astro';
 import Spacer from '../components/Spacer.astro';
@@ -16,8 +17,10 @@ import {Services} from '../components/services/index.astro';
 import {Image} from 'astro:assets';
 import Logos from '../components/Logos.astro';
 import News from '../components/News.astro';
+import {Icon} from 'astro-icon/components';
 
 const t = useTranslations(Astro.currentLocale);
+const p = useLocalePages(Astro.currentLocale);
 ---
 
 <Layout>
@@ -29,7 +32,7 @@ const t = useTranslations(Astro.currentLocale);
         </p>
         <p class="mx-auto">
             <a
-                href="#"
+                href={p('contact')}
                 class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
             >
                 {t('contact.button')}
@@ -55,7 +58,7 @@ const t = useTranslations(Astro.currentLocale);
                 <Image class="col-span-2 inline-block size-32 rounded-full" src={seegerAvatar} alt="Bernhard Seeger" />
             </div>
             <div class="w-full">
-                <h2 class="text-3xl font-semibold">Unser Team</h2>
+                <h2 class="text-3xl font-semibold">{t('team.title')}</h2>
                 <hr class="border-main-green my-8 w-16 border-1" />
                 <p class="mx-auto pb-8">{t('team.shortSlogan')}</p>
                 <p class="mx-auto">
@@ -67,10 +70,35 @@ const t = useTranslations(Astro.currentLocale);
                     </a>
                 </p>
             </div>
-            <!-- ... -->
         </div>
     </Section>
-    <Section bg="blue" box> Die Geo Engine: Unser Technologiestack </Section>
+    <Section bg="blue" box>
+        <h2 class="mx-auto mb-16 text-3xl font-semibold">{t('technology.title')}</h2>
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
+            <Image class="inline-block" src={geoEngineArchitecture} alt="Geo Engine Architecture" />
+            <div class="w-full">
+                <p class="mx-auto pb-8">{t('technology.text')}</p>
+                <p class="mx-auto pb-4 font-bold">{t('technology.keyFeatures')}:</p>
+                <ul class="mx-auto list-disc space-y-2 px-8">
+                    <li>{t('technology.keyFeatures1')}</li>
+                    <li>{t('technology.keyFeatures2')}</li>
+                    <li>{t('technology.keyFeatures3')}</li>
+                    <li>{t('technology.keyFeatures4')}</li>
+                    <li>{t('technology.keyFeatures5')}</li>
+                    <li>{t('technology.keyFeatures6')}</li>
+                </ul>
+            </div>
+        </div>
+        <p class="mx-auto mt-16">
+            <a
+                href="https://www.geoengine.io"
+                class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-gray-200 p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+            >
+                <Icon name="mdi:link-variant" class="size-4" />
+                {t('technology.link')}
+            </a>
+        </p>
+    </Section>
     <News />
     <Logos />
     <Section bg="lightblue">
@@ -79,7 +107,7 @@ const t = useTranslations(Astro.currentLocale);
         </p>
         <p class="mx-auto -mb-16">
             <a
-                href="#"
+                href={p('contact')}
                 class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
             >
                 {t('contact.button')}

@@ -1,8 +1,8 @@
 ---
-import {getCollection, render} from 'astro:content';
 import {Picture} from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import PageHeader from './PageHeader.astro';
 
 interface Props {
     date: Date;
@@ -19,10 +19,17 @@ const formattedDate = date.toLocaleString(lang, {
 });
 ---
 
+<style>
+    div :global(a) {
+        color: var(--color-main-green);
+    }
+    div :global(a:hover) {
+        text-decoration: underline;
+    }
+</style>
+
 <Layout>
-    <Section bg="beach">
-        <h2 class="mx-auto text-2xl font-bold text-white uppercase text-shadow-lg/25 md:text-3xl">{title}</h2>
-    </Section>
+    <PageHeader>{title}</PageHeader>
     <Section>
         <div class="mx-auto max-w-2xl">
             <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />

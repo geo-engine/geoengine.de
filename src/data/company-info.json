@@ -1,0 +1,19 @@
+{
+    "name": "Geo Engine GmbH",
+    "address": {
+        "street": "Am Kornacker 68",
+        "city": "Marburg",
+        "zipCode": "35041",
+        "country": "Germany"
+    },
+    "executives": "Dr. Christian Beilschmidt, Dr. Johannes Drönner, Michael Mattig, Philip Schweitzer",
+    "website": "https://www.geoengine.de",
+    "eMail": "info@geoengine.de",
+    "phone": "+49 6421 38017-70",
+    "registration": {
+        "type": "Handelsregister",
+        "location": "Marburg",
+        "number": "HRB 7796"
+    },
+    "vatId": "(USt.-Id) DE344571875"
+}

@@ -1,15 +1,155 @@
 ---
 import {getCollection} from 'astro:content';
-import {useTranslations} from '../i18n/utils';
+import {useTranslations, asLocale} from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
+import deIntro from '../components/about/about-de.md';
+import enIntro from '../components/about/about-en.md';
+import Section from '../components/Section.astro';
+import {Team, Person} from '../components/team/index.astro';
+import Spacer from '../components/Spacer.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+import beilschmidt from '../images/team/Beilschmidt.png';
+import droenner from '../images/team/Drönner.jpg';
+import mattig from '../images/team/Mattig.png';
+import seeger from '../images/team/Seeger.jpg';
+import schweitzer from '../images/team/Schweitzer.png';
+import bendix from '../images/team/bendix.jpg';
+import koslowski from '../images/team/koslowski.jpeg';
+import kraemer from '../images/team/kraemer.jpeg';
+import meyer from '../images/team/meyer.jpeg';
+import wagner from '../images/team/wagner.jpeg';
+
+const language = asLocale(Astro.currentLocale);
 
 const t = useTranslations(Astro.currentLocale);
+
+const Intro = language === 'de' ? deIntro : enIntro;
 
 const publications = await getCollection('publications');
 ---
 
+<style>
+    .intro {
+        margin-top: -2rem;
+        text-align: justify;
+    }
+    .intro :global(h2) {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: 1rem;
+    }
+    .intro :global(p) {
+        margin-bottom: 1rem;
+    }
+    .intro :global(a) {
+        color: var(--color-main-green);
+    }
+    .intro :global(a:hover) {
+        text-decoration: underline;
+    }
+</style>
+
 <Layout>
-    <section>
+    <PageHeader>{t('team.title')}</PageHeader>
+    <Section>
+        <div class="intro">
+            <Intro />
+        </div>
+    </Section>
+    <!-- Team -->
+    <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
+        <!-- Title -->
+        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('team.leadership')}</h2>
+            <!-- <p class="mt-1 text-gray-600 dark:text-neutral-400">Creative people</p> -->
+        </div>
+        <!-- End Title -->
+
+        <Team>
+            <Person
+                name="Christian Beilschmidt"
+                title="Co-Founder / Projects"
+                image={beilschmidt}
+                linkedin="https://www.linkedin.com/in/christian-beilschmidt/"
+                twitter="https://twitter.com/cbeilschmidt"
+                website="https://www.christianbeilschmidt.de/"
+            />
+            <Person
+                name="Johannes Drönner"
+                title="Co-Founder / Product & ML"
+                image={droenner}
+                linkedin="https://www.linkedin.com/in/johannes-dr%C3%B6nner-5b6b04208/"
+            />
+            <Person
+                name="Michael Mattig"
+                title="Co-Founder / Infrastructure & Engine"
+                image={mattig}
+                linkedin="https://www.linkedin.com/in/michael-mattig/"
+                twitter="https://twitter.com/michael_mattig"
+            />
+            <Person
+                name="Philip Schweitzer"
+                title="Co-Founder / Sales"
+                image={schweitzer}
+                linkedin="https://www.linkedin.com/in/philip-schweitzer-514a701b9/"
+                twitter="https://twitter.com/PhilipSchweitz5"
+            />
+            <Person
+                name="Bernhard Seeger"
+                title="Co-Founder / Research"
+                image={seeger}
+                linkedin="https://www.linkedin.com/in/bernhardseeger/"
+                twitter="https://twitter.com/beseeger"
+            />
+        </Team>
+        <!-- End Team -->
+
+        <Spacer />
+
+        <!-- Title -->
+        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('team.advisors')}</h2>
+            <!-- <p class="mt-1 text-gray-600 dark:text-neutral-400">Creative people</p> -->
+        </div>
+        <!-- End Title -->
+
+        <Team>
+            <Person
+                name="Prof. Jörg Bendix"
+                title="Professor for climate geography and environmental modeling"
+                image={bendix}
+                website="https://vhrz669.hrz.uni-marburg.de/lcrs/showdetaileduserview.do?userid=65"
+            />
+            <Person
+                name="Dr. Wolfram Koslowski"
+                title="Former CEO CCP Software GmbH, Coach at Mafex Förderverein e.V."
+                image={koslowski}
+                linkedin="https://www.linkedin.com/in/wolfram-koslowski-230b6128/"
+            />
+            <Person
+                name="Dr. Jürgen Krämer"
+                title="CPO IoT & Analytics  Software AG"
+                image={kraemer}
+                linkedin="https://www.linkedin.com/in/juergenkraemer/"
+            />
+            <Person
+                name="Prof. Hanna Meyer"
+                title="Professor for remote sensing and spatial modeling"
+                image={meyer}
+                twitter="https://twitter.com/hanna123987"
+            />
+            <Person
+                name="Dr. Matthias P. Wagner"
+                title="Founder & CEO Panopterra"
+                image={wagner}
+                linkedin="https://www.linkedin.com/in/m-p-wagner/"
+            />
+        </Team>
+    </div>
+
+    <Section>
+        <h2 class="mb-8 text-2xl font-semibold">{t('team.publications')}</h2>
         <ul class="list-disc pl-16">
             {
                 publications.map((publication) => (
@@ -24,5 +164,5 @@ const publications = await getCollection('publications');
                 ))
             }
         </ul>
-    </section>
+    </Section>
 </Layout>

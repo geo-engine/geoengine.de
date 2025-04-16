@@ -1,0 +1,47 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import Section from '../../components/Section.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import claInfo from '../../data/cla.json';
+---
+
+<Layout>
+    <PageHeader>CLA</PageHeader>
+    <Section>
+        <h2 class="my-4 text-lg font-semibold">Description of the Geo Engine Contributor License Agreement</h2>
+        <p>
+            When an individual wishes to submit code to a Geo Engine open source project, they must first sign a Contributor License
+            Agreement (CLA). This allows contributors to retain ownership of the submitted code, while the agreement grants Geo Engine the
+            necessary rights to use that contribution. The CLA only needs to be signed once and applies to all Geo Engine projects. For
+            submissions to our project made by employees during their working hours, the CLA must be signed by their organization.
+        </p>
+        <h3 class="text-md my-4 font-semibold">Quick links</h3>
+        <p>
+            External website (where contributors can read and sign the agreement):<br />
+            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+        </p>
+        <h3 class="text-md my-4 font-semibold">How do I sign the CLA?</h3>
+        <p>
+            Once a pull request is made in a Geo Engine repository, our Continuous Integration checks to see if the contributing user has
+            signed the CLA. It is then only necessary to follow the link
+            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+            and sign this electronically.
+        </p>
+        <p class="mt-2">
+            As an alternative to using the link, contributors or organizations are welcome to send the completed and signed form to
+            <a class="text-main-green hover:underline" href={'mailto:' + claInfo.eMail}>{claInfo.eMail}</a>.
+        </p>
+        <h3 class="text-md my-4 font-semibold">Why do we have a CLA in the first place?</h3>
+        <p>
+            Our CLA allows open source projects managed by Geo Engine to securely accept code and documentation from external contributors.
+            This is how we ensure that external contributions can be used in a safe and scalable way.
+        </p>
+        <h3 class="text-md my-4 font-semibold">What is the Basis of our CLA?</h3>
+        <p>
+            Our CLA is based on information from the site:
+            <br />
+            <a class="text-main-green hover:underline" href={claInfo.basis}>{claInfo.basis}</a>.
+        </p>
+    </Section>
+</Layout>
