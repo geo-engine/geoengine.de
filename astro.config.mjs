@@ -1,13 +1,13 @@
 import {defineConfig} from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-
+import pagefind from 'astro-pagefind';
 import icon from 'astro-icon';
-
 import cookieconsent from '@jop-software/astro-cookieconsent';
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://www.geoengine.de',
+    output: 'static',
 
     vite: {
         plugins: [tailwindcss()],
@@ -66,6 +66,7 @@ export default defineConfig({
                 },
             },
         ),
+        pagefind(),
     ],
 
     experimental: {

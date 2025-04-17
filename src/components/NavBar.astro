@@ -1,8 +1,10 @@
 ---
 import {getRelativeLocaleUrl} from 'astro:i18n';
-import Logo from '../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
 import {currentLanguage, useTranslations, useLocalePages} from '../i18n/utils';
 import {Icon} from 'astro-icon/components';
+import Search from 'astro-pagefind/components/Search';
+
+import Logo from '../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
 
 const logoHeightPx = 74;
 const logoWidthPx = logoHeightPx * (1920 / 498);
@@ -13,7 +15,15 @@ const t = useTranslations(Astro.currentLocale);
 const p = useLocalePages(Astro.currentLocale);
 ---
 
-<header class="sticky z-50 flex w-full flex-wrap bg-black md:flex-nowrap md:justify-start">
+<style>
+    .pagefind-ui :global(.pagefind-ui__drawer:not(.pagefind-ui__hidden)) {
+        max-height: 33vh;
+        background-color: var(--color-white);
+        overflow-y: auto;
+    }
+</style>
+
+<header class="sticky top-0 z-50 flex w-full flex-wrap bg-black md:flex-nowrap md:justify-start">
     <nav class="relative mx-auto w-full max-w-5xl px-4 py-2 sm:px-6 md:flex md:items-center md:justify-between md:gap-3 lg:px-8">
         <!-- Logo w/ Collapse Button -->
         <div class="flex items-center justify-between">
@@ -112,28 +122,21 @@ const p = useLocalePages(Astro.currentLocale);
                     </a>
 
                     <!-- Button Group -->
-                    <!-- TODO: search -->
                     <div
                         class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-start-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
                     >
                         <a
-                            class="flex w-full items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
-                            href="#"
+                            class="flex w-full cursor-pointer items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
+                            onclick="
+                                const search = document.querySelector('.pagefind-ui');
+                                if (search) {
+                                    search.classList.toggle('hidden');
+                                    search.focus();
+                                } 
+                                "
                         >
-                            <svg
-                                class="me-3 size-4 shrink-0 md:me-2"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg
-                            >
-                            Log in
+                            <Icon name="mdi:search" class="me-3 size-4 shrink-0 md:me-2" />
+                            <span class="md:hidden">Search</span>
                         </a>
                     </div>
                     <!-- End Button Group -->
@@ -143,3 +146,7 @@ const p = useLocalePages(Astro.currentLocale);
         <!-- End Collapse -->
     </nav>
 </header>
+
+<aside class="pagefind-ui hidden">
+    <Search id="search" className="fixed w-full" uiOptions={{showImages: false}} />
+</aside>
