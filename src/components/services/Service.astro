@@ -1,0 +1,21 @@
+---
+import {Icon} from 'astro-icon/components';
+
+interface Props {
+    icon: string;
+    heading: string;
+}
+
+const {icon, heading} = Astro.props;
+---
+
+<div class="flex gap-x-5 sm:gap-x-8">
+    <Icon name={icon} class="text-main-green mt-2 size-6 shrink-0 dark:text-white" />
+    <slot name="icon" />
+    <div class="grow">
+        <h3 class="text-base font-semibold text-gray-800 sm:text-lg dark:text-neutral-200">{heading}</h3>
+        <p class="mt-1 text-gray-600 dark:text-neutral-400">
+            <slot />
+        </p>
+    </div>
+</div>

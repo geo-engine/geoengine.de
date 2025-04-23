@@ -1,0 +1,39 @@
+---
+import {Icon} from 'astro-icon/components';
+
+interface Props {
+    idPrefix: string;
+    heading: string;
+    icon: string;
+    selectedInitially?: boolean;
+}
+
+const {heading, icon, idPrefix, selectedInitially = false} = Astro.props;
+
+const id = `${idPrefix}-tab`;
+const idLink = `${idPrefix}-content`;
+---
+
+<button
+    type="button"
+    class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent dark:hs-tab-active:bg-neutral-800 flex w-full cursor-pointer flex-col rounded-xl p-3 text-start hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden md:p-5 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+    class:list={[{active: selectedInitially}]}
+    id={id}
+    aria-selected={selectedInitially}
+    data-hs-tab={`#${idLink}`}
+    aria-controls={idLink}
+    role="tab"
+>
+    <Icon
+        class="hs-tab-active:text-main-green dark:hs-tab-active:text-main-green hidden size-7 shrink-0 text-gray-800 sm:block dark:text-white"
+        name={icon}
+    />
+    <span class="sm:mt-5">
+        <span
+            class="hs-tab-active:text-main-green dark:hs-tab-active:text-main-green block font-semibold text-gray-800 dark:text-neutral-200"
+        >
+            {heading}
+        </span>
+        <span class="mt-2 hidden text-gray-800 lg:block dark:text-neutral-200"><slot /></span>
+    </span>
+</button>

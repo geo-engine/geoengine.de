@@ -1,0 +1,42 @@
+---
+import {useTranslations} from '../../i18n/utils';
+import AppImage from '../../images/solutions/app.webp';
+import PipelineImage from '../../images/solutions/data-products-v2.webp';
+import MLImage from '../../images/solutions/deep-learning.webp';
+import SolutionTab from './SolutionTab.astro';
+import SolutionTabContent from './SolutionTabContent.astro';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<!-- Features -->
+<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <!-- Tab Nav -->
+    <nav
+        id="solutions-tabs"
+        class="mx-auto flex max-w-6xl flex-col gap-y-px sm:flex-row sm:gap-x-4 sm:gap-y-0"
+        aria-label="Tabs"
+        role="tablist"
+        aria-orientation="horizontal"
+    >
+        <SolutionTab idPrefix="solutions-tab-1" heading={t('solutions.dashboards.heading')} icon="mdi:monitor-dashboard" selectedInitially>
+            {t('solutions.dashboards.text')}
+        </SolutionTab>
+        <SolutionTab idPrefix="solutions-tab-2" heading={t('solutions.ml.heading')} icon="mdi:brain-freeze-outline">
+            {t('solutions.ml.text')}
+        </SolutionTab>
+        <SolutionTab idPrefix="solutions-tab-3" heading={t('solutions.dataproducts.heading')} icon="mdi:database-cog-outline">
+            {t('solutions.dataproducts.text')}
+        </SolutionTab>
+    </nav>
+    <!-- End Tab Nav -->
+
+    <!-- Tab Content -->
+    <div class="mt-12 md:mt-16">
+        <SolutionTabContent idPrefix="solutions-tab-1" image={AppImage} selectedInitially />
+        <SolutionTabContent idPrefix="solutions-tab-2" image={MLImage} />
+        <SolutionTabContent idPrefix="solutions-tab-3" image={PipelineImage} />
+    </div>
+    <!-- End Tab Content -->
+</div>
+<!-- End Features -->

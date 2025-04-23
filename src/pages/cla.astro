@@ -1,0 +1,52 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import Section from '../components/Section.astro';
+import Layout from '../layouts/Layout.astro';
+
+import claInfo from '../data/cla.json';
+---
+
+<Layout>
+    <PageHeader>CLA</PageHeader>
+    <Section>
+        <h2 class="my-4 text-lg font-semibold">
+            Beschreibung zum Lizenzvertrag für Mitwirkende (Contributor License Agreement) der Geo Engine
+        </h2>
+        <p>
+            Wenn eine Person Code für ein Open-Source-Projekt von Geo Engine einreichen möchte, muss diese zunächst ein Contributor License
+            Agreement (CLA) unterzeichnen. Dies ermöglicht es Mitwirkenden, ihr Eigentum an dem eingereichten Code zu behalten, während die
+            Vereinbarung Geo Engine die notwendigen Rechte zur Nutzung dieses Beitrags einräumt. Der CLA muss nur einmal unterzeichnet
+            werden und gilt für alle Geo Engine-Projekte. Für die Einreichung von Beiträgen zu unserem Projekt, die Angestellte während
+            ihrer Arbeitszeit erstellen, muss das CLA durch ihre Organisation unterzeichnet werden.
+        </p>
+        <h3 class="text-md my-4 font-semibold">Schnelle Links</h3>
+        <p>
+            Externe Website (wo Beitragende die Vereinbarung lesen und unterschreiben können):<br />
+            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+        </p>
+        <h3 class="text-md my-4 font-semibold">Wie unterzeichne ich das CLA?</h3>
+        <p>
+            Sobald ein Pull-Request in einem Geo Engine-Repository gestellt wird, überprüft unsere Continuous-Integration, ob der
+            beitragende User das CLA unterzeichnet hat. Es ist dann lediglich notwendig, dem Link
+            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+            zu folgen und dies elektronisch zu unterzeichnen.
+        </p>
+        <p class="mt-2">
+            Alternativ zur Nutzung des Links können Beitragende oder Organisationen das ausgefüllte und unterschriebene Formular gerne auch
+            an
+            <a class="text-main-green hover:underline" href={'mailto:' + claInfo.eMail}>{claInfo.eMail}</a>
+            senden.
+        </p>
+        <h3 class="text-md my-4 font-semibold">Warum haben wir überhaupt eine CLA?</h3>
+        <p>
+            Unser CLA ermöglicht es Open-Source-Projekten, die von Geo Engine verwaltet werden, Code und Dokumentation von externen
+            Mitwirkenden sicher zu akzeptieren. So stellen wir sicher, dass externe Beiträge sicher und skalierbar verwendet werden können.
+        </p>
+        <h3 class="text-md my-4 font-semibold">Was ist die Basis unseres CLA?</h3>
+        <p>
+            Unser CLA basiert auf den Informationen der Seite:
+            <br />
+            <a class="text-main-green hover:underline" href={claInfo.basis}>{claInfo.basis}</a>.
+        </p>
+    </Section>
+</Layout>

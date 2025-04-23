@@ -1,0 +1,36 @@
+---
+import {useTranslations} from '../../i18n/utils';
+import {Service} from './index.astro';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<!-- Icon Blocks -->
+<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl">
+        <!-- Grid -->
+        <div class="grid gap-12">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 lg:text-4xl dark:text-white">{t('services.title')}</h2>
+                <p class="mt-3 text-gray-800 dark:text-neutral-400">{t('services.intro')}</p>
+            </div>
+
+            <div class="space-y-6 lg:space-y-10">
+                <Service icon="gis:map-stat" heading={t('services.esg.heading')}>
+                    {t('services.esg.text')}
+                </Service>
+                <Service icon="gis:earth-network" heading={t('services.portals.heading')}>
+                    {t('services.portals.text')}
+                </Service>
+                <Service icon="gis:earth-gear" heading={t('services.processing.heading')}>
+                    {t('services.processing.text')}
+                </Service>
+                <Service icon="gis:layer-download" heading={t('services.integration.heading')}>
+                    {t('services.integration.text')}
+                </Service>
+            </div>
+        </div>
+        <!-- End Grid -->
+    </div>
+</div>
+<!-- End Icon Blocks -->

@@ -1,0 +1,11 @@
+---
+interface Props {
+    height?: number;
+}
+
+const {height} = Astro.props;
+
+const repetitions = new Array(height ?? 1).fill(undefined);
+---
+
+{repetitions.map(() => <div class="h-[2rem] md:h-[8rem]" />)}

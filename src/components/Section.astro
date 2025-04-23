@@ -1,0 +1,42 @@
+---
+import {getImage} from 'astro:assets';
+import beachBg from '../images/Strand.png';
+import blueBg from '../images/backgrounds/GeoEngine_Structure_midblue.svg';
+import greenBg from '../images/backgrounds/GeoEngine_Structure_lightgreen.svg';
+import lightblueBg from '../images/backgrounds/GeoEngine_Structure_lightblue.svg';
+
+interface Props {
+    bg?: 'green' | 'blue' | 'lightblue' | 'beach';
+    box?: boolean;
+}
+
+const {bg, box = false} = Astro.props;
+
+async function optimizedBackgroundImage(src: ImageMetadata): Promise<string> {
+    const bg = await getImage({src});
+    return `url('${bg.src}')`;
+}
+
+let backgroundImage = 'none';
+if (bg == 'green') {
+    backgroundImage = await optimizedBackgroundImage(greenBg);
+} else if (bg == 'blue') {
+    backgroundImage = await optimizedBackgroundImage(blueBg);
+} else if (bg == 'lightblue') {
+    backgroundImage = await optimizedBackgroundImage(lightblueBg);
+} else if (bg == 'beach') {
+    backgroundImage = await optimizedBackgroundImage(beachBg);
+}
+---
+
+<style define:vars={{backgroundImage}}>
+    section {
+        background-image: var(--backgroundImage);
+    }
+</style>
+
+<section class="bg-cover bg-center bg-no-repeat py-16">
+    <div class="mx-auto flex size-full max-w-6xl flex-col rounded-md p-8" class:list={[{'bg-white': box}]}>
+        <slot />
+    </div>
+</section>

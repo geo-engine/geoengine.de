@@ -1,0 +1,44 @@
+---
+import {Picture} from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import PageHeader from './PageHeader.astro';
+
+interface Props {
+    date: Date;
+    title: string;
+    image: ImageMetadata;
+    lang: 'de' | 'en';
+}
+
+const {date, title, image, lang} = Astro.props;
+const formattedDate = date.toLocaleString(lang, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+});
+---
+
+<style>
+    div :global(a) {
+        color: var(--color-main-green);
+    }
+    div :global(a:hover) {
+        text-decoration: underline;
+    }
+</style>
+
+<Layout>
+    <PageHeader>{title}</PageHeader>
+    <Section>
+        <div class="mx-auto max-w-2xl">
+            <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
+            <p class="my-8 text-xs text-gray-500 dark:text-neutral-500">
+                {formattedDate}
+            </p>
+            <div class="space-y-4 text-lg">
+                <slot />
+            </div>
+        </div>
+    </Section>
+</Layout>

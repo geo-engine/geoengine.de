@@ -1,0 +1,35 @@
+[
+    {
+        "id": "cc_cookie",
+        "de": {
+            "purpose": "Speichert Cookie-Einstellungen",
+            "validity": "6 Monate"
+        },
+        "en": {
+            "purpose": "Saves cookie preferences",
+            "validity": "6 months"
+        }
+    },
+    {
+        "id": "astroErrorOverlayTheme",
+        "de": {
+            "purpose": "Dieser LocalStorage-Schlüssel/Wert speichert die Farbe des Website-Themas.",
+            "validity": "variabel"
+        },
+        "en": {
+            "purpose": "This LocalStorage key / value stores the website theme color.",
+            "validity": "variable"
+        }
+    },
+    {
+        "id": "theme",
+        "de": {
+            "purpose": "This LocalStorage key / value stores the website theme color.",
+            "validity": "variabel"
+        },
+        "en": {
+            "purpose": "Dieser LocalStorage-Schlüssel/Wert speichert die Farbe des Website-Themas.",
+            "validity": "variable"
+        }
+    }
+]
