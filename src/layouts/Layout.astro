@@ -18,7 +18,9 @@ const currentLocale = Astro.currentLocale;
     <body>
         <NavBar />
         <slot />
-        <Footer />
+        <div class="bg-black">
+            <Footer />
+        </div>
         <!-- Preline UI -->
         <script>
             import 'preline/dist/preline.js';
