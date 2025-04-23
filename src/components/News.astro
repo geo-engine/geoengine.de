@@ -33,8 +33,6 @@ const newsItems: Array<{
     abstract: string;
     link: string;
 }> = paths.map((page) => {
-    console.log(page.params.slug);
-    console.log(page.params.lang);
     return {
         title: page.props.data.title,
         date: page.props.data.date.toLocaleDateString(pageLang, {
