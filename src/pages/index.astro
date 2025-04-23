@@ -63,7 +63,7 @@ const p = useLocalePages(Astro.currentLocale);
                 <p class="mx-auto pb-8">{t('team.shortSlogan')}</p>
                 <p class="mx-auto">
                     <a
-                        href="#"
+                        href={p('about')}
                         class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-gray-200 p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
                     >
                         {t('team.link')}
