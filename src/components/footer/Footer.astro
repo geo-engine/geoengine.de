@@ -1,10 +1,9 @@
 ---
 import {Icon} from 'astro-icon/components';
-import {asLocale, useLocalePages, useTranslations} from '../../i18n/utils';
+import {asLocale, useLocalePages, useTranslations, pageInOtherLocale} from '../../i18n/utils';
 import Logo from '../../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
 import FooterGridColumn from './FooterGridColumn.astro';
 import FooterGridLink from './FooterGridLink.astro';
-import {getRelativeLocaleUrl} from 'astro:i18n';
 
 const logoHeightPx = 32;
 const logoWidthPx = logoHeightPx * (1920 / 498);
@@ -97,14 +96,14 @@ const selectedLocale = asLocale(Astro.currentLocale) === 'en' ? 'English' : 'Deu
                     >
                         <a
                             class="flex items-center gap-x-2 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                            href={getRelativeLocaleUrl('en')}
+                            href={pageInOtherLocale('en', Astro.url.pathname)}
                         >
                             <Icon name="flag-en" class="size-3.5 shrink-0 rounded-full" id="flag-icon-css-us" />
                             English
                         </a>
                         <a
                             class="flex items-center gap-x-2 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                            href={getRelativeLocaleUrl('de')}
+                            href={pageInOtherLocale('de', Astro.url.pathname)}
                         >
                             <Icon name="flag-de" class="size-3 shrink-0 rounded-full" id="flag-icon-css-de" />
                             Deutsch

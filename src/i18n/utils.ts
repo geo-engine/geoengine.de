@@ -1,3 +1,4 @@
+import {getRelativeLocaleUrl} from 'astro:i18n';
 import {translations, defaultLang, pages} from './translations';
 
 // export function getLangFromUrl(url: URL) {
@@ -26,6 +27,30 @@ export function useLocalePages(astro_current_locale: string | undefined) {
     return function p(key: keyof (typeof pages)[typeof defaultLang]) {
         return pages[lang][key] || pages[defaultLang][key];
     };
+}
+
+/**
+ * Returns the URL of the page in the given locale.
+ *
+ * If the page cannot be looked up, it returns the URL of the root page in the given locale.
+ */
+export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
+    let key = undefined;
+    for (const localePages of Object.values(pages)) {
+        for (const [page, pagePath] of Object.entries(localePages)) {
+            if (pagePath === currentPath) {
+                key = page as keyof (typeof pages)[typeof defaultLang];
+                break;
+            }
+        }
+        if (key) break;
+    }
+
+    if (key) {
+        return pages[lang][key];
+    } else {
+        return getRelativeLocaleUrl(lang, '/');
+    }
 }
 
 function localePagePrefix(lang: LocaleString): string {
