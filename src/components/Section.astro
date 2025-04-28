@@ -1,9 +1,9 @@
 ---
-import {getImage} from 'astro:assets';
 import beachBg from '../images/Strand.png';
 import blueBg from '../images/backgrounds/GeoEngine_Structure_midblue.svg';
 import greenBg from '../images/backgrounds/GeoEngine_Structure_lightgreen.svg';
 import lightblueBg from '../images/backgrounds/GeoEngine_Structure_lightblue.svg';
+import {optimizedBackgroundImage} from '../images/util';
 
 interface Props {
     bg?: 'green' | 'blue' | 'lightblue' | 'beach';
@@ -11,11 +11,6 @@ interface Props {
 }
 
 const {bg, box = false} = Astro.props;
-
-async function optimizedBackgroundImage(src: ImageMetadata): Promise<string> {
-    const bg = await getImage({src});
-    return `url('${bg.src}')`;
-}
 
 let backgroundImage = 'none';
 if (bg == 'green') {

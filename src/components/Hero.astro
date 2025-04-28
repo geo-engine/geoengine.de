@@ -1,10 +1,11 @@
 ---
 import {useTranslations} from '../i18n/utils';
 import geoEngineTitle from '../images/Strand.png';
+import {optimizedBackgroundImage} from '../images/util';
 
 const t = useTranslations(Astro.currentLocale);
 
-const geoEngineBackground = 'url(' + geoEngineTitle.src + ')';
+const geoEngineBackground = await optimizedBackgroundImage(geoEngineTitle);
 ---
 
 <style define:vars={{geoEngineBackground}}>
