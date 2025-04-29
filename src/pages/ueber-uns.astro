@@ -50,8 +50,7 @@ const publications = await getCollection('publications');
     }
 </style>
 
-<Layout>
-    <PageHeader>{t('team.title')}</PageHeader>
+<Layout title={t('team.title')} description={t('team.shortSlogan')}>
     <Section>
         <div class="intro">
             <Intro />

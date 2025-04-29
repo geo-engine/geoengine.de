@@ -11,8 +11,7 @@ const pageLang = Astro.currentLocale;
 const t = useTranslations(pageLang);
 ---
 
-<Layout>
-    <PageHeader>{t('nav.contact')}</PageHeader>
+<Layout title={t('nav.contact')} description={t('contact.slogan')}>
     <Section>{t('contact.intro')}</Section>
     <!-- Contact -->
     <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-24">

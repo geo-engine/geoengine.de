@@ -67,6 +67,8 @@ export const translations = {
         'technology.keyFeatures6': 'Reproduzierbarkeit des Datenzugriffs',
         'technology.link': 'Hier gibt es mehr Infos',
         'references.title': 'Referenzen & Beispiele',
+        'references.intro':
+            'Hier finden Sie einige Beispiele für unsere Arbeit. Diese Projekte zeigen, wie wir Geodaten und Zeitreihenverarbeitung in verschiedenen Anwendungsfällen einsetzen.',
         'news.title': 'Neueste Beiträge',
         'news.subtitle': 'Bleiben Sie auf dem Laufenden mit unseren neuesten Nachrichten und Updates.',
         'footer.info': 'Informationen',
@@ -137,6 +139,8 @@ export const translations = {
         'technology.keyFeatures6': 'Reproducibility of data access',
         'technology.link': 'More information here',
         'references.title': 'References & Examples',
+        'references.intro':
+            'Here you will find some examples of our work. These projects show how we use geodata and time series processing in various applications.',
         'news.title': 'Latest Posts',
         'news.subtitle': 'Stay up to date with our latest news and updates.',
         'footer.info': 'Information',

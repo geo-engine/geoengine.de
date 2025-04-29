@@ -9,14 +9,17 @@ interface Props {
     title: string;
     image: ImageMetadata;
     lang: 'de' | 'en';
+    pageBody: string;
 }
 
-const {date, title, image, lang} = Astro.props;
+const {date, title, image, lang, pageBody} = Astro.props;
 const formattedDate = date.toLocaleString(lang, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
 });
+
+const pageDescription = pageBody.slice(0, 200) + '…';
 ---
 
 <style>
@@ -28,8 +31,7 @@ const formattedDate = date.toLocaleString(lang, {
     }
 </style>
 
-<Layout>
-    <PageHeader>{title}</PageHeader>
+<Layout title={title} description={pageDescription}>
     <Section>
         <div class="mx-auto max-w-2xl">
             <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
