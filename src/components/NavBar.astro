@@ -125,7 +125,7 @@ const p = useLocalePages(Astro.currentLocale);
                     <div
                         class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-start-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
                     >
-                        <a
+                        <button
                             class="flex w-full cursor-pointer items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
                             onclick="
                                 const search = document.querySelector('.pagefind-ui');
@@ -137,7 +137,7 @@ const p = useLocalePages(Astro.currentLocale);
                         >
                             <Icon name="mdi:search" class="me-3 size-4 shrink-0 md:me-2" />
                             <span class="md:hidden">Search</span>
-                        </a>
+                        </button>
                     </div>
                     <!-- End Button Group -->
                 </div>
