@@ -3,7 +3,7 @@ import beachBg from '../images/Strand.png';
 import blueBg from '../images/backgrounds/GeoEngine_Structure_midblue.svg';
 import greenBg from '../images/backgrounds/GeoEngine_Structure_lightgreen.svg';
 import lightblueBg from '../images/backgrounds/GeoEngine_Structure_lightblue.svg';
-import {optimizedBackgroundImage} from '../images/util';
+import {NO_IMAGE_SET, optimizedBackgroundImage} from '../images/util';
 
 interface Props {
     bg?: 'green' | 'blue' | 'lightblue' | 'beach';
@@ -12,7 +12,7 @@ interface Props {
 
 const {bg, box = false} = Astro.props;
 
-let backgroundImage = 'none';
+let backgroundImage = NO_IMAGE_SET;
 if (bg == 'green') {
     backgroundImage = await optimizedBackgroundImage(greenBg);
 } else if (bg == 'blue') {
@@ -24,9 +24,33 @@ if (bg == 'green') {
 }
 ---
 
-<style define:vars={{backgroundImage}}>
+<style
+    define:vars={{
+        smImageSrc: backgroundImage.sm.src,
+        mdImageSrc: backgroundImage.md.src,
+        lgImageSrc: backgroundImage.lg.src,
+        xlImageSrc: backgroundImage.xl.src,
+        originalImageSrc: backgroundImage.original.src,
+    }}
+>
     section {
-        background-image: var(--backgroundImage);
+        background-image: var(--originalImageSrc);
+
+        @media screen and (max-width: 1536px) {
+            background-image: var(--xlImageSrc);
+        }
+
+        @media screen and (max-width: 1280px) {
+            background-image: var(--lgImageSrc);
+        }
+
+        @media screen and (max-width: 1024px) {
+            background-image: var(--mdImageSrc);
+        }
+
+        @media screen and (max-width: 768px) {
+            background-image: var(--smImageSrc);
+        }
     }
 </style>
 

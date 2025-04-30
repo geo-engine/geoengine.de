@@ -5,12 +5,36 @@ import {optimizedBackgroundImage} from '../images/util';
 
 const t = useTranslations(Astro.currentLocale);
 
-const geoEngineBackground = await optimizedBackgroundImage(geoEngineTitle);
+const backgroundImage = await optimizedBackgroundImage(geoEngineTitle);
 ---
 
-<style define:vars={{geoEngineBackground}}>
+<style
+    define:vars={{
+        smImageSrc: backgroundImage.sm.src,
+        mdImageSrc: backgroundImage.md.src,
+        lgImageSrc: backgroundImage.lg.src,
+        xlImageSrc: backgroundImage.xl.src,
+        originalImageSrc: backgroundImage.original.src,
+    }}
+>
     .hero-bg {
-        background-image: var(--geoEngineBackground);
+        background-image: var(--originalImageSrc);
+
+        @media screen and (max-width: 1536px) {
+            background-image: var(--xlImageSrc);
+        }
+
+        @media screen and (max-width: 1280px) {
+            background-image: var(--lgImageSrc);
+        }
+
+        @media screen and (max-width: 1024px) {
+            background-image: var(--mdImageSrc);
+        }
+
+        @media screen and (max-width: 768px) {
+            background-image: var(--smImageSrc);
+        }
     }
 </style>
 

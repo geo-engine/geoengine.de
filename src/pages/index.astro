@@ -23,7 +23,7 @@ const t = useTranslations(Astro.currentLocale);
 const p = useLocalePages(Astro.currentLocale);
 ---
 
-<Layout>
+<Layout title="Start" description={t('header.slogan')} noHeader>
     <Hero />
     <Services />
     <Section bg="beach">

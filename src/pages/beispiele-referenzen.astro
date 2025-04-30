@@ -53,9 +53,7 @@ function isNotLast<T>(arr: T[], index: number): boolean {
         text-decoration: underline;
     }
 </style>
-<Layout>
-    <PageHeader>{t('references.title')}</PageHeader>
-
+<Layout title={t('references.title')} description={t('references.intro')}>
     {
         references.map((reference, i) => (
             <>
