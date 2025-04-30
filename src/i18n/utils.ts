@@ -35,6 +35,11 @@ export function useLocalePages(astro_current_locale: string | undefined) {
  * If the page cannot be looked up, it returns the URL of the root page in the given locale.
  */
 export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
+    // normalize the path
+    if (!currentPath.endsWith('/')) {
+        currentPath += '/';
+    }
+
     let key = undefined;
     for (const localePages of Object.values(pages)) {
         for (const [page, pagePath] of Object.entries(localePages)) {
@@ -49,6 +54,7 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
     if (key) {
         return pages[lang][key];
     } else {
+        console.warn(`Could not find page for path ${currentPath} in locale ${lang}. Using root page instead.`);
         return getRelativeLocaleUrl(lang, '/');
     }
 }

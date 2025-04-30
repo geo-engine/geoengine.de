@@ -154,19 +154,19 @@ export const translations = {
 
 export const pages = {
     de: {
-        about: '/ueber-uns',
-        references: '/beispiele-referenzen',
-        contact: '/kontakt',
-        imprint: '/impressum',
-        cla: '/cla',
-        privacyPolicy: '/datenschutzerklaerung',
+        about: '/ueber-uns/',
+        references: '/beispiele-referenzen/',
+        contact: '/kontakt/',
+        imprint: '/impressum/',
+        cla: '/cla/',
+        privacyPolicy: '/datenschutzerklaerung/',
     },
     en: {
-        about: '/en/about-us',
-        references: '/en/examples-references',
-        contact: '/en/contact',
-        imprint: '/en/imprint',
-        cla: '/en/cla',
-        privacyPolicy: 'privacy-policy',
+        about: '/en/about-us/',
+        references: '/en/examples-references/',
+        contact: '/en/contact/',
+        imprint: '/en/imprint/',
+        cla: '/en/cla/',
+        privacyPolicy: 'privacy-policy/',
     },
 } as const;
