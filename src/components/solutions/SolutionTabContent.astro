@@ -1,4 +1,6 @@
 ---
+import {Image} from 'astro:assets';
+
 interface Props {
     idPrefix: string;
     selectedInitially?: boolean;
@@ -21,7 +23,7 @@ const hidden = !selectedInitially;
             <div
                 class="rounded-3xl bg-gray-100 p-1.5 shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(45_55_75_/_20%),_0_2rem_4rem_-2rem_rgb(45_55_75_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(45_55_75_/_20%)] dark:bg-neutral-700 dark:shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(0_0_0_/_20%),_0_2rem_4rem_-2rem_rgb(0_0_0_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(0_0_0_/_20%)]"
             >
-                <img class="h-auto max-w-full rounded-[1.25rem]" src={image.src} alt="Features Image" />
+                <Image class="h-auto max-w-full rounded-[1.25rem]" src={image} alt="Features Image" />
             </div>
         </figure>
         <!-- End Mobile Device -->
@@ -46,7 +48,7 @@ const hidden = !selectedInitially;
             </div>
 
             <div class="rounded-b-lg bg-gray-800">
-                <img class="h-auto max-w-full rounded-b-lg" src={imageMobile.src} alt="Features Image" />
+                <Image class="h-auto max-w-full rounded-b-lg" src={imageMobile} alt="Features Image" />
             </div>
         </figure>
         <!-- End Browser Device -->
