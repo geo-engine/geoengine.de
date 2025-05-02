@@ -18,5 +18,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## ToDo
 
-- [] Rest Referenzen
 - [] Service & Solution pages
