@@ -57,7 +57,7 @@ function isNotLast<T>(arr: T[], index: number): boolean {
     {
         references.map((reference, i) => (
             <>
-                <Section>
+                <Section id={reference.slug}>
                     <h2 class="mb-4 text-2xl font-semibold">{reference.data.title}</h2>
                     <div class="reference">
                         <Picture

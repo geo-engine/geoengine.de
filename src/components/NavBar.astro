@@ -92,7 +92,11 @@ const p = useLocalePages(Astro.currentLocale);
                 class="max-h-[75vh] overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700"
             >
                 <div class="flex flex-col gap-0.5 py-2 md:flex-row md:items-center md:justify-end md:gap-1 md:py-0">
-                    <a class="flex items-center p-2 text-sm text-white focus:text-white focus:outline-hidden" href="#" aria-current="page">
+                    <a
+                        class="flex items-center p-2 text-sm text-white focus:text-white focus:outline-hidden"
+                        href={p('services')}
+                        aria-current="page"
+                    >
                         <Icon name="mdi:service-toolbox" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
                         {t('nav.services')}
                     </a>

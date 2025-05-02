@@ -1,8 +1,9 @@
 ---
-import {useTranslations} from '../../i18n/utils';
+import {useLocalePages, useTranslations} from '../../i18n/utils';
 import {Service} from './index.astro';
 
 const t = useTranslations(Astro.currentLocale);
+const p = useLocalePages(Astro.currentLocale);
 ---
 
 <!-- Icon Blocks -->
@@ -31,6 +32,14 @@ const t = useTranslations(Astro.currentLocale);
             </div>
         </div>
         <!-- End Grid -->
+        <p class="mx-auto mt-16 text-center">
+            <a
+                href={p('services')}
+                class="text-main-green hover:text-second-torquise i inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-gray-200 p-4 px-4 py-3 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+            >
+                {t('services.more')}
+            </a>
+        </p>
     </div>
 </div>
 <!-- End Icon Blocks -->

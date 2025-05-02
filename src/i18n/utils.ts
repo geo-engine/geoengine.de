@@ -1,5 +1,5 @@
 import {getRelativeLocaleUrl} from 'astro:i18n';
-import {translations, defaultLang, pages} from './translations';
+import {translations, defaultLang, pages, serviceTranslations} from './translations';
 
 // export function getLangFromUrl(url: URL) {
 //     const [, lang] = url.pathname.split('/');
@@ -19,6 +19,13 @@ export function useTranslations(astro_current_locale: string | undefined) {
     const lang = currentLanguage(astro_current_locale);
     return function t(key: keyof (typeof translations)[typeof defaultLang]) {
         return translations[lang][key] || translations[defaultLang][key];
+    };
+}
+
+export function useServiceTranslations(astro_current_locale: string | undefined) {
+    const lang = currentLanguage(astro_current_locale);
+    return function t(key: keyof typeof serviceTranslations) {
+        return serviceTranslations[key][lang] || serviceTranslations[key][defaultLang];
     };
 }
 
