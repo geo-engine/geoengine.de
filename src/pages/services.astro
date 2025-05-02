@@ -49,10 +49,8 @@ const examples = {
     {
         servicePrefixes.map((prefix) => (
             <>
-                <Section>
-                    <h2 class="my-4 text-2xl font-semibold" id={prefix}>
-                        {pt(prefix, 'heading')}
-                    </h2>
+                <Section id={prefix}>
+                    <h2 class="my-4 text-2xl font-semibold">{pt(prefix, 'heading')}</h2>
                     <p>{pt(prefix, 'textLong')}</p>
                 </Section>
                 <Section bg="lightblue" box>
