@@ -132,6 +132,7 @@ export const serviceTranslations = {
     },
 } as const;
 
+// `\u00AD` is a soft hyphen
 export const translations = {
     de: {
         'nav.contact': 'Kontakt',
@@ -140,7 +141,7 @@ export const translations = {
         'nav.technology': 'Technologie',
         'nav.about': 'Über uns',
         'nav.references': 'Referenzen',
-        'header.slogan': 'Ihre Experten für Geodaten & Zeitreihen-Verarbeitung',
+        'header.slogan': 'Ihre Experten für Geodaten & Zeitreihen-Ver\u00ADarbei\u00ADtung',
         'services.title': serviceTranslations['services.title'].de,
         'services.intro': serviceTranslations['services.intro'].de,
         'services.esg.heading': serviceTranslations['services.esg.heading'].de,
