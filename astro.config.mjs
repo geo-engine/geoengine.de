@@ -69,10 +69,6 @@ export default defineConfig({
         pagefind(),
     ],
 
-    experimental: {
-        svg: true,
-    },
-
     i18n: {
         defaultLocale: 'de',
         locales: ['de', 'en'],

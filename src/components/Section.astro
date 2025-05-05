@@ -8,9 +8,10 @@ import {NO_IMAGE_SET, optimizedBackgroundImage} from '../images/util';
 interface Props {
     bg?: 'green' | 'blue' | 'lightblue' | 'beach';
     box?: boolean;
+    id?: string;
 }
 
-const {bg, box = false} = Astro.props;
+const {bg, box = false, id} = Astro.props;
 
 let backgroundImage = NO_IMAGE_SET;
 if (bg == 'green') {
@@ -54,7 +55,7 @@ if (bg == 'green') {
     }
 </style>
 
-<section class="bg-cover bg-center bg-no-repeat py-16">
+<section class="bg-cover bg-center bg-no-repeat py-16" id={id}>
     <div class="mx-auto flex size-full max-w-6xl flex-col rounded-md p-8" class:list={[{'bg-white': box}]}>
         <slot />
     </div>

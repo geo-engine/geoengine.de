@@ -19,6 +19,7 @@ const backgroundImage = await optimizedBackgroundImage(geoEngineTitle);
 >
     .hero-bg {
         background-image: var(--originalImageSrc);
+        background-size: cover;
 
         @media screen and (max-width: 1536px) {
             background-image: var(--xlImageSrc);
@@ -40,12 +41,12 @@ const backgroundImage = await optimizedBackgroundImage(geoEngineTitle);
 
 <!-- Hero -->
 <div class="hero-bg">
-    <div class="mx-auto max-w-5xl px-4 pt-24 pb-24 lg:pt-32 xl:px-0">
+    <div class="mx-auto max-w-5xl px-4 pt-24 pb-24 lg:pt-48 xl:px-0">
         <h1 class="text-5xl font-semibold text-white uppercase text-shadow-lg/25 md:text-6xl">
             {t('header.slogan')}
         </h1>
         <div class="max-w-4xl">
-            <p class="mt-5 text-lg text-white">
+            <p class="text-lg text-white lg:mt-5">
                 <!-- Here could be a subtitle -->
                 <br />
                 <br />
