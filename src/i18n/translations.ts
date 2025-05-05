@@ -287,7 +287,7 @@ export const pages = {
         cla: '/en/cla/',
         contact: '/en/contact/',
         imprint: '/en/imprint/',
-        privacyPolicy: 'privacy-policy/',
+        privacyPolicy: '/en/privacy-policy/',
         references: '/en/examples-references/',
         services: '/en/services/',
     },
