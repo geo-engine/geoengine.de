@@ -27,8 +27,8 @@ export const serviceTranslations = {
         en: 'We offer you the possibility to calculate and provide ESG indicators. These indicators are important for the assessment of companies and their sustainability.',
     },
     'services.esg.textLong': {
-        de: 'Wir bieten Ihnen die Möglichkeit, ESG-Indikatoren zu berechnen und bereitzustellen. Diese Indikatoren sind wichtig für die Bewertung von Unternehmen und deren Nachhaltigkeit.  Hier fokussieren wir uns auf die Bereitstellung von Biodiversitätsindikatoren. Beispiele sind die Veränderung der Vegetation, die Veränderung der Landnutzung oder die Veränderung der Wasserverfügbarkeit. Zudem können wir für EUDR Entwaldungsindikatoren bereitstellen.',
-        en: 'We offer you the possibility to calculate and provide ESG indicators. These indicators are important for the assessment of companies and their sustainability. Here we focus on the provision of biodiversity indicators. Examples include changes in vegetation, changes in land use, or changes in water availability. In addition, we can provide deforestation indicators for EUDR.',
+        de: 'Wir bieten Ihnen die Möglichkeit, ESG-Indikatoren zu berechnen und bereitzustellen. Diese Indikatoren sind wichtig für die Bewertung Ihres Unternehmens und Ihrer Nachhaltigkeit. Hier fokussieren wir uns auf die Bereitstellung von Biodiversitätsindikatoren. Beispiele sind die Veränderung der Vegetation, die Veränderung der Landnutzung oder die Veränderung der Wasserverfügbarkeit. Zudem können wir für EUDR Entwaldungsindikatoren bereitstellen.',
+        en: 'We offer you the possibility to calculate and provide ESG indicators. These indicators are important for the assessment of your company and your sustainability. Here we focus on the provision of biodiversity indicators. Examples include changes in vegetation, changes in land use, or changes in water availability. In addition, we can provide deforestation indicators for EUDR.',
     },
     'services.esg.benefit1': {
         de: 'Erhalten Sie quantifizierbare ESG-Indikatoren, die Sie in Ihre Berichterstattung integrieren können.',
