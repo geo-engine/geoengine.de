@@ -51,7 +51,7 @@ export const serviceTranslations = {
         en: 'We develop customized data portals tailored to your needs. These portals enable you to access and analyze geodata and time series.',
     },
     'services.portals.textLong': {
-        de: 'Wir erstellen mit und für Sie passgenaue Datenportale. So können Sie zielgruppen- oder nutzerspezifische Daten und Analysen dynamisch und interaktiv anbieten. Es sind dann Web-GIS, Dashboards und Jupyter Notebooks als Zugriffsform möglich, je nach Zielgruppe und Einsatzgebiet. Das Datenportal kann auch abgeleitete Daten anbieten, da wir mit der Geo Engine ein Tool mit Standardschnittstellen und Workflow-Processing mitbringen.',
+        de: 'Wir erstellen gemeinsam mit Ihnen passgenaue Datenportale. So können Sie zielgruppen- oder nutzerspezifische Daten und Analysen dynamisch und interaktiv anbieten. Es sind dann Web-GIS, Dashboards und Jupyter Notebooks als Zugriffsform möglich, je nach Zielgruppe und Einsatzgebiet. Das Datenportal kann auch abgeleitete Daten anbieten, da wir mit der Geo Engine ein Tool mit Standardschnittstellen und Workflow-Processing mitbringen.',
         en: 'We create custom-fit data portals with and for you. This allows you to offer dynamic data and interactive analyses for your target group. Web GIS, dashboards and Jupyter notebooks are then possible as a form of access, depending on the target group and area of application. The data portal can also offer derived data, because with Geo Engine we bring a tool with standard interfaces and workflow processing.',
     },
     'services.portals.benefit1': {
