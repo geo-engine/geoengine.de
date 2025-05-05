@@ -12,7 +12,7 @@ We develop methods for integration and pipelines for processing data from DLR’
 - Hosting in the cloud
 - Unified access / data mesh for heterogeneous data (EnMap, Sentinel, DEM, field information).
 
-## Methodik
+## Methodology
 
 In the CropHype project, methods for monitoring vegetation and crops are being developed in a collaboration between SMEs and the university on the data from EnMap, DLR’s latest hyperspectral satellite. Here we support the provision of the data, the development of the processing pipeline and the deployment in the “EO-Lab” cloud. The Geo Engine offers many advantages in this project:
 

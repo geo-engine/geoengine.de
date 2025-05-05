@@ -11,6 +11,6 @@ Clouds in satellite imagery carry information about the weather, but can also bl
 - Reusable pipeline for AI training/application
 - Training and application of Deep-Learning with Convolutional Neural Networks
 
-## Methodik
+## Methodology
 
 Clouds are a phenomenon that plays an important role for most satellite images. While in Sentinel-2 time series, for example, one tries to combine images in such a way that the Earth’s surface is visible everywhere, one uses weather satellites to investigate, for example, how to classify clouds. For the classification of clouds we have implemented a complete AI pipeline including preprocessing. We trained on a time series of 10 years with images for every 15-minute interval. That’s over 35,000 images per year. The raw data was unpacked in the pipeline and prepared for various parameters. This data then flows into the connected ML framework Tensorflow to train a CNN model. The workflows that provide the training data can be used directly to apply the model for arbitrary time points. The trained model can be attached as an operator to the corresponding workflow. Thus, among other things, each new recording can be classified instantaneously.
