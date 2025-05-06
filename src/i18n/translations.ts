@@ -5,133 +5,6 @@ export const languages = {
 
 export const defaultLang = 'de';
 
-export const serviceTranslations = {
-    'services.title': {
-        de: 'Unsere Dienstleistungen',
-        en: 'Our services',
-    },
-    'services.intro': {
-        de: 'Wir bieten Ihnen maßgeschneiderte Lösungen für Ihre Anforderungen. Profitieren Sie von der Multidisziplinarität unseres Teams. Wir bringen Kompetenzen aus Geographie und Informatik ein, um Probleme fachlich korrekt und effizient zu lösen. ',
-        en: 'We offer you customized solutions for your requirements. Benefit from the multidisciplinarity of our team. We bring together expertise in geography and computer science to solve problems correctly and efficiently.',
-    },
-    'services.advantages': {
-        de: 'Ihre Vorteile',
-        en: 'Your advantages',
-    },
-    'services.esg.heading': {
-        de: 'Bereitstellung von ESG-Indikatoren',
-        en: 'Provision of ESG indicators',
-    },
-    'services.esg.text': {
-        de: 'Wir bieten Ihnen die Möglichkeit, ESG-Indikatoren zu berechnen und bereitzustellen. Diese Indikatoren sind wichtig für die Bewertung von Unternehmen und deren Nachhaltigkeit.',
-        en: 'We offer you the possibility to calculate and provide ESG indicators. These indicators are important for the assessment of companies and their sustainability.',
-    },
-    'services.esg.textLong': {
-        de: 'Wir bieten Ihnen die Möglichkeit, ESG-Indikatoren zu berechnen und bereitzustellen. Diese Indikatoren sind wichtig für die Bewertung Ihres Unternehmens und Ihrer Nachhaltigkeit. Hier fokussieren wir uns auf die Bereitstellung von Biodiversitätsindikatoren. Beispiele sind die Veränderung der Vegetation, die Veränderung der Landnutzung oder die Veränderung der Wasserverfügbarkeit. Zudem können wir für EUDR Entwaldungsindikatoren bereitstellen.',
-        en: 'We offer you the possibility to calculate and provide ESG indicators. These indicators are important for the assessment of your company and your sustainability. Here we focus on the provision of biodiversity indicators. Examples include changes in vegetation, changes in land use, or changes in water availability. In addition, we can provide deforestation indicators for EUDR.',
-    },
-    'services.esg.benefit1': {
-        de: 'Erhalten Sie quantifizierbare ESG-Indikatoren, die Sie in Ihre Berichterstattung integrieren können.',
-        en: 'Get quantifiable ESG indicators that you can integrate into your reporting.',
-    },
-    'services.esg.benefit2': {
-        de: 'Profitieren Sie von unserer Expertise in der Verarbeitung von Biodiversitätsdaten und Zeitreihen.',
-        en: 'Benefit from our expertise in processing biodiversity data and time series.',
-    },
-    'services.esg.benefit3': {
-        de: 'Erhalten Sie maßgeschneiderte Indikatoren, die auf Ihre Fragestellungen zugeschnitten sind.',
-        en: 'Get customized indicators tailored to your questions.',
-    },
-    'services.portals.heading': {
-        de: 'Entwicklung von Datenportalen',
-        en: 'Development of data portals',
-    },
-    'services.portals.text': {
-        de: 'Wir entwickeln für Sie maßgeschneiderte Datenportale, die auf Ihre Bedürfnisse zugeschnitten sind. Diese Portale ermöglichen Ihnen den Zugriff auf und die Analyse von Geodaten und Zeitreihen.',
-        en: 'We develop customized data portals tailored to your needs. These portals enable you to access and analyze geodata and time series.',
-    },
-    'services.portals.textLong': {
-        de: 'Wir erstellen gemeinsam mit Ihnen passgenaue Datenportale. So können Sie zielgruppen- oder nutzerspezifische Daten und Analysen dynamisch und interaktiv anbieten. Es sind dann Web-GIS, Dashboards und Jupyter Notebooks als Zugriffsform möglich, je nach Zielgruppe und Einsatzgebiet. Das Datenportal kann auch abgeleitete Daten anbieten, da wir mit der Geo Engine ein Tool mit Standardschnittstellen und Workflow-Processing mitbringen.',
-        en: 'We create custom-fit data portals with and for you. This allows you to offer dynamic data and interactive analyses for your target group. Web GIS, dashboards and Jupyter notebooks are then possible as a form of access, depending on the target group and area of application. The data portal can also offer derived data, because with Geo Engine we bring a tool with standard interfaces and workflow processing.',
-    },
-    'services.portals.benefit1': {
-        de: 'Mit uns können Sie dynamische Datenportale umsetzen, da wir mit der Geo Engine Workflow-Processing mitbringen.',
-        en: 'With us you can implement dynamic data portals, because we bring workflow processing with the Geo Engine.',
-    },
-    'services.portals.benefit2': {
-        de: 'Wir haben langjährige Erfahrung in der Erstellung interaktiver Datenportale für verschiedene Zielgruppen.',
-        en: 'We have many years of experience in creating interactive data portals for various target groups.',
-    },
-    'services.portals.benefit3': {
-        de: 'Unsere Portale bauen auf einem starken Fundament auf und Erweiterungen sind einfach umzusetzen.',
-        en: 'Our portals are built on a strong foundation and extensions are easy to implement.',
-    },
-    'services.processing.heading': {
-        de: 'Prozessierung Ihrer Daten & Automatisierung Ihrer Prozesse',
-        en: 'Processing your data & automating your processes',
-    },
-    'services.processing.text': {
-        de: 'Wir realisieren für Sie Daten- und AI-Pipelines. Dabei definieren wir für Sie nachvollziehbare Workflows und implementieren diese als robuste, wiederverwendbare und wiederholbare Datenverarbeitung.',
-        en: 'We implement data and AI pipelines for you. In doing so, we define comprehensible workflows for you and implement them as robust, reusable, and repeatable data processing.',
-    },
-    'services.processing.textLong': {
-        de: 'Wir realisieren für Sie Daten- und AI-Pipelines. Dabei definieren wir für Sie nachvollziehbare Workflows und implementieren diese als robuste, wiederverwendbare und wiederholbare Datenverarbeitung. Unsere Devise ist hier “Workflows statt Scripts”, die komplexe Verarbeitungs-Pipelines umsetzen können und gleichzeitig direkt operationalisierbar sind. Durch den Einsatz unserer Geo Engine Technologie können auch aktualisierte Daten direkt prozessiert werden. Durch den Workflow-Ansatz der Geo Engine können wir die für Sie passenden dynamischen AI-Pipelines umsetzen. Dabei können sie von allen Vorteilen der Geo Engine profitieren: Ihre AI-Pipeline reagiert auf aktualisierte Daten, kann ohne Aufwand auf neue Zielregionen und Zeiten angepasst werden und ist flexibel erweiterbar.',
-        en: 'We realize data and AI pipelines for you. We define comprehensible workflows and implement them as robust, reusable and repeatable data processing. Our motto here is “workflows instead of scripts”, which can implement complex processing pipelines while being directly operationalizable. By using our Geo Engine technology, even updated data can be processed directly. Through Geo Engine’s workflow approach, we can implement the dynamic AI pipelines that are right for you. In doing so, you can benefit from all the advantages of Geo Engine: Your AI pipeline reacts to updated data, can be adapted to new target regions and times without effort and is flexibly expandable.',
-    },
-    'services.processing.benefit1': {
-        de: 'Wir setzen sich wiederholende Aufgaben als robusten Dienst um.',
-        en: 'We implement repetitive tasks as a robust service.',
-    },
-    'services.processing.benefit2': {
-        de: 'Setzen Sie KI in Ihrere Geodatenverarbeitung ein!',
-        en: 'Use AI in your geospatial data processing!',
-    },
-    'services.processing.benefit3': {
-        de: 'Wir binden Daten aus verschiedenen Quellen für Sie an und bringen interne und externe Daten zusammen.',
-        en: 'We connect data from various sources for you and bring together internal and external data.',
-    },
-    'services.processing.benefit4': {
-        de: 'Unsere Workflow-Verarbeitung ist transparent, flexibel und erweiterbar.',
-        en: 'Our workflow processing is transparent, flexible and expandable.',
-    },
-    'services.processing.benefit5': {
-        de: 'Bei Bedarf bringen wir Daten- und User-Management direkt mit.',
-        en: 'If required, we bring data and user management directly to you.',
-    },
-    'services.integration.heading': {
-        de: 'Datenintegration & -bereitstellung',
-        en: 'Data integration & provision',
-    },
-    'services.integration.text': {
-        de: 'Wir integrieren und kombinieren für Sie Ihre internen Geodaten und verschaffen Ihnen Zugang zu externen Daten-Pools. Externe Daten sind z.B. Sentinel-Satellitendaten, ECMWF-Klimadaten oder kommerzielle Daten.',
-        en: 'We integrate and combine your internal geodata and provide you with access to external data pools. External data includes, for example, Sentinel satellite data, ECMWF climate data, or commercial data.',
-    },
-    'services.integration.textLong': {
-        de: 'Wir integrieren und kombinieren für Sie Ihre internen Geodaten und verschaffen Ihnen Zugang zu externen Daten-Pools. Dies realisieren wir in Form eines Data-Mesh, sodass die jeweiligen Fachteams einheitlich und transparent auf unterschiedlichste Datenquellen zugreifen können. Die bisher aufwendige Datenaufbereitung kann so weitgehend entfallen. Damit sparen wir Ihren Teams viel Zeit, die sie für ihre fachliche Arbeit nutzen können. Unsere Data-Mesh-Lösung bietet noch viele weitere Vorteile: Ab sofort sind alle Geodaten dynamische Zeitreihen. So können z.B. externe Satellitendaten so integriert werden, dass immer die aktuellsten Daten zur Verfügung stehen. Beispiele für externe Daten sind Sentinel-2, Sentinel-3 LAI, ECMWF ERA5, SRTM, MODIS, ALOS PALSAR und ECOSCTRESS.',
-        en: 'We integrate and combine your internal geodata for you and provide you with access to external data pools. We realize this in the form of a data mesh, so that the respective specialist teams can access a wide variety of data sources in a uniform and transparent manner. The previously time-consuming data preparation can thus be largely eliminated. This saves your teams a lot of time, which they can use for their technical work. Our data mesh solution offers many more advantages: From now on, all geodata are dynamic time series. For example, external satellite data can be integrated so that the most up-to-date data is always available. Examples of external data are Sentinel-2, Sentinel-3 LAI, ECMWF ERA5, SRTM, MODIS, ALOS PALSAR and ECOSCTRESS.',
-    },
-    'services.integration.benefit1': {
-        de: 'Sparen Sie sich und Ihren Fachteams bis zu 80% des Aufwands der Datenintegration.',
-        en: 'Save yourself and your business teams up to 80% of the effort of data integration.',
-    },
-    'services.integration.benefit2': {
-        de: 'Wir führen verschiedene Daten so zusammen, dass man einheitlich und einfach darauf zugreifen kann.',
-        en: 'We bring together different data so that it can be accessed consistently and easily.',
-    },
-    'services.integration.benefit3': {
-        de: 'Wir machen es sehr einfach, interne und externe Daten zusammenzuführen.',
-        en: 'We make it very easy to merge internal and external data.',
-    },
-    'services.integration.benefit4': {
-        de: 'Wir bringen Konnektoren zu externen Datenprovidern, z.B. STAC, mit.',
-        en: 'We bring connectors to external data providers, e.g. STAC.',
-    },
-    'services.integration.benefit5': {
-        de: 'Angebundene externe Daten sind immer up-to-date nutzbar.',
-        en: 'Connected external data can always be used up-to-date.',
-    },
-} as const;
-
 // `\u00AD` is a soft hyphen
 export const translations = {
     de: {
@@ -142,16 +15,10 @@ export const translations = {
         'nav.about': 'Über uns',
         'nav.references': 'Referenzen',
         'header.slogan': 'Das Potenzial von Bio\u00ADdiversitäts- und Umwelt\u00ADdaten erschließen',
-        'services.title': serviceTranslations['services.title'].de,
-        'services.intro': serviceTranslations['services.intro'].de,
-        'services.esg.heading': serviceTranslations['services.esg.heading'].de,
-        'services.esg.text': serviceTranslations['services.esg.text'].de,
-        'services.portals.heading': serviceTranslations['services.portals.heading'].de,
-        'services.portals.text': serviceTranslations['services.portals.text'].de,
-        'services.processing.heading': serviceTranslations['services.processing.heading'].de,
-        'services.processing.text': serviceTranslations['services.processing.text'].de,
-        'services.integration.heading': serviceTranslations['services.integration.heading'].de,
-        'services.integration.text': serviceTranslations['services.integration.text'].de,
+        'services.title': 'Unsere Dienstleistungen',
+        'services.intro':
+            'Wir bieten Ihnen maßgeschneiderte Lösungen für Ihre Anforderungen. Profitieren Sie von der Multidisziplinarität unseres Teams. Wir bringen Kompetenzen aus Geographie und Informatik ein, um Probleme fachlich korrekt und effizient zu lösen.',
+        'services.advantages': 'Ihre Vorteile',
         'services.more': 'Mehr erfahren',
         'solutions.title': 'Viele Lösungen mit einer Software',
         'solutions.dashboards.heading': 'Apps und Dashboards mit Geodaten',
@@ -210,16 +77,10 @@ export const translations = {
         'nav.about': 'About us',
         'nav.references': 'References',
         'header.slogan': 'Unlocking the potential of biodiversity and environ\u00ADmental data',
-        'services.title': serviceTranslations['services.title'].en,
-        'services.intro': serviceTranslations['services.intro'].en,
-        'services.esg.heading': serviceTranslations['services.esg.heading'].en,
-        'services.esg.text': serviceTranslations['services.esg.text'].en,
-        'services.portals.heading': serviceTranslations['services.portals.heading'].en,
-        'services.portals.text': serviceTranslations['services.portals.text'].en,
-        'services.processing.heading': serviceTranslations['services.processing.heading'].en,
-        'services.processing.text': serviceTranslations['services.processing.text'].en,
-        'services.integration.heading': serviceTranslations['services.integration.heading'].en,
-        'services.integration.text': serviceTranslations['services.integration.text'].en,
+        'services.title': 'Our services',
+        'services.intro':
+            'We offer you customized solutions for your requirements. Benefit from the multidisciplinarity of our team. We bring together expertise in geography and computer science to solve problems correctly and efficiently.',
+        'services.advantages': 'Your advantages',
         'services.more': 'Learn more',
         'solutions.title': 'Many solutions with one software',
         'solutions.dashboards.heading': 'Apps and dashboards with geodata',

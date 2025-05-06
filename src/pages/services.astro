@@ -1,70 +1,52 @@
 ---
-import {useLocalePages, useServiceTranslations, useTranslations} from '../i18n/utils';
+import {useLocalePages, useTranslations} from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import {Icon} from 'astro-icon/components';
-import {getEntry} from 'astro:content';
+import {getCollection, getEntry} from 'astro:content';
 import {Image} from 'astro:assets';
 import type {DataEntryMap} from 'astro:content';
 
 const p = useLocalePages(Astro.currentLocale);
-
-const st = useServiceTranslations(Astro.currentLocale);
 const t = useTranslations(Astro.currentLocale);
+const pageLang = Astro.currentLocale;
 
-const servicePrefixes = ['esg', 'portals', 'processing', 'integration'] as const;
-const pt = (prefix: string, subkey: string): string => {
-    const key = `services.${prefix}.${subkey}`;
-    const translation = st(key as any);
-    if (!translation) {
-        throw Error(`Missing translation for key: ${key}`);
+const services = await getCollection('services', (entry) => {
+    const [lang, ...slug] = entry.slug.split('/');
+    if (lang !== pageLang) {
+        return undefined;
     }
-    return translation;
-};
-const benefits = (prefix: string) =>
-    [...Array(10).keys()]
-        .map((i) => `benefit${i + 1}`)
-        .map((key) => {
-            try {
-                return pt(prefix, key);
-            } catch (e) {
-                return undefined;
-            }
-        })
-        .filter((benefit) => benefit !== undefined);
+    return entry;
+});
+
 type ValueOfRecord<T> = T[keyof T];
-async function referencesEntry(entry: string): Promise<ValueOfRecord<DataEntryMap['references']>> {
-    const loaded_entry = await getEntry('references', `${Astro.currentLocale}/${entry}`);
+async function referencesEntry(entry: {id: string; collection: 'references'}): Promise<ValueOfRecord<DataEntryMap['references']>> {
+    const loaded_entry = await getEntry(entry.collection, `${Astro.currentLocale}/${entry.id}`);
     if (!loaded_entry) {
         throw new Error(`Entry ${entry} not found`);
     }
+
     return loaded_entry;
 }
-const examples = {
-    esg: [await referencesEntry('1-respect'), await referencesEntry('9-eurocrops'), await referencesEntry('2-ebv-analyzer')],
-    portals: [
-        await referencesEntry('7-vat'),
-        await referencesEntry('2-ebv-analyzer'),
-        await referencesEntry('1-respect'),
-        await referencesEntry('3-gdo'),
-    ],
-    processing: [await referencesEntry('8-climate-polygons'), await referencesEntry('5-ndvi'), await referencesEntry('6-ai-weather')],
-    integration: [await referencesEntry('2-ebv-analyzer'), await referencesEntry('1-respect'), await referencesEntry('4-crophype')],
-} as const;
+
+const references = new Map<{id: string; collection: 'references'}, ValueOfRecord<DataEntryMap['references']>>();
+for (const referenceRef of new Set(services.flatMap((service) => service.data.references))) {
+    references.set(referenceRef, await referencesEntry(referenceRef));
+}
 ---
 
-<Layout title={st('services.title')} description={st('services.intro')}>
+<Layout title={t('services.title')} description={t('services.intro')}>
     {
-        servicePrefixes.map((prefix) => (
+        services.map((service) => (
             <>
-                <Section id={prefix}>
-                    <h2 class="my-4 text-2xl font-semibold">{pt(prefix, 'heading')}</h2>
-                    <p>{pt(prefix, 'textLong')}</p>
+                <Section id={service.slug}>
+                    <h2 class="my-4 text-2xl font-semibold">{service.data.title}</h2>
+                    <p>{service.body}</p>
                 </Section>
                 <Section bg="lightblue" box>
-                    <h3 class="my-4 text-xl font-semibold">{st('services.advantages')}</h3>
+                    <h3 class="my-4 text-xl font-semibold">{t('services.advantages')}</h3>
                     <ul class="space-y-3">
-                        {benefits(prefix).map((benefit) => (
+                        {service.data.benefits.map((benefit) => (
                             <li class="flex gap-x-3">
                                 <Icon name="mdi:check-bold" class="text-main-green mt-0.5 size-4 shrink-0 dark:text-white" />
                                 <span class="text-gray-800 dark:text-white">{benefit}</span>
@@ -75,21 +57,23 @@ const examples = {
                 <Section>
                     <h3 class="my-4 text-xl font-semibold">{t('references.title')}</h3>
                     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                        {examples[prefix].map((example) => (
-                            <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${example.slug}`}>
-                                <Image
-                                    class="size-40 w-full rounded-lg bg-gray-100 object-cover dark:bg-neutral-800"
-                                    src={example.data.image}
-                                    alt={example.data.title}
-                                />
-                                <div class="absolute end-1 bottom-1 opacity-0 transition group-hover:opacity-100">
-                                    <div class="flex items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
-                                        <Icon name="mdi:magnify-expand" class="size-3 shrink-0" />
-                                        <span class="text-xs">{example.data.title}</span>
+                        {service.data.references
+                            .map((referenceRef) => references.get(referenceRef))
+                            .map((reference) => (
+                                <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${reference.slug}`}>
+                                    <Image
+                                        class="size-40 w-full rounded-lg bg-gray-100 object-cover dark:bg-neutral-800"
+                                        src={reference.data.image}
+                                        alt={reference.data.title}
+                                    />
+                                    <div class="absolute end-1 bottom-1 opacity-0 transition group-hover:opacity-100">
+                                        <div class="flex items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+                                            <Icon name="mdi:magnify-expand" class="size-3 shrink-0" />
+                                            <span class="text-xs">{reference.data.title}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        ))}
+                                </a>
+                            ))}
                     </div>
                 </Section>
                 <Section bg="beach">
