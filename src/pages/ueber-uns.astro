@@ -18,6 +18,8 @@ import koslowski from '../images/team/koslowski.jpeg';
 import kraemer from '../images/team/kraemer.jpeg';
 import meyer from '../images/team/meyer.jpeg';
 import wagner from '../images/team/wagner.jpeg';
+import geile from '../images/team/geile.jpeg';
+import lee from '../images/team/lee.png';
 
 const language = asLocale(Astro.currentLocale);
 
@@ -120,6 +122,12 @@ const publications = await getCollection('publications');
                 website="https://vhrz669.hrz.uni-marburg.de/lcrs/showdetaileduserview.do?userid=65"
             />
             <Person
+                name="Dr. Wolfhard Geile"
+                title="Founder of Geomatics Consulting & former DLR delegate in Canada"
+                image={geile}
+                linkedin="https://www.linkedin.com/in/wolfhard-geile/"
+            />
+            <Person
                 name="Dr. Wolfram Koslowski"
                 title="Former CEO CCP Software GmbH, Coach at Mafex Förderverein e.V."
                 image={koslowski}
@@ -127,9 +135,15 @@ const publications = await getCollection('publications');
             />
             <Person
                 name="Dr. Jürgen Krämer"
-                title="CPO IoT & Analytics  Software AG"
+                title="CPO IoT & Analytics Software AG"
                 image={kraemer}
                 linkedin="https://www.linkedin.com/in/juergenkraemer/"
+            />
+            <Person
+                name="Dr. Daniel Lee"
+                title="Data access systems operations manager at EUMETSAT"
+                image={lee}
+                linkedin="https://www.linkedin.com/in/daniel-lee-eumetsat/"
             />
             <Person
                 name="Prof. Hanna Meyer"
