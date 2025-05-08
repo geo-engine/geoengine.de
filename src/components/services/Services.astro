@@ -1,9 +1,19 @@
 ---
+import {getCollection} from 'astro:content';
 import {useLocalePages, useTranslations} from '../../i18n/utils';
 import {Service} from './index.astro';
 
 const t = useTranslations(Astro.currentLocale);
 const p = useLocalePages(Astro.currentLocale);
+const pageLang = Astro.currentLocale;
+
+const services = await getCollection('services', (entry) => {
+    const [lang, ...slug] = entry.slug.split('/');
+    if (lang !== pageLang) {
+        return undefined;
+    }
+    return entry;
+});
 ---
 
 <!-- Icon Blocks -->
@@ -17,18 +27,13 @@ const p = useLocalePages(Astro.currentLocale);
             </div>
 
             <div class="space-y-6 lg:space-y-10">
-                <Service icon="gis:map-stat" heading={t('services.esg.heading')}>
-                    {t('services.esg.text')}
-                </Service>
-                <Service icon="gis:earth-network" heading={t('services.portals.heading')}>
-                    {t('services.portals.text')}
-                </Service>
-                <Service icon="gis:earth-gear" heading={t('services.processing.heading')}>
-                    {t('services.processing.text')}
-                </Service>
-                <Service icon="gis:layer-download" heading={t('services.integration.heading')}>
-                    {t('services.integration.text')}
-                </Service>
+                {
+                    services.map((service) => (
+                        <Service icon={service.data.icon} heading={service.data.title}>
+                            {service.data.description}
+                        </Service>
+                    ))
+                }
             </div>
         </div>
         <!-- End Grid -->

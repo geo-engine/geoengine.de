@@ -1,5 +1,5 @@
 // 1. Import utilities from `astro:content`
-import {defineCollection, z} from 'astro:content';
+import {defineCollection, z, reference} from 'astro:content';
 
 // 2. Import loader(s)
 import {glob, file} from 'astro/loaders';
@@ -36,6 +36,18 @@ const references = defineCollection({
         }),
 });
 
+const services = defineCollection({
+    // loader: glob({pattern: '{de,en}/*.md', base: './src/services'}),
+    schema: () =>
+        z.object({
+            title: z.string().nonempty().max(100),
+            description: z.string().nonempty().max(250),
+            icon: z.string().nonempty(),
+            benefits: z.array(z.string().nonempty()).max(5),
+            references: z.array(reference('references')).max(5),
+        }),
+});
+
 const cookies = defineCollection({
     loader: file('./src/data/cookies.json'),
     schema: () =>
@@ -53,4 +65,10 @@ const cookies = defineCollection({
 });
 
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = {publications, posts, references, cookies};
+export const collections = {
+    cookies,
+    posts,
+    publications,
+    references,
+    services,
+};
