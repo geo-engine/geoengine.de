@@ -68,6 +68,10 @@ export const translations = {
         'footer.imprint': 'Impressum',
         'footer.externalLinks': 'Externe Links',
         'footer.projectPageUni': 'Projektseite Uni Marburg',
+        '404.title': '404 – Seite nicht gefunden',
+        '404.description':
+            'Die angeforderte Seite existiert nicht. Möglicherweise wurde sie entfernt, umbenannt oder ist vorübergehend nicht verfügbar.',
+        '404.back': 'Zurück zur Startseite',
     },
     en: {
         'nav.contact': 'Contact',
@@ -130,6 +134,9 @@ export const translations = {
         'footer.imprint': 'Imprint',
         'footer.externalLinks': 'External Links',
         'footer.projectPageUni': 'Project page Uni Marburg',
+        '404.title': '404 – Page not found',
+        '404.description': 'The requested page does not exist. It may have been removed, renamed, or is temporarily unavailable.',
+        '404.back': 'Back to homepage',
     },
 } as const;
 
@@ -142,6 +149,7 @@ export const pages = {
         privacyPolicy: '/datenschutzerklaerung/',
         references: '/beispiele-referenzen/',
         services: '/services/',
+        404: '/404/',
     },
     en: {
         about: '/en/about-us/',
@@ -151,5 +159,6 @@ export const pages = {
         privacyPolicy: '/en/privacy-policy/',
         references: '/en/examples-references/',
         services: '/en/services/',
+        404: '/en/404/',
     },
 } as const;

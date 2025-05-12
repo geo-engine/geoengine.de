@@ -1,0 +1,19 @@
+---
+import {currentLanguage, useTranslations} from '../i18n/utils';
+import Section from '../components/Section.astro';
+import Layout from '../layouts/Layout.astro';
+import {getRelativeLocaleUrl} from 'astro:i18n';
+import {Icon} from 'astro-icon/components';
+
+const currentLang = currentLanguage(Astro.currentLocale);
+const t = useTranslations(currentLang);
+const homeLink = getRelativeLocaleUrl(currentLang, '/');
+---
+
+<Layout title={t('404.title')} description={t('404.description')}>
+    <Section>
+        <p class="text-center text-xl">{t('404.description')}</p>
+        <p class="my-8 text-center text-xl"><a class="text-main-green hover:underline" href={homeLink}>{t('404.back')}</a></p>
+        <Icon name="404" class="text-main-lightgreen m-auto text-[25vw]" />
+    </Section>
+</Layout>
