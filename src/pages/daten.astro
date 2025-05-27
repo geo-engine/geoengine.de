@@ -1,0 +1,89 @@
+---
+import {useLocalePages, useTranslations} from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import {Icon} from 'astro-icon/components';
+import {getCollection, getEntry} from 'astro:content';
+import {Image} from 'astro:assets';
+import type {DataEntryMap} from 'astro:content';
+import Picture from 'astro/components/Picture.astro';
+
+const p = useLocalePages(Astro.currentLocale);
+const t = useTranslations(Astro.currentLocale);
+const pageLang = Astro.currentLocale;
+
+const data = await getCollection('data', (entry) => {
+    const [lang, ...slug] = entry.slug.split('/');
+    if (lang !== pageLang) {
+        return undefined;
+    }
+    return entry;
+});
+---
+
+<Layout title={t('data.title')} description={t('data.intro')}>
+    <Section>
+        {t('data.intro')}
+    </Section>
+    {
+        data.map((datum) => (
+            <>
+                <Section id={datum.slug} bg="lightblue" box>
+                    <h2 class="my-4 text-2xl font-semibold">{datum.data.title}</h2>
+                    <Picture src={datum.data.exampleImage} alt={datum.data.title} />
+                    <p>{datum.body}</p>
+                    <h3 class="my-4 text-xl font-semibold">{t('data.specs')}</h3>
+                    <p>
+                        <strong>{t('data.classes')}:</strong>
+                        <ul class="list-disc pl-6">
+                            {datum.data.classes?.map((className) => (
+                                <li>{className}</li>
+                            ))}
+                        </ul>
+                    </p>
+                    <p class="mt-4">
+                        <strong>{t('data.dataSources')}:</strong>
+                        <ul class="list-disc pl-6">
+                            {datum.data.dataSources.map((source) => (
+                                <li>{source}</li>
+                            ))}
+                        </ul>
+                    </p>
+                    <p class="mt-4">
+                        <strong>{t('data.method')}:</strong> {datum.data.method}
+                    </p>
+                    <p class="mt-4">
+                        <strong>{t('data.quality')}:</strong> {datum.data.quality}
+                    </p>
+                    {datum.data.qualityImage && <Picture src={datum.data.qualityImage} alt={t('data.quality')} />}
+                    <div class="mt-4">
+                        <h4 class="text-lg font-semibold">{t('data.properties')}</h4>
+                        <p class="mt-4">
+                            <strong>{t('data.crs')}:</strong> {datum.data.properties.crs}
+                        </p>
+                        <p class="mt-4">
+                            <strong>{t('data.time')}:</strong> {datum.data.properties.time}
+                        </p>
+                        <p class="mt-4">
+                            <strong>{t('data.spatialResolution')}:</strong> {datum.data.properties.spatialResolution}
+                        </p>
+                        <p class="mt-4">
+                            <strong>{t('data.spatialValidity')}:</strong> {datum.data.properties.spatialValidity}
+                        </p>
+                    </div>
+                </Section>
+                <Section bg="beach">
+                    <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
+                    <p class="mx-auto">
+                        <a
+                            href={p('contact')}
+                            class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
+                        >
+                            {t('contact.button')}
+                        </a>
+                    </p>
+                </Section>
+            </>
+        ))
+    }
+</Layout>
