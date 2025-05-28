@@ -33,6 +33,7 @@ const newsItems: Array<{
     abstract: string;
     link: string;
 }> = paths.map((page) => {
+    const mdHeadingsAndLinksRegex = /(?:__|[*#])|\[(.*?)\]\(.*?\)|\[(.*?)\]/gm;
     return {
         title: page.props.data.title,
         date: page.props.data.date.toLocaleDateString(pageLang, {
@@ -41,7 +42,7 @@ const newsItems: Array<{
             day: 'numeric',
         }),
         image: page.props.data.image,
-        abstract: page.props.body.slice(0, 200) + '…',
+        abstract: page.props.body.replace(mdHeadingsAndLinksRegex, '$1').slice(0, 200) + '…',
         link: slugToPostLink(page.params.lang, page.params.slug),
     };
 });
