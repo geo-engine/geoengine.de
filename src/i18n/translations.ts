@@ -39,8 +39,8 @@ export const translations = {
             'Möchten Sie weitere Informationen zu Geo Engine erhalten, sollen wir Ihnen eine unverbindliche Produktdemo zeigen oder haben Sie anderweitige Fragen? Dann zögern Sie nicht mit uns in Kontakt zu treten und uns eine Nachricht zu schreiben. Wir freuen uns über Ihre Kontaktaufnahme!',
         'contact.mail': 'Per E-Mail',
         'contact.phone': 'Per Telefon',
-        'contact.meeting': 'Per Meeting',
-        'contact.bookHere': 'Hier können Sie einen Termin buchen',
+        'contact.meeting': 'Beratungstermin vereinbaren',
+        'contact.bookHere': 'Hier kostenlos einen Termin buchen',
         'team.title': 'Unser Team',
         'team.shortSlogan':
             'Wir sind ein interdisziplinäres Team, das Expertise aus Informatik, Geographie vereint und viel Erfahrung in Datenverarbeitung mitbringt.',
@@ -107,8 +107,8 @@ export const translations = {
             'Would you like to receive more information about Geo Engine, should we show you a non-binding product demo or do you have any other questions? Then do not hesitate to contact us and write us a message. We are looking forward to hearing from you!',
         'contact.mail': 'By email',
         'contact.phone': 'By phone',
-        'contact.meeting': 'By meeting',
-        'contact.bookHere': 'You can book an appointment here',
+        'contact.meeting': 'Arrange a consultation appointment',
+        'contact.bookHere': 'Book a free appointment here',
         'team.title': 'Our team',
         'team.shortSlogan':
             'We are an interdisciplinary team combining expertise from computer science, geography and business administration.',
