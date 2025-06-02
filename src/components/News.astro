@@ -2,6 +2,7 @@
 import {getCollection} from 'astro:content';
 import {asLocale, slugToPostLink, useTranslations} from '../i18n/utils';
 import {Image} from 'astro:assets';
+import {mdExcerpt} from './utils';
 
 const pageLang = Astro.currentLocale;
 const t = useTranslations(pageLang);
@@ -33,7 +34,6 @@ const newsItems: Array<{
     abstract: string;
     link: string;
 }> = paths.map((page) => {
-    const mdHeadingsAndLinksRegex = /(?:__|[*#])|\[(.*?)\]\(.*?\)|\[(.*?)\]/gm;
     return {
         title: page.props.data.title,
         date: page.props.data.date.toLocaleDateString(pageLang, {
@@ -42,7 +42,7 @@ const newsItems: Array<{
             day: 'numeric',
         }),
         image: page.props.data.image,
-        abstract: page.props.body.replace(mdHeadingsAndLinksRegex, '$1').slice(0, 200) + '…',
+        abstract: mdExcerpt(page.props.body, 200),
         link: slugToPostLink(page.params.lang, page.params.slug),
     };
 });

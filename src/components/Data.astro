@@ -1,0 +1,107 @@
+---
+import {Picture} from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import {useLocalePages, useTranslations, type LocaleString} from '../i18n/utils';
+import type {DataEntryMap} from 'astro:content';
+import {mdExcerpt} from './utils';
+
+interface Props {
+    datum: DataEntryMap['data'];
+    pageBody: string;
+    lang: LocaleString;
+}
+
+const {datum, pageBody, lang} = Astro.props;
+
+const p = useLocalePages(Astro.currentLocale);
+const t = useTranslations(lang);
+---
+
+<style>
+    div :global(a) {
+        color: var(--color-main-green);
+    }
+    div :global(a:hover) {
+        text-decoration: underline;
+    }
+    div :global(h2) {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: s emibold;
+    }
+    div :global(ul) {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+    div :global(ol) {
+        list-style-type: decimal;
+        padding-left: 1.5rem;
+    }
+</style>
+
+<Layout title={datum.title} description={mdExcerpt(pageBody, 200)}>
+    <Section>
+        <Picture class="w-full rounded-xl object-cover" src={datum.exampleImage} alt={datum.title} />
+        <p><slot /></p>
+    </Section>
+    <Section bg="green" box>
+        <h3 class="mt-6 mb-4 text-xl font-semibold">{t('data.specs')}</h3>
+        {
+            datum.classes && (
+                <>
+                    <h4 class="mt-4 text-lg font-semibold">{t('data.classes')}</h4>
+                    <ul class="list-disc pl-6">
+                        {datum.classes.map((className) => (
+                            <li>{className}</li>
+                        ))}
+                    </ul>
+                </>
+            )
+        }
+        <h4 class="mt-4 text-lg font-semibold">{t('data.dataSources')}</h4>
+        <ul class="list-disc pl-6">
+            {datum.dataSources.map((source) => <li>{source}</li>)}
+        </ul>
+        <h4 class="mt-4 text-lg font-semibold">{t('data.method')}</h4>
+        <p>{datum.method}</p>
+        <h4 class="mt-4 text-lg font-semibold">{t('data.quality')}</h4>
+        <p>{datum.quality}</p>
+        {datum.qualityImage && <Picture src={datum.qualityImage} alt={t('data.quality')} />}
+        <div class="mt-4">
+            <h4 class="text-lg font-semibold">{t('data.properties')}</h4>
+            <table class="border-main-lightgreen mt-4 w-full border-2">
+                <tbody>
+                    <tr>
+                        <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.crs')}</th>
+                        <td class="border-main-lightgreen border-b px-2 py-1">{datum.properties.crs}</td>
+                    </tr>
+                    <tr>
+                        <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.time')}</th>
+                        <td class="border-main-lightgreen border-b px-2 py-1">{datum.properties.time}</td>
+                    </tr>
+                    <tr>
+                        <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.spatialResolution')}</th>
+                        <td class="border-main-lightgreen border-b px-2 py-1">{datum.properties.spatialResolution}</td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-1 text-left">{t('data.spatialValidity')}</th>
+                        <td class="px-2 py-1">{datum.properties.spatialValidity}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </Section>
+    <Section bg="beach">
+        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
+        <p class="mx-auto">
+            <a
+                href={p('contact')}
+                class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
+            >
+                {t('contact.button')}
+            </a>
+        </p>
+    </Section>
+</Layout>

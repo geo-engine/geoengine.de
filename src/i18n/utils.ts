@@ -64,8 +64,12 @@ function localePagePrefix(lang: LocaleString): string {
 }
 
 export function slugToPostLink(lang: LocaleString, slug: string) {
-    const langPart = lang === 'de' ? '' : `/${lang}`;
     return `${localePagePrefix(lang)}/posts/${slug}`;
+}
+
+export function slugToDataLink(slugWithLang: string) {
+    const [_lang, ...slug] = slugWithLang.split('/');
+    return `${slug.join('/')}`;
 }
 
 export type LocaleString = keyof typeof translations; // 'de' | 'en'

@@ -1,16 +1,17 @@
 ---
-import {useLocalePages, useTranslations} from '../i18n/utils';
+import {slugToDataLink, useLocalePages, useTranslations} from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import {getCollection} from 'astro:content';
-import Picture from 'astro/components/Picture.astro';
+import {Image} from 'astro:assets';
+import {mdExcerpt} from '../components/utils';
 
 const p = useLocalePages(Astro.currentLocale);
 const t = useTranslations(Astro.currentLocale);
 const pageLang = Astro.currentLocale;
 
 const data = await getCollection('data', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
+    const [lang, ..._slug] = entry.slug.split('/');
     if (lang !== pageLang) {
         return undefined;
     }
@@ -22,71 +23,44 @@ const data = await getCollection('data', (entry) => {
     <Section>
         {t('data.intro')}
     </Section>
-    {
-        data.map((datum) => (
-            <>
-                <Section id={datum.slug} bg="lightblue" box>
-                    <h2 class="my-4 text-2xl font-semibold">{datum.data.title}</h2>
-                    <Picture src={datum.data.exampleImage} alt={datum.data.title} />
-                    <p>{datum.body}</p>
-                    <h3 class="mt-6 mb-4 text-xl font-semibold">{t('data.specs')}</h3>
-                    {datum.data.classes && (
-                        <>
-                            <h4 class="mt-4 text-lg font-semibold">{t('data.classes')}</h4>
-                            <ul class="list-disc pl-6">
-                                {datum.data.classes.map((className) => (
-                                    <li>{className}</li>
-                                ))}
-                            </ul>
-                        </>
-                    )}
-                    <h4 class="mt-4 text-lg font-semibold">{t('data.dataSources')}</h4>
-                    <ul class="list-disc pl-6">
-                        {datum.data.dataSources.map((source) => (
-                            <li>{source}</li>
-                        ))}
-                    </ul>
-                    <h4 class="mt-4 text-lg font-semibold">{t('data.method')}</h4>
-                    <p>{datum.data.method}</p>
-                    <h4 class="mt-4 text-lg font-semibold">{t('data.quality')}</h4>
-                    <p>{datum.data.quality}</p>
-                    {datum.data.qualityImage && <Picture src={datum.data.qualityImage} alt={t('data.quality')} />}
-                    <div class="mt-4">
-                        <h4 class="text-lg font-semibold">{t('data.properties')}</h4>
-                        <table class="border-main-lightgreen mt-4 w-full border-2">
-                            <tbody>
-                                <tr>
-                                    <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.crs')}</th>
-                                    <td class="border-main-lightgreen border-b px-2 py-1">{datum.data.properties.crs}</td>
-                                </tr>
-                                <tr>
-                                    <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.time')}</th>
-                                    <td class="border-main-lightgreen border-b px-2 py-1">{datum.data.properties.time}</td>
-                                </tr>
-                                <tr>
-                                    <th class="border-main-lightgreen border-b px-2 py-1 text-left">{t('data.spatialResolution')}</th>
-                                    <td class="border-main-lightgreen border-b px-2 py-1">{datum.data.properties.spatialResolution}</td>
-                                </tr>
-                                <tr>
-                                    <th class="px-2 py-1 text-left">{t('data.spatialValidity')}</th>
-                                    <td class="px-2 py-1">{datum.data.properties.spatialValidity}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </Section>
-                <Section bg="beach">
-                    <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
-                    <p class="mx-auto">
-                        <a
-                            href={p('contact')}
-                            class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
-                        >
-                            {t('contact.button')}
-                        </a>
-                    </p>
-                </Section>
-            </>
-        ))
-    }
+
+    <Section bg="lightblue" box>
+        <!-- Card Grid -->
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
+            <!-- Card -->
+            {
+                data.map((datum) => (
+                    <a class="group flex flex-col focus:outline-hidden" href={slugToDataLink(datum.slug)}>
+                        <div class="aspect-w-16 aspect-h-12 overflow-hidden rounded-2xl bg-gray-100 dark:bg-neutral-800">
+                            <Image
+                                class="rounded-2xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
+                                src={datum.data.exampleImage}
+                                alt={datum.data.title}
+                            />
+                        </div>
+
+                        <div class="pt-4">
+                            <h3 class="before:bg-main-lightgreen relative inline-block text-lg font-medium text-black before:absolute before:start-0 before:bottom-0.5 before:-z-1 before:h-1 before:w-full before:origin-left before:scale-x-0 before:transition group-hover:before:scale-x-100 dark:text-white">
+                                {datum.data.title}
+                            </h3>
+                            <p class="mt-1 text-gray-600 dark:text-neutral-400">{mdExcerpt(datum.body, 200)}</p>
+                        </div>
+                    </a>
+                ))
+            }
+            <!-- End Card -->
+        </div>
+        <!-- End Card Grid -->
+    </Section>
+    <Section bg="beach">
+        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
+        <p class="mx-auto">
+            <a
+                href={p('contact')}
+                class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
+            >
+                {t('contact.button')}
+            </a>
+        </p>
+    </Section>
 </Layout>
