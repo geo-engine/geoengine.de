@@ -1,5 +1,19 @@
 [
     {
+        "authors": "Dominik Brandenstein, Christian Beilschmidt, Johannes Drönnner, Nikolaus Glombiewski, Michael Mattig, Bernhard Seeger",
+        "title": "The Case for XCIP: Bridging User and Data Provider Expectations in Research Infrastructures",
+        "url": "https://doi.org/10.18420/BTW2025-115",
+        "source": "BTW Workshops 2025: 93-103",
+        "id": 38
+    },
+    {
+        "authors": "Nikolaus Glombiewski, Zeyd Boukhers, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Artur Piet, Robert Pietrzynski, Mehrshad Jaberansary, Macedo Maia, Sebastian Beyvers, Yeliz \u00dc\u00e7er Yediel, Muhammad Hamza Akhtar, Heiner Oberkampf, Jonathan Hartman, Bernhard Seeger, Christoph Lange",
+        "title": "From Theory to Practice: Demonstrators of FAIR Data Spaces Across Different Sectors",
+        "url": "https://doi.org/10.1145/3672608.3707987",
+        "source": "SAC 2025: 509-513",
+        "id": 37
+    },
+    {
         "authors": "Leander Leist, Manuel Oed, Christian Beilschmidt, J\u00f6rg Bendix",
         "title": "Towards 3m/px EnMAP Imagery: A Fusion-Based Hyperspectral Super-Resolution Approach for Improving Crop-Type Mapping in Smallholder Regions of Kenya",
         "url": "https://enmap.geographie-muenchen.de/",
