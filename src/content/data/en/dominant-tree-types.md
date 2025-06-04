@@ -12,9 +12,9 @@ quality: 93% accuracy
 qualityImage: ../../../images/data/dominant-tree-types-confusion.png
 properties:
     crs: EPSG:32632 - WGS 84 / UTM zone 32N
-    time: Trained for Germany and years 2016 to 2022
+    time: Trained for Germany and years 2017 to 2018
     spatialResolution: 10 meters
     spatialValidity: Germany
 ---
 
-Classification of dominant tree types. Not a single tree species classification.
+A Classification of dominant tree types per Sentinel-2 pixel. Not a single tree species classification.

@@ -12,13 +12,40 @@ Unser ML-Modell kann zum aktuellen Stand die folgenden Bäume erkennen: Birken (
 
 ![Confusion Matrix](../../../images/posts/dominant-tree-types/image1.png)
 
-Mit nur wenigen Zeilen Python-Code kann dieses und auch viele andere Modelle in die Geo Engine importiert werden. Die Geo Engine nutzt dazu das ONNX Format um ML Modelle aus beliebigen ML Frameworks anzuwenden. Hier sieht man, dass zum Import nur das Modell, ein Name und eine Beschreibung sowie Informationen zu den Datentypen angegeben werden müssen.
+Mit nur wenigen Zeilen Python-Code kann dieses und auch viele andere Modelle in die Geo Engine importiert werden. Die Geo Engine nutzt dazu das ONNX Format um ML Modelle aus beliebigen ML Frameworks anzuwenden. Hier sieht man, dass zum Import nur das Modell, ein Name und eine Beschreibung sowie Informationen zu den Datentypen angegeben werden müssen:
 
-![Add model](../../../images/posts/dominant-tree-types/image2.png)
+```python
+
+metadata = ge.ml.MlModelMetadata(
+    file_name="hgb_dominant_trees4.onnx",
+    input_type=geoc.models.RasterDataType.F32,
+    num_input_bands=97,
+    output_type=geoc.models.RasterDataType.I64,
+)
+
+model_config = ge.ml.MlModelConfig(
+    name=f"{ge.get_session().user_id}:hgb_dominant_trees4",
+    metadata=metadata,
+    display_name="Dominante Baumarten",
+    description="Ein HistGradientBoost Modell für Baumarten",
+)
+
+ge.register_ml_model(onnx_model, model_config)
+
+```
 
 Mit noch weniger Code kann das Modell dann in einen Workflow integriert werden. Wie man hier sieht muss dazu lediglich der ONNX-Operator zu einem Workflow, der die passenden Inputdaten hinzu gefügt und der Name des gewünschten Modells angegeben werden:
 
-![Apply model](../../../images/posts/dominant-tree-types/image7.png)
+```python
+
+op_onnx = ge.workflow_builder.operators.Onnx(
+    source=stacked_band_operators,
+    model=f'{ge.get_session().user_id}:hgb_dominant_trees4'
+    )
+
+workflow_onnx = ge.register_workflow(op_onnx)
+
+```
 
 Eine Anfrage an einen Workflow mit dem Modell liefert direkt die Klassifikation der Baumarten für die Region und das Jahr von Interesse. So kann man die Geo Engine nutzen, um trainierte **Modelle als operationellen Dienst** bereitzustellen und für beliebige Gebiete und anfragen über verschiedene Zeitpunkte nutzbar zu machen.
 
