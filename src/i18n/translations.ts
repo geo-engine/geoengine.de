@@ -48,7 +48,7 @@ export const translations = {
         'team.leadership': 'Führungsteam',
         'team.advisors': 'Berater',
         'team.publications': 'Publikationen',
-        'technology.title': 'Die Geo Engine: Unser Technologiestack',
+        'technology.title': 'Die Geo Engine: Unser offener Technologiestack',
         'technology.text':
             'Die Geo Engine ist eine cloud-fähige Data-Science-Plattform für die Verarbeitung von raum-zeitlichen Daten. Sie verfügt über ein einzigartiges Verarbeitungsmodell mit Zeit als nativer Dimension. Darüber hinaus ist sie für Big Data ausgelegt, indem sie eine strombasierte Verarbeitung sowohl für Raster- als auch für Vektordaten-Workflows anwendet. Benutzer können Workflows entweder deklarativ, z.B. über Jupyter Notebooks, oder in einer webbasierten Benutzeroberfläche definieren. Die Ergebnisse der Workflows können über standardisierte Schnittstellen abgerufen oder in maschinelle Lernprozesse eingespeist werden.',
         'technology.keyFeatures': 'Schlüsselkomponenten',
@@ -58,6 +58,7 @@ export const translations = {
         'technology.keyFeatures4': 'Automatische Datenharmonisierung',
         'technology.keyFeatures5': 'OGC-Endpunkte',
         'technology.keyFeatures6': 'Reproduzierbarkeit des Datenzugriffs',
+        'technology.keyFeatures7': 'Open Source: frei zugänglich und erweiterbar',
         'technology.link': 'Hier gibt es mehr Infos',
         'references.title': 'Referenzen & Beispiele',
         'references.intro':
@@ -116,7 +117,7 @@ export const translations = {
         'team.leadership': 'Leadership team',
         'team.advisors': 'Advisors',
         'team.publications': 'Publications',
-        'technology.title': 'The Geo Engine: Our technology stack',
+        'technology.title': 'The Geo Engine: Our open technology stack',
         'technology.text':
             'The Geo Engine is a cloud-ready data science platform for processing spatio-temporal data. It features a unique processing model with time as a native dimension. In addition, it is designed for big data by applying stream-based processing for both raster and vector data workflows. Users can define workflows either declaratively, e.g., via Jupyter notebooks, or in a web-based user interface. The results of the workflows can be accessed via standardized interfaces or fed into machine learning processes.',
         'technology.keyFeatures': 'Key components',
@@ -126,6 +127,7 @@ export const translations = {
         'technology.keyFeatures4': 'Automatic data harmonization',
         'technology.keyFeatures5': 'OGC endpoints',
         'technology.keyFeatures6': 'Reproducibility of data access',
+        'technology.keyFeatures7': 'Open Source: freely accessible and extensible',
         'technology.link': 'More information here',
         'references.title': 'References & Examples',
         'references.intro':
