@@ -7,56 +7,56 @@
         "id": 38
     },
     {
-        "authors": "Nikolaus Glombiewski, Zeyd Boukhers, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Artur Piet, Robert Pietrzynski, Mehrshad Jaberansary, Macedo Maia, Sebastian Beyvers, Yeliz \u00dc\u00e7er Yediel, Muhammad Hamza Akhtar, Heiner Oberkampf, Jonathan Hartman, Bernhard Seeger, Christoph Lange",
+        "authors": "Nikolaus Glombiewski, Zeyd Boukhers, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Artur Piet, Robert Pietrzynski, Mehrshad Jaberansary, Macedo Maia, Sebastian Beyvers, Yeliz Üçer Yediel, Muhammad Hamza Akhtar, Heiner Oberkampf, Jonathan Hartman, Bernhard Seeger, Christoph Lange",
         "title": "From Theory to Practice: Demonstrators of FAIR Data Spaces Across Different Sectors",
         "url": "https://doi.org/10.1145/3672608.3707987",
         "source": "SAC 2025: 509-513",
         "id": 37
     },
     {
-        "authors": "Leander Leist, Manuel Oed, Christian Beilschmidt, J\u00f6rg Bendix",
+        "authors": "Leander Leist, Manuel Oed, Christian Beilschmidt, Jörg Bendix",
         "title": "Towards 3m/px EnMAP Imagery: A Fusion-Based Hyperspectral Super-Resolution Approach for Improving Crop-Type Mapping in Smallholder Regions of Kenya",
         "url": "https://enmap.geographie-muenchen.de/",
         "source": "2nd EnMAP User Workshop 2025",
         "id": 36
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner",
-        "title": "Biodiversit\u00e4tsindikatoren aus Satellitendaten",
+        "authors": "Christian Beilschmidt, Johannes Drönner",
+        "title": "Biodiversitätsindikatoren aus Satellitendaten",
         "url": "https://youtu.be/pYjXFzKPQxo?si=onf2xY8XoLQWTvqd",
         "source": "NFDI-Podcast (4) 2025",
         "id": 35
     },
     {
-        "authors": "Nikolaus Glombiewski, Zeyd Boukhers, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Artur Piet, Robert Pietrzynski, Mehrshad Jaberansary, Macedo Maia, Sebastian Beyvers, Yeliz \u00dc\u00e7er Yediel, Muhammad Hamza Akhtar, Heiner Oberkampf, Jonathan Hartman, Bernhard Seeger, Christoph Lange",
+        "authors": "Nikolaus Glombiewski, Zeyd Boukhers, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Artur Piet, Robert Pietrzynski, Mehrshad Jaberansary, Macedo Maia, Sebastian Beyvers, Yeliz Üçer Yediel, Muhammad Hamza Akhtar, Heiner Oberkampf, Jonathan Hartman, Bernhard Seeger, Christoph Lange",
         "title": "From Theory to Practice: Demonstrators of FAIR Data Spaces Across Different Sectors",
         "url": "https://doi.org/10.48550/arXiv.2412.04969",
         "source": "CoRR abs/2412.04969 (2024)",
         "id": 34
     },
     {
-        "authors": "Paulina Grigusova, Christian Beilschmidt, Maik Dobbermann, Johannes Dr\u00f6nner, Michael Mattig, Pablo Sanchez, Nina Farwig, J\u00f6rg Bendix",
+        "authors": "Paulina Grigusova, Christian Beilschmidt, Maik Dobbermann, Johannes Drönner, Michael Mattig, Pablo Sanchez, Nina Farwig, Jörg Bendix",
         "title": "A Data Storage, Analysis, and Project Administration Engine (TMFdw) for Small-to Medium-Size Interdisciplinary Ecological Research Programs with Full Raster Data Capabilities",
         "url": "https://doi.org/10.3390/data9120143",
         "source": "Data 2024",
         "id": 33
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "Geo Engine: Workflow-driven Geospatial Portals for Data Science",
         "url": "https://doi.org/10.1007/s13222-023-00453-2",
         "source": "Datenbank Spektrum 2023",
         "id": 32
     },
     {
-        "authors": "Christian Beilschmidt, Dominik Brandenstein, Johannes Dr\u00f6nner, Nikolaus Glombiewski, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Dominik Brandenstein, Johannes Drönner, Nikolaus Glombiewski, Michael Mattig, Bernhard Seeger",
         "title": "On the Design and Implementation of Easy Access to External Spatiotemporal Datasets in NFDI",
         "url": "https://www.tib-op.org/ojs/index.php/CoRDI/article/view/360",
         "source": "CoRDI 2023",
         "id": 31
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Philip Schweitzer, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Philip Schweitzer, Bernhard Seeger",
         "title": "Geo Engine: Workflow-backed Geo Data Portals.",
         "url": "https://doi.org/10.18420/BTW2023-55",
         "source": "BTW 2023: 837-849",
@@ -64,90 +64,90 @@
     },
     {
         "authors": "Christian Beilschmidt",
-        "title": "Geo Engine: Ein skalierbares System f\u00fcr interaktive Geoanalysen in der Cloud",
+        "title": "Geo Engine: Ein skalierbares System für interaktive Geoanalysen in der Cloud",
         "url": "https://twitter.com/teamgeoengine/status/1567120869528375305",
         "source": "INNOspace Jahreskonferenz 2022",
         "id": 29
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner",
+        "authors": "Christian Beilschmidt, Johannes Drönner",
         "title": "Geo Engine: Exploratory data analysis with spatio-temporal workflow processing",
         "url": "https://talks.osgeo.org/foss4g-2022/talk/review/Y33UJVHUC9S3YHLFZQNZ8SSZBRZUJXD8",
         "source": "FOSS4G 2022",
         "id": 28
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael K\u00f6rber, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Körber, Michael Mattig, Bernhard Seeger",
         "title": "Geo Engine: Leveraging harmonized data access for interactive geo-analytics",
         "url": "https://twitter.com/teamgeoengine/status/1529435763288465409/photo/1",
         "source": "Living Planet Symposium 2022",
         "id": 27
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner",
-        "title": "Workflows in Geo Engine: Von der UI zum Python-Notebook und zur\u00fcck",
+        "authors": "Christian Beilschmidt, Johannes Drönner",
+        "title": "Workflows in Geo Engine: Von der UI zum Python-Notebook und zurück",
         "url": "https://av.tib.eu/media/56783",
         "source": "FOSSGIS 2022",
         "id": 26
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner",
+        "authors": "Christian Beilschmidt, Johannes Drönner",
         "title": "Geoanwendungen und-verarbeitung in Rust: ein Einstieg in die GeoRust-Community",
         "url": "https://av.tib.eu/media/56740",
         "source": "FOSSGIS 2022",
         "id": 25
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner",
+        "authors": "Christian Beilschmidt, Johannes Drönner",
         "title": "Building interactive spatio-temporal analysis portals with Geo Engine: A Digital teaching Tool for multi-spectral data",
         "url": "https://science.eo-college.org/videos_ak_eo_education_2022/",
-        "source": "I. Workshop \u2018EO Education\u2019 2022, EO College",
+        "source": "I. Workshop ‘EO Education’ 2022, EO College",
         "id": 24
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig and Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig and Bernhard Seeger",
         "title": "Geo Engine: A flexible Dashboard for Exploring and Analyzing Biodiversity Data",
         "url": "https://www.nfdi4biodiversity.org/de/cs4biodiversity/",
         "source": "CS4BioDiversity (Workshop), INFORMATIK 2021",
         "id": 23
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig and Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig and Bernhard Seeger",
         "title": "Geo Engine: Data Fusion inside your Data Portal",
         "url": "https://gfoe-conference.de/WEBS/GFOe2020.pages.download/Detailed-Program.pdf",
-        "source": "Gf\u00d6 Virtual Annual Meeting 2021",
+        "source": "GfÖ Virtual Annual Meeting 2021",
         "id": 22
     },
     {
         "authors": "Judith Weber, Jimena Linares, Christian Beilschmidt",
         "title": "Data management 101 with NFDI4BioDiversity & GFBio",
         "url": "https://gfoe-conference.de/index.php?cat=premeeting",
-        "source": "Pre-Meeting Workshop, Gf\u00d6 Virtual Annual Meeting 2021",
+        "source": "Pre-Meeting Workshop, GfÖ Virtual Annual Meeting 2021",
         "id": 21
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig",
         "title": "Geo Engine: Explorative Datenanalyse mit raum-zeitlicher Workflowverarbeitung",
         "url": "https://av.tib.eu/media/53871",
         "source": "FOSSGIS 2021",
         "id": 20
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig and Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig and Bernhard Seeger",
         "title": "Building the Next-Generation EBV Analyzer",
         "url": "https://conf2020.geobon.org/OSC2020/Oral-Flash_Prerecordings/4_Beilschmidt_Oral_Building_the_Next-Generation_EBV_Analyzer.mp4",
         "source": "GEO BON Open Science Conference & All Hands Meeting 2020",
         "id": 19
     },
     {
-        "authors": "Johannes Dr\u00f6nner, Christian Beilschmidt, Michael Mattig, Philip Schweitzer, Bernhard Seeger",
+        "authors": "Johannes Drönner, Christian Beilschmidt, Michael Mattig, Philip Schweitzer, Bernhard Seeger",
         "title": "Geo Engine: Explore and Combine Spatio-Temporal Data in the Cloud",
         "url": "https://events.ecmwf.int/event/211/contributions/1870/attachments/974/1714/go",
         "source": "ECMWF Virtual workshop: Weather and climate in the cloud, 2020",
         "id": 18
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Nikolaus Glombiewski, Michael K\u00f6rber, Michael Mattig, Andreas Morgen, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Nikolaus Glombiewski, Michael Körber, Michael Mattig, Andreas Morgen, Bernhard Seeger",
         "title": "VAT to the Future: Extrapolating Visual Complex Event Processing.",
         "url": "https://www.easychair.org/publications/paper/P7xv",
         "source": "OpenSky 2019: 25-36",
@@ -161,15 +161,15 @@
         "id": 16
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, N\u00e9stor Fern\u00e1ndez, Christian Langer, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Néstor Fernández, Christian Langer, Michael Mattig, Bernhard Seeger",
         "title": "Analyzing Essential Biodiversity Variables with the VAT System.",
         "url": "https://doi.org/10.3897/biss.3.36319",
         "source": "Biodiversity Information Science and Standards 3, e36319",
         "id": 15
     },
     {
-        "authors": "Johannes Dr\u00f6nner, Sebastian Egli, Boris Thies, J\u00f6rg Bendix, Bernhard Seeger",
-        "title": "FFLSD \u2013 Fast Fog and Low Stratus Detection tool for large satellite time-series.",
+        "authors": "Johannes Drönner, Sebastian Egli, Boris Thies, Jörg Bendix, Bernhard Seeger",
+        "title": "FFLSD – Fast Fog and Low Stratus Detection tool for large satellite time-series.",
         "url": "https://doi.org/10.1016/j.cageo.2019.04.003",
         "source": "Computers & Geosciences 128: 51-59 (2019)",
         "id": 14
@@ -182,49 +182,49 @@
         "id": 13
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Nikolaus Glombiewski, Christian Heigele, Jana Holznigenkemper, Anna Isenberg, Michael K\u00f6rber, Michael Mattig, Andreas Morgen, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Nikolaus Glombiewski, Christian Heigele, Jana Holznigenkemper, Anna Isenberg, Michael Körber, Michael Mattig, Andreas Morgen, Bernhard Seeger",
         "title": "Pretty Fly for a VAT GUI: Visualizing Event Patterns for Flight Data.",
         "url": "https://doi.org/10.1145/3328905.3332507",
         "source": "DEBS 2019: 224-227",
         "id": 12
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, N\u00e9stor Fern\u00e1ndez, Christian Langer, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Néstor Fernández, Christian Langer, Michael Mattig, Bernhard Seeger",
         "title": "Towards an EBV Analyzer based on VAT.",
         "url": "https://drive.google.com/file/d/1tomhF749HCZ4ZN37twI1_N40IRjK786N/view",
         "source": "Proceedings 10th International Conference on Ecological Informatics: 182 (2018)",
         "id": 11
     },
     {
-        "authors": "Johannes Dr\u00f6nner, Nikolaus Korfhage, Sebastian Egli, Markus M\u00fchling, Boris Thies, J\u00f6rg Bendix, Bernd Freisleben, Bernhard Seeger",
+        "authors": "Johannes Drönner, Nikolaus Korfhage, Sebastian Egli, Markus Mühling, Boris Thies, Jörg Bendix, Bernd Freisleben, Bernhard Seeger",
         "title": "Fast Cloud Segmentation Using Convolutional Neural Networks.",
         "url": "https://doi.org/10.3390/rs10111782",
         "source": "Remote Sensing 10(11): 1782 (2018)",
         "id": 10
     },
     {
-        "authors": "Marco Schmidt, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
-        "title": "Unter welchen Klimabedingungen w\u00e4chst meine Pflanze? \u2013 Mit dem GFBio-VAT Umweltdaten aus Verbreitungsdaten extrahieren.",
+        "authors": "Marco Schmidt, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
+        "title": "Unter welchen Klimabedingungen wächst meine Pflanze? – Mit dem GFBio-VAT Umweltdaten aus Verbreitungsdaten extrahieren.",
         "url": "https://agtl.org/wp-content/uploads/2018/11/gbb_209_leseprobe_web.pdf",
-        "source": "G\u00e4rtnerisch-Botanischer Brief 209 (2018): 79-81",
+        "source": "Gärtnerisch-Botanischer Brief 209 (2018): 79-81",
         "id": 9
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Marco Schmidt, Christian Authmann, Aidin Niamir, Thomas Hickler, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Marco Schmidt, Christian Authmann, Aidin Niamir, Thomas Hickler, Bernhard Seeger",
         "title": "VAT: A Scientific Toolbox for Interactive Geodata Exploration.",
         "url": "https://doi.org/10.1007/s13222-017-0266-5",
         "source": "Datenbank-Spektrum 17(3): 233-243 (2017)",
         "id": 8
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Marco Schmidt, Christian Authmann, Aidin Niamir, Thomas Hickler, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Marco Schmidt, Christian Authmann, Aidin Niamir, Thomas Hickler, Bernhard Seeger",
         "title": "Interactive Data Exploration for Geoscience.",
         "url": "http://btw2017.informatik.uni-stuttgart.de/slidesandpapers/E1-15/paper_web.pdf",
         "source": "BTW (Workshops) 2017: 117-126",
         "id": 7
     },
     {
-        "authors": "Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "VAT: A System for Data-Driven Biodiversity Research.",
         "url": "https://openproceedings.org/2017/conf/edbt/paper-407.pdf",
         "source": "EDBT 2017: 546-549",
@@ -245,21 +245,21 @@
         "id": 4
     },
     {
-        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "VAT: A System for Visualizing, Analyzing and Transforming Spatial Data in Science.",
         "url": "http://link.springer.com/article/10.1007%2Fs13222-015-0197-y",
         "source": "Datenbank-Spektrum 15(3): 175-184 (2015)",
         "id": 3
     },
     {
-        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "Rethinking Spatial Processing in Data-Intensive Science.",
         "url": "http://www.btw-2015.de/res/proceedings/Workshops/DMS/Authmann-Rethinking_Spatial_Process.pdf",
         "source": "BTW Workshops 2015: 161-170",
         "id": 2
     },
     {
-        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Dr\u00f6nner, Michael Mattig, Bernhard Seeger",
+        "authors": "Christian Authmann, Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "Analytical Workflows for Large Data.",
         "url": "https://mbgocs.mobot.org/index.php/tdwg/2014/paper/view/674",
         "source": "TDWG 2014 Symposium: Biodiversity Informatics workflows and services.",
