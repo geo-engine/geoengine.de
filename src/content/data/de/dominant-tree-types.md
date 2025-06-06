@@ -1,7 +1,18 @@
 ---
 title: Dominante Baumarten
 exampleImage: ../../../images/data/dominant-tree-types.png
-classes: ['Erlen (Alnus)', 'Birken (Betula)', 'Buchen (Fagus)', 'Fichten (Picea)', 'Kiefern (Pinus)', 'Eichen (Quercus)', 'Baumfrei (no_tree)', ' Andere Nadelbäume (other_coniferous)', ' Andere Laubbäume (other_deciduous)']
+classes:
+    [
+        'Erlen (Alnus)',
+        'Birken (Betula)',
+        'Buchen (Fagus)',
+        'Fichten (Picea)',
+        'Kiefern (Pinus)',
+        'Eichen (Quercus)',
+        'Baumfrei (no_tree)',
+        ' Andere Nadelbäume (other_coniferous)',
+        ' Andere Laubbäume (other_deciduous)',
+    ]
 dataSources:
     - Sentinel-2
     - SRTM

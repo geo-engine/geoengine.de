@@ -1,7 +1,18 @@
 ---
 title: Dominant tree types
 exampleImage: ../../../images/data/dominant-tree-types.png
-classes: [Alders (Alnus), Birches (Betula), Beeches (Fagus), Spruces (Picea), Pines (Pinus), Oaks (Quercus), Treeless (no_tree), Other conifers (other_coniferous), Other deciduous trees (other_deciduous)]
+classes:
+    [
+        Alders (Alnus),
+        Birches (Betula),
+        Beeches (Fagus),
+        Spruces (Picea),
+        Pines (Pinus),
+        Oaks (Quercus),
+        Treeless (no_tree),
+        Other conifers (other_coniferous),
+        Other deciduous trees (other_deciduous),
+    ]
 dataSources:
     - Sentinel-2
     - SRTM

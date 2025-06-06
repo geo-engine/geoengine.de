@@ -8,7 +8,7 @@ Mehr als 30 Prozent der Landfläche Deutschlands sind Wald[^1]. Im Kontext von K
 
 ![Marburg](../../../images/posts/dominant-tree-types/image1.png)
 
-Für die **Klassifikation von Baumarten** haben wir ein entsprechendes Modell für ganz Deutschland trainiert und dieses in die Geo Engine integriert. Dabei nutzen wir die frei verfügbaren **Sentinel-2** Daten mit 10 m Pixelgröße, die wir für jedes Jahr auf (wolkenfreie) Monate aggregieren und so eine Klassifikation pro Jahr ermöglichen.  Im obigen Bild sieht man die Ergebnisse des Modells an einem Beispiel: Links sieht man ein wolkenfreies Sentinel-2 RGB-Komposit für Juli 2018. Rechts sieht man das Ergebniss der dominante Baumarten-Klassifikation, welche unser trainiertes Modell ausgibt als Overlay.
+Für die **Klassifikation von Baumarten** haben wir ein entsprechendes Modell für ganz Deutschland trainiert und dieses in die Geo Engine integriert. Dabei nutzen wir die frei verfügbaren **Sentinel-2** Daten mit 10 m Pixelgröße, die wir für jedes Jahr auf (wolkenfreie) Monate aggregieren und so eine Klassifikation pro Jahr ermöglichen. Im obigen Bild sieht man die Ergebnisse des Modells an einem Beispiel: Links sieht man ein wolkenfreies Sentinel-2 RGB-Komposit für Juli 2018. Rechts sieht man das Ergebniss der dominante Baumarten-Klassifikation, welche unser trainiertes Modell ausgibt als Overlay.
 
 Unser ML-Modell kann zum aktuellen Stand die folgenden Bäume erkennen: Birken (Betula), Erlen (Alnus), Eichen (Quercus), Buchen (Fagus), Fichten (Picea), Kiefern (Pinus) sowie andere Laubbäume (deciduous) und Nadelbäume (coniferous) erkennen. Die **Accuracy** beträgt **93 %**. Die Confusion Matrix zeigt die Qualität des Models für die einzelnen Arten und mögliche Verwechslungen:
 
@@ -73,7 +73,7 @@ Mithilfe der Geo Engine lassen sich Modelle für konkrete Fragestellungen sehr e
 
 Besonders für zusammenhängende Waldflächen liefert das Modell nachvollziehbar gute Ergebnisse, wie die Beispiele und die Confusion Matrix zeigen. Auf Basis dieser Ergebnisse werden wir das Modell weiterentwickeln und neben der Klassifikation der Baumarten auch ein Change-Dataset erzeugen, um die Veränderungen zwischen verschiedenen Jahren als Dienst anzubieten.
 
-Bei Fragen zur Geo Engine, zu unserem [Baumarten-Dataset](../data/dominant-tree-types) oder zu einem auf Ihre Bedürfnisse angepassten Service wenden Sie sich gerne an info@geoengine.de.
+Bei Fragen zur Geo Engine, zu unserem [Baumarten-Dataset](../data/dominant-tree-types) oder zu einem auf Ihre Bedürfnisse angepassten Service wenden Sie sich gerne an <info@geoengine.de>.
 
 ## Referenzen
 

@@ -8,7 +8,7 @@ More than 30 per cent of Germany's land area is covered by forests [1]. In the c
 
 ![Marburg](../../../images/posts/dominant-tree-types/image1.png)
 
-We have trained a model for the **classification of tree species** for the whole of Germany and integrated it into the Geo Engine. We use freely available Sentinel-2 data with a pixel size of 10 m, which we aggregate into cloud-free months for each year, thus enabling classification on an annual basis.  The image above shows the results of the model using an example. On the left is a cloud-free **Sentinel-2** RGB composite for July 2018. On the right, you can see the classification of the dominant tree species, which our trained model provides as an overlay.
+We have trained a model for the **classification of tree species** for the whole of Germany and integrated it into the Geo Engine. We use freely available Sentinel-2 data with a pixel size of 10 m, which we aggregate into cloud-free months for each year, thus enabling classification on an annual basis. The image above shows the results of the model using an example. On the left is a cloud-free **Sentinel-2** RGB composite for July 2018. On the right, you can see the classification of the dominant tree species, which our trained model provides as an overlay.
 
 Our ML model can currently recognise the following tree species: Birch (Betula), alder (Alnus), oak (Quercus), beech (Fagus), spruce (Picea), pine (Pinus), and other deciduous and coniferous trees. The **accuracy** is **93%**. The confusion matrix shows the model's performance for each species and possible misclassifications.
 
@@ -73,7 +73,7 @@ The Geo Engine makes it easy to translate models for specific issues into operat
 
 The model produces excellent results, particularly for contiguous forest areas, as demonstrated by the examples and confusion matrix. Based on these results, we will further develop the model and create an additional change dataset alongside the classification of tree species, in order to offer changes between different years as a service.
 
-If you have any questions about the Geo Engine, our [tree species dataset](../data/dominant-tree-types), or customised services, please email info@geoengine.de.
+If you have any questions about the Geo Engine, our [tree species dataset](../data/dominant-tree-types), or customised services, please email <info@geoengine.de>.
 
 ## Referenzen
 
