@@ -168,6 +168,7 @@ export const translations = {
 
 export const pages = {
     de: {
+        '.': '/',
         about: '/ueber-uns/',
         cla: '/cla/',
         contact: '/kontakt/',
@@ -179,6 +180,7 @@ export const pages = {
         404: '/404/',
     },
     en: {
+        '.': '/en/',
         about: '/en/about-us/',
         cla: '/en/cla/',
         contact: '/en/contact/',
