@@ -44,7 +44,7 @@ const t = useTranslations(lang);
 <Layout title={datum.title} description={mdExcerpt(pageBody, 200)}>
     <Section>
         <Picture class="w-full rounded-xl object-cover" src={datum.exampleImage} alt={datum.title} />
-        <p><slot /></p>
+        <div class="text-lg"><slot /></div>
     </Section>
     <Section bg="green" box>
         <h3 class="mt-6 mb-4 text-xl font-semibold">{t('data.specs')}</h3>

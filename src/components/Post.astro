@@ -42,11 +42,14 @@ const pageDescription = pageBody.slice(0, 200) + '…';
         list-style-type: decimal;
         padding-left: 1.5rem;
     }
+    div :global(pre) {
+        padding: 1rem;
+    }
 </style>
 
 <Layout title={title} description={pageDescription}>
     <Section>
-        <div class="mx-auto max-w-2xl">
+        <div class="mx-auto w-full text-justify">
             <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
             <p class="my-8 text-xs text-gray-500 dark:text-neutral-500">
                 {formattedDate}

@@ -28,4 +28,4 @@ properties:
     spatialValidity: Deutschland
 ---
 
-Eine Klassifizierung der vorherrschenden Baumarten pro Sentinel-2-Pixel. Durch die 10 m x 10 m Auflösung von Sentinel-2 kann das Modell keine einzelnen Bäume klassifizieren sondern bestimmt die dominante Klasse jedes Pixels.
+Eine Klassifizierung der vorherrschenden Baumarten pro Sentinel-2-Pixel. Durch die 10 m x 10 m Auflösung von Sentinel-2 kann das Modell keine einzelnen Bäume klassifizieren, sondern bestimmt die dominante Klasse jedes Pixels.
