@@ -102,6 +102,15 @@ const p = useLocalePages(Astro.currentLocale);
                     </a>
 
                     <a
+                        class="flex items-center p-2 text-sm text-white focus:text-white focus:outline-hidden"
+                        href={p('data')}
+                        aria-current="page"
+                    >
+                        <Icon name="mdi:database" class="me-3 block size-4 shrink-0 md:me-2 md:hidden" />
+                        {t('data.title')}
+                    </a>
+
+                    <a
                         class="flex items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
                         href={p('references')}
                     >

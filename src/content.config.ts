@@ -64,8 +64,28 @@ const cookies = defineCollection({
         }),
 });
 
+const data = defineCollection({
+    schema: ({image}) =>
+        z.object({
+            title: z.string().nonempty().max(100),
+            exampleImage: image(),
+            classes: z.optional(z.array(z.string().nonempty()).min(1)),
+            dataSources: z.array(z.string().nonempty()).min(1),
+            method: z.string().nonempty(),
+            quality: z.string().nonempty(),
+            qualityImage: z.optional(image()),
+            properties: z.object({
+                crs: z.string().nonempty(),
+                time: z.string().nonempty(),
+                spatialResolution: z.string().nonempty(),
+                spatialValidity: z.string().nonempty(),
+            }),
+        }),
+});
+
 // 4. Export a single `collections` object to register your collection(s)
 export const collections = {
+    data,
     cookies,
     posts,
     publications,

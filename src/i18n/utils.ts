@@ -1,5 +1,6 @@
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {translations, defaultLang, pages} from './translations';
+import {redirectSearchParam} from '../pages/404.astro';
 
 // export function getLangFromUrl(url: URL) {
 //     const [, lang] = url.pathname.split('/');
@@ -53,10 +54,14 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
 
     if (key) {
         return pages[lang][key];
-    } else {
-        console.warn(`Could not find page for path ${currentPath} in locale ${lang}. Using root page instead.`);
-        return getRelativeLocaleUrl(lang, '/');
     }
+
+    console.warn(`Could not find page for path ${currentPath} in locale ${lang}. Trying to swap locale in path instead.`);
+    let path = currentPath;
+    if (path.startsWith('/en/')) {
+        path = path.substring(4); // remove /en/
+    }
+    return getRelativeLocaleUrl(lang, path) + '?' + redirectSearchParam;
 }
 
 function localePagePrefix(lang: LocaleString): string {
@@ -64,8 +69,12 @@ function localePagePrefix(lang: LocaleString): string {
 }
 
 export function slugToPostLink(lang: LocaleString, slug: string) {
-    const langPart = lang === 'de' ? '' : `/${lang}`;
     return `${localePagePrefix(lang)}/posts/${slug}`;
+}
+
+export function slugToDataLink(slugWithLang: string) {
+    const [_lang, ...slug] = slugWithLang.split('/');
+    return `${slug.join('/')}`;
 }
 
 export type LocaleString = keyof typeof translations; // 'de' | 'en'
