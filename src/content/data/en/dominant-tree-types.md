@@ -17,4 +17,4 @@ properties:
     spatialValidity: Germany
 ---
 
-A Classification of dominant tree types per Sentinel-2 pixel. Not a single tree species classification.
+A classification of the dominant tree species per Sentinel-2 pixel. Due to the 10 m x 10 m resolution of Sentinel-2, the model cannot classify individual trees but determines the dominant class of each pixel.

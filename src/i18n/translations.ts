@@ -171,7 +171,7 @@ export const pages = {
         about: '/ueber-uns/',
         cla: '/cla/',
         contact: '/kontakt/',
-        data: '/daten/',
+        data: '/data/',
         imprint: '/impressum/',
         privacyPolicy: '/datenschutzerklaerung/',
         references: '/beispiele-referenzen/',

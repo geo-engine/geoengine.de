@@ -73,7 +73,7 @@ The Geo Engine makes it easy to translate models for specific issues into operat
 
 The model produces excellent results, particularly for contiguous forest areas, as demonstrated by the examples and confusion matrix. Based on these results, we will further develop the model and create an additional change dataset alongside the classification of tree species, in order to offer changes between different years as a service.
 
-If you have any questions about the Geo Engine, our tree species dataset, or customised services, please email info@geoengine.de.
+If you have any questions about the Geo Engine, our [tree species dataset](../data/dominant-tree-types), or customised services, please email info@geoengine.de.
 
 ## Referenzen
 
