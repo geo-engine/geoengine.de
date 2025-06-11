@@ -1,0 +1,31 @@
+---
+import {getCollection, render} from 'astro:content';
+import Data from '../../../components/Data.astro';
+
+export async function getStaticPaths() {
+    const pages = await getCollection('data');
+
+    const paths = pages.map((page) => {
+        const [lang, ...slug] = page.slug.split('/');
+        return {params: {lang, slug: slug.join('/') || undefined}, props: page};
+    });
+
+    return paths.filter((path) => {
+        const {lang} = path.params;
+        return lang === 'en';
+    });
+}
+
+const {lang, slug} = Astro.params;
+
+if (lang !== 'de' && lang !== 'en') {
+    throw new Error(`Unsupported language: ${lang}`);
+}
+
+const page = Astro.props;
+const {Content} = await render(page);
+---
+
+<Data datum={page.data} lang={lang} pageBody={page.body}>
+    <Content />
+</Data>
