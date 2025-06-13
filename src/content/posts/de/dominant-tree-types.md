@@ -1,6 +1,6 @@
 ---
 title: Baumarten-Klassifikation für Deutschland
-date: 2025-06-09
+date: 2025-06-13
 image: ../../../images/posts/dominant-tree-types/image0.png
 ---
 
@@ -100,7 +100,7 @@ Unser Modell zur Klassifikation von Baumarten weist eine sehr gute Genauigkeit a
 Besonders für zusammenhängende Waldflächen liefert das Modell nachvollziehbar gute Ergebnisse, wie die Beispiele und die Confusion Matrix zeigen.
 Auf Basis dieser Ergebnisse werden wir das Modell weiterentwickeln und neben der Klassifikation der Baumarten auch ein Change-Dataset erzeugen, um die Veränderungen zwischen verschiedenen Jahren als Dienst anzubieten.
 
-Bei Fragen zur Geo Engine, zu unserem [Baumarten-Dataset](../data/dominant-tree-types) oder zu einem auf Ihre Bedürfnisse angepassten Service wenden Sie sich gerne an <info@geoengine.de>.
+Bei Fragen zur Geo Engine, zu unserem [Baumarten-Dataset](/data/dominant-tree-types) oder zu einem auf Ihre Bedürfnisse angepassten Service wenden Sie sich gerne an <info@geoengine.de>.
 
 ## Referenzen
 
