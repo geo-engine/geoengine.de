@@ -26,8 +26,14 @@ const logos: Array<{src: ImageMetadata; alt: string}> = await Promise.all(
     <!-- End Title -->
 
     <!-- Grid -->
-    <div class="my-8 grid grid-cols-3 gap-6 sm:flex sm:justify-center sm:gap-x-12 md:my-16 lg:gap-x-20">
-        {logos.map((logo) => <Picture src={logo.src} alt={logo.alt} />)}
+    <div class="my-8 grid grid-cols-3 gap-6 sm:justify-center sm:gap-x-12 md:my-16 md:grid-cols-4 lg:gap-x-20">
+        {
+            logos.map((logo) => (
+                <div class="flex w-full items-center justify-center">
+                    <Picture src={logo.src} alt={logo.alt} class="h-auto w-full object-contain" />
+                </div>
+            ))
+        }
         <!-- <a class="shrink-0 transition hover:-translate-y-1" href="#">
             <svg
                 class="mx-auto size-6 sm:mx-0 md:size-10"
