@@ -1,5 +1,5 @@
 ---
-title: "Abschluss der ESA BIC Inkubation: Startbereit für die Zukunft der Erdbeobachtung!"
+title: 'Abschluss der ESA BIC Inkubation: Startbereit für die Zukunft der Erdbeobachtung!'
 date: 2025-10-15
 image: ../../../images/posts/esa-bic-2025.png
 ---
@@ -12,14 +12,14 @@ Im Zentrum der Entwicklung stand eine Pipeline für Random Forest (RF) Machine L
 ### Wesentliche Erfolge und technologische Sprünge
 
 1. Standardisierter ML-Modellaustausch:  
-Um eine maximale Flexibilität und Zukunftsfähigkeit zu gewährleisten, wurde das offene [ONNX-Format](https://onnx.ai/) integriert. Dies ermöglicht den standardisierten und effizienten Austausch sowie die Bereitstellung verschiedenster Machine-Learning-Modelle wie Random Forest, Gradient Boosted Trees und Convolutional Neural Networks.
+   Um eine maximale Flexibilität und Zukunftsfähigkeit zu gewährleisten, wurde das offene [ONNX-Format](https://onnx.ai/) integriert. Dies ermöglicht den standardisierten und effizienten Austausch sowie die Bereitstellung verschiedenster Machine-Learning-Modelle wie Random Forest, Gradient Boosted Trees und Convolutional Neural Networks.
 
 2. Blaupausen für Anwender:  
-Wir haben die Interaktion mit der Geo Engine durch die Bereitstellung von Modelltrainingsbeispielen in Form von Jupyter Notebooks (Blaupausen) vereinfacht. Diese Vorlagen ermöglichen es Nutzern, verfügbare Pipelines leicht anzupassen und auf ihre spezifischen Datensätze anzuwenden.
+   Wir haben die Interaktion mit der Geo Engine durch die Bereitstellung von Modelltrainingsbeispielen in Form von Jupyter Notebooks (Blaupausen) vereinfacht. Diese Vorlagen ermöglichen es Nutzern, verfügbare Pipelines leicht anzupassen und auf ihre spezifischen Datensätze anzuwenden.
 
 3. Fokus auf Copernicus-Daten:  
-Die Pipeline nutzt die frei verfügbaren und hochauflösenden Sentinel-2-Daten des europäischen Copernicus-Programms.
-Validierte Anwendungsfälle umfassen die Landbedeckungsklassifizierung und die [Identifizierung dominanter Baumarten](dominant-tree-types) in Deutschland.
+   Die Pipeline nutzt die frei verfügbaren und hochauflösenden Sentinel-2-Daten des europäischen Copernicus-Programms.
+   Validierte Anwendungsfälle umfassen die Landbedeckungsklassifizierung und die [Identifizierung dominanter Baumarten](dominant-tree-types) in Deutschland.
 
 ### Ausrichtung auf Nachhaltigkeit (ESG)
 
