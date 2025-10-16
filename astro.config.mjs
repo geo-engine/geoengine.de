@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import pagefind from 'astro-pagefind';
 import icon from 'astro-icon';
 import cookieconsent from '@jop-software/astro-cookieconsent';
+import equalPageNameValidator from './src/integrations/equal-page-name-validator';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +15,8 @@ export default defineConfig({
     },
 
     integrations: [
+        equalPageNameValidator('posts/', 'en/posts/'),
+        equalPageNameValidator('data/', 'en/data/'),
         icon({
             iconDir: './src/images/icons',
         }),

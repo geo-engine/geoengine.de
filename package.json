@@ -7,7 +7,8 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "check": "prettier --check . && eslint 'src/**/*.{js,astro}'"
+        "check": "prettier --check . && eslint 'src/**/*.{js,astro}'",
+        "prettier": "prettier"
     },
     "dependencies": {
         "@fontsource/poppins": "^5.2.7",

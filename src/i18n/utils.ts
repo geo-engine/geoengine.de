@@ -1,6 +1,5 @@
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {translations, defaultLang, pages} from './translations';
-import {redirectSearchParam} from '../pages/404.astro';
 
 // export function getLangFromUrl(url: URL) {
 //     const [, lang] = url.pathname.split('/');
@@ -61,7 +60,7 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
     if (path.startsWith('/en/')) {
         path = path.substring(4); // remove /en/
     }
-    return getRelativeLocaleUrl(lang, path) + '?' + redirectSearchParam;
+    return getRelativeLocaleUrl(lang, path);
 }
 
 function localePagePrefix(lang: LocaleString): string {
