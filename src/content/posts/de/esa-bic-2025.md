@@ -21,7 +21,7 @@ Im Zentrum der Entwicklung stand eine Pipeline für Random Forest (RF) Machine L
 
 3. Fokus auf Copernicus-Daten:  
    Die Pipeline nutzt die frei verfügbaren und hochauflösenden Sentinel-2-Daten des europäischen Copernicus-Programms.
-   Validierte Anwendungsfälle umfassen die Landbedeckungsklassifizierung und die [Identifizierung dominanter Baumarten](dominant-tree-types) in Deutschland.
+   Validierte Anwendungsfälle umfassen die Landbedeckungsklassifizierung und die [Identifizierung dominanter Baumarten](/posts/dominant-tree-types) in Deutschland.
 
 ### Ausrichtung auf Nachhaltigkeit (ESG)
 

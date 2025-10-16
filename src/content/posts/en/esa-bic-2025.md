@@ -21,7 +21,7 @@ At the core of the development was a pipeline for Random Forest (RF) Machine Lea
 
 3. Focus on Copernicus Data:  
    The pipeline leverages the freely available and high-resolution Sentinel-2 data from the European Copernicus program.
-   Validated use cases include land cover classification and the [identification of dominant tree species](dominant-tree-types) in Germany.
+   Validated use cases include land cover classification and the [identification of dominant tree species](/en/posts/dominant-tree-types) in Germany.
 
 ### Focus on Sustainability (ESG)
 
