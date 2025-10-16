@@ -8,8 +8,6 @@ import {Icon} from 'astro-icon/components';
 const currentLang = currentLanguage(Astro.currentLocale);
 const t = useTranslations(currentLang);
 const homeLink = getRelativeLocaleUrl(currentLang, '/');
-
-export const redirectSearchParam = 'redirect-if-not-found';
 ---
 
 <Layout title={t('404.title')} description={t('404.description')}>
@@ -19,21 +17,3 @@ export const redirectSearchParam = 'redirect-if-not-found';
         <Icon name="404" class="text-main-lightgreen m-auto text-[25vw]" />
     </Section>
 </Layout>
-
-<redirect-optionally data-home-link={homeLink} data-search-param={redirectSearchParam}></redirect-optionally>
-
-<script>
-    class Redirector extends HTMLElement {
-        connectedCallback() {
-            const searchParams = new URLSearchParams(window.location.search);
-            const homeLink = this.dataset.homeLink;
-            const redirectSearchParam = this.dataset.searchParam ?? '';
-
-            if (homeLink && searchParams.has(redirectSearchParam)) {
-                window.location.href = homeLink;
-            }
-        }
-    }
-
-    customElements.define('redirect-optionally', Redirector);
-</script>
