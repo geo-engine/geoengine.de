@@ -1,0 +1,60 @@
+---
+import {Picture} from 'astro:assets';
+import {currentLanguage, useTranslations} from '../i18n/utils';
+import Scroller from '../layouts/Scroller.astro';
+import {getEntry} from 'astro:content';
+
+const pageLang = currentLanguage(Astro.currentLocale);
+const t = useTranslations(pageLang);
+
+const title = `${t('retrospective')} 2025`;
+
+const entry = await getEntry('scroller', '2025');
+const chapters = entry?.data ?? [];
+
+const tt = {
+    de: {
+        subheader: 'Rückblick auf das Jahr 2025',
+        intro: `Das Jahr 2025 hat für uns spannende Projekte, technologische Fortschritte und einen guten Austausch gebracht.`,
+        scroll: 'Zum Beginnen nach unten scrollen ↓',
+        outro: 'Regt eines dieser Themen bei euch eine Projektidee an oder wollt ihr Details zu einem Punkt hören?<br>Dann meldet euch gerne bei uns!',
+        website: 'Besucht unsere Webseite',
+    },
+    en: {
+        subheader: '2025 Year in Review',
+        intro: `The year 2025 has brought us exciting projects, technological advancements, and great collaboration.`,
+        scroll: 'Scroll to begin ↓',
+        outro: 'Do any of these topics spark a project idea for you, or would you like to hear more details about a specific point?<br>Feel free to reach out to us!',
+        website: 'Visit Our Website',
+    },
+}[pageLang];
+---
+
+<Scroller title={title} description={title} chapters={chapters}>
+    <div id="header">
+        <h1>Geo Engine</h1>
+        <h2>{tt.subheader}</h2>
+        <p set:html={tt.intro} />
+        <p class="smaller">{tt.scroll}</p>
+    </div>
+
+    <div id="features">
+        {
+            chapters.map((chapter, idx) => (
+                <div class="step" data-step={idx}>
+                    <h3>{chapter.title}</h3>
+                    <Picture src={chapter.image} alt={chapter.title} />
+                    <p set:html={chapter.description[pageLang]} />
+                </div>
+            ))
+        }
+    </div>
+
+    <div id="footer">
+        <p set:html={tt.outro} />
+        <p>© 2025 Geo Engine GmbH</p>
+        <p>
+            <a href="https://geoengine.de" target="_blank">{tt.website}</a>
+        </p>
+    </div>
+</Scroller>

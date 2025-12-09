@@ -1,0 +1,124 @@
+@import '@fontsource/poppins';
+
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: #333;
+
+    --light-green: #d7e4a5;
+    --green: #3fab39;
+    --light-blue: #92d2e3;
+    --medium-blue: #0088bc;
+    --dark-blue: #0f4493;
+    --torquioise: #0e8e89;
+
+    --dark-bg: rgba(0, 0, 0, 0.85);
+    --light-bg: rgba(255, 255, 255, 0.95);
+
+    --text-light-bg: rgba(0, 0, 0, 0.8);
+    --text-dark-bg: rgba(255, 255, 255, 0.9);
+}
+/* Map container fixed to background */
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* width: 100vw;
+    height: 100vh; */
+    z-index: 0;
+}
+/* Story Content */
+#story {
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Let clicks pass through to map */
+}
+/* Header Box */
+#header {
+    margin: 5vh auto 15vh auto;
+    /* width: 90%; */
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: var(--text-dark-bg);
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+
+    h1 {
+        margin-bottom: 0.2em;
+    }
+
+    h2 {
+        margin-top: 0;
+        color: var(--green);
+    }
+
+    .smaller {
+        font-size: 0.9em;
+    }
+}
+#features {
+    padding-bottom: 20vh;
+}
+/* Individual Story Steps */
+.step {
+    margin: 0 auto 70vh auto;
+    padding: 25px;
+    /* width: 90%; */
+    max-width: 400px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    pointer-events: auto;
+    border-left: 5px solid transparent;
+
+    &.active {
+        opacity: 1;
+        border-left: 5px solid var(--green);
+        transform: scale(1.02);
+    }
+    h3 {
+        margin-top: 0;
+        color: var(--text-light-bg);
+    }
+    p {
+        line-height: 1.6;
+        color: var(--text-light-bg);
+        font-size: 1.05em;
+        text-align: justify;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+    small {
+        display: block;
+        margin-top: 10px;
+        color: #888;
+        font-style: italic;
+    }
+}
+#footer {
+    min-height: 10vh;
+    background-color: #111;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    pointer-events: auto;
+}
+a {
+    color: var(--green);
+    text-decoration: none;
+}

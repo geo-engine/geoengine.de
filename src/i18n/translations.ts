@@ -88,6 +88,7 @@ export const translations = {
         'data.time': 'Zeit',
         'data.spatialResolution': 'Räumliche Auflösung',
         'data.spatialValidity': 'Räumliche Gültigkeit',
+        retrospective: 'Retrospektive',
     },
     en: {
         'nav.contact': 'Contact',
@@ -169,6 +170,7 @@ export const translations = {
         'data.time': 'Time',
         'data.spatialResolution': 'Spatial Resolution',
         'data.spatialValidity': 'Spatial Validity',
+        retrospective: 'Retrospective',
     },
 } as const;
 

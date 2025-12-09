@@ -83,6 +83,28 @@ const data = defineCollection({
         }),
 });
 
+const scroller = defineCollection({
+    // loader: glob({pattern: '*.json', base: './src/content/scroller'}),
+    type: 'data',
+    schema: ({image}) =>
+        z.array(
+            z.object({
+                id: z.string().nonempty().max(100),
+                title: z.string().nonempty().max(100),
+                image: image(),
+                description: z.object({
+                    de: z.string().nonempty(),
+                    en: z.string().nonempty(),
+                }),
+                location: z.object({
+                    center: z.array(z.number().finite()).length(2),
+                    zoom: z.number().finite().positive(),
+                    pitch: z.number().int().positive(),
+                    bearing: z.number().int(),
+                }),
+            }),
+        ),
+});
 // 4. Export a single `collections` object to register your collection(s)
 export const collections = {
     data,
@@ -90,5 +112,6 @@ export const collections = {
     posts,
     publications,
     references,
+    scroller,
     services,
 };
