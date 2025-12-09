@@ -68,8 +68,8 @@
         "title": "Dominant Tree Types in Germany",
         "image": "../../images/posts/dominant-tree-types/image0.png",
         "description": {
-            "de": "Mit der Baumarten-Klassifikation haben wir ein neues Datenprodukt veröffentlicht, das präzise Einblicke in die Waldzusammensetzung in Deutschland bietet.<br><br><a href=\"https://www.geoengine.de/posts/dominant-tree-types/\" target=\"_blank\" rel=\"noopener noreferrer\">Zum Artikel</a>",
-            "en": "With the tree species classification, we released a new data product offering precise insights into forest composition in Germany.<br><br><a href=\"https://www.geoengine.de/en/posts/dominant-tree-types/\" target=\"_blank\" rel=\"noopener noreferrer\">Read the article</a>"
+            "de": "Mit der Baumarten-Klassifikation haben wir ein neues Datenprodukt veröffentlicht, das präzise Einblicke in die Waldzusammensetzung in Deutschland bietet.<br><br><a href=\"/posts/dominant-tree-types/\" target=\"_blank\">Zum Artikel</a>",
+            "en": "With the tree species classification, we released a new data product offering precise insights into forest composition in Germany.<br><br><a href=\"/en/posts/dominant-tree-types/\" target=\"_blank\">Read the article</a>"
         },
         "location": {
             "center": [8.7562, 50.809],
