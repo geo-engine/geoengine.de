@@ -16,3 +16,10 @@ export function mdExcerpt(text: string, length: number) {
 
     return trimmedText.substring(0, length) + '…';
 }
+
+/**
+ * @returns an array of picture widths used for responsive and optimized images in <Image /> and <Picture /> components.
+ *
+ * Note: This is a function because Astro requires sizes to be mutable.
+ */
+export const pictureWidths = (): number[] => [768, 1024, 1280, 1536] as const;

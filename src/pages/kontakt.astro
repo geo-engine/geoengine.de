@@ -6,6 +6,7 @@ import {Image} from 'astro:assets';
 import {Icon} from 'astro-icon/components';
 
 import teamImage from '../images/team/team.jpg';
+import {pictureWidths} from '../components/utils';
 
 const pageLang = Astro.currentLocale;
 const t = useTranslations(pageLang);
@@ -29,6 +30,7 @@ const t = useTranslations(pageLang);
                 <Image
                     class="rounded-2xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
                     src={teamImage}
+                    widths={pictureWidths()}
                     alt={t('contact.getInTouch')}
                 />
             </div>

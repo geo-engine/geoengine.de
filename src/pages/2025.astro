@@ -3,6 +3,7 @@ import {Picture} from 'astro:assets';
 import {currentLanguage, useTranslations} from '../i18n/utils';
 import Scroller from '../layouts/Scroller.astro';
 import {getEntry} from 'astro:content';
+import {pictureWidths} from '../components/utils';
 
 const pageLang = currentLanguage(Astro.currentLocale);
 const t = useTranslations(pageLang);
@@ -43,7 +44,7 @@ const tt = {
             chapters.map((chapter, idx) => (
                 <div class="step" data-step={idx}>
                     <h3>{chapter.title}</h3>
-                    <Picture src={chapter.image} alt={chapter.title} />
+                    <Picture src={chapter.image} alt={chapter.title} widths={pictureWidths()} />
                     <p set:html={chapter.description[pageLang]} />
                 </div>
             ))

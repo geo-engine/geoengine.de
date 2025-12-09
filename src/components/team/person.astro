@@ -1,6 +1,7 @@
 ---
 import {Icon} from 'astro-icon/components';
 import {Image} from 'astro:assets';
+import {pictureWidths} from '../utils';
 
 interface Props {
     name: string;
@@ -15,7 +16,7 @@ const {name, title, image, linkedin, twitter, website} = Astro.props;
 ---
 
 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-    <Image class="size-20 rounded-lg" src={image} alt={name} />
+    <Image class="size-20 rounded-lg" src={image} alt={name} widths={pictureWidths()} />
 
     <div class="grow">
         <div>

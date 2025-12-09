@@ -17,6 +17,7 @@ import {Image} from 'astro:assets';
 import Logos from '../components/Logos.astro';
 import News from '../components/News.astro';
 import {Icon} from 'astro-icon/components';
+import {pictureWidths} from '../components/utils';
 
 const t = useTranslations(Astro.currentLocale);
 const p = useLocalePages(Astro.currentLocale);
@@ -50,11 +51,32 @@ const p = useLocalePages(Astro.currentLocale);
                     class="col-span-2 col-start-2 inline-block size-32 rounded-full"
                     src={beilschmidtAvatar}
                     alt="Christian Beilschmidt"
+                    widths={pictureWidths()}
                 />
-                <Image class="col-span-2 inline-block size-32 rounded-full" src={droennerAvatar} alt="Johannes Drönner" />
-                <Image class="col-span-2 inline-block size-32 rounded-full" src={mattigAvatar} alt="Michael Mattig" />
-                <Image class="col-span-2 inline-block size-32 rounded-full" src={schweitzerAvatar} alt="Philip Schweitzer" />
-                <Image class="col-span-2 inline-block size-32 rounded-full" src={seegerAvatar} alt="Bernhard Seeger" />
+                <Image
+                    class="col-span-2 inline-block size-32 rounded-full"
+                    src={droennerAvatar}
+                    alt="Johannes Drönner"
+                    widths={pictureWidths()}
+                />
+                <Image
+                    class="col-span-2 inline-block size-32 rounded-full"
+                    src={mattigAvatar}
+                    alt="Michael Mattig"
+                    widths={pictureWidths()}
+                />
+                <Image
+                    class="col-span-2 inline-block size-32 rounded-full"
+                    src={schweitzerAvatar}
+                    alt="Philip Schweitzer"
+                    widths={pictureWidths()}
+                />
+                <Image
+                    class="col-span-2 inline-block size-32 rounded-full"
+                    src={seegerAvatar}
+                    alt="Bernhard Seeger"
+                    widths={pictureWidths()}
+                />
             </div>
             <div class="w-full">
                 <h2 class="text-3xl font-semibold">{t('team.title')}</h2>

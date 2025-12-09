@@ -4,6 +4,7 @@ import {useTranslations} from '../i18n/utils';
 import {Picture} from 'astro:assets';
 import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
+import {pictureWidths} from '../components/utils';
 
 const t = useTranslations(Astro.currentLocale);
 
@@ -62,6 +63,7 @@ function isNotLast<T>(arr: T[], index: number): boolean {
                         <Picture
                             src={reference.data.image}
                             alt={reference.slug}
+                            widths={pictureWidths()}
                             class="float-right mx-auto rounded-xl object-cover pb-4 md:w-1/2 md:pl-4"
                         />
                         <Fragment set:html={reference.rendered?.html} />
