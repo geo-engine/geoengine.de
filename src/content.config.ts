@@ -84,7 +84,6 @@ const data = defineCollection({
 });
 
 const scroller = defineCollection({
-    // loader: glob({pattern: '*.json', base: './src/content/scroller'}),
     type: 'data',
     schema: ({image}) =>
         z.array(
