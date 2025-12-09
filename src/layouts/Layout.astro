@@ -9,13 +9,15 @@ import {useTranslations} from '../i18n/utils';
 interface Props {
     title: string;
     description?: string;
+    noNav?: boolean;
     noHeader?: boolean;
+    noFooter?: boolean;
 }
 
 const currentLocale = Astro.currentLocale;
 const t = useTranslations(currentLocale);
 
-const {title, description = t('header.slogan'), noHeader = false} = Astro.props;
+const {title, description = t('header.slogan'), noHeader = false, noFooter = false, noNav = false} = Astro.props;
 
 const pageTitle = `${title} - Geo Engine`;
 ---
@@ -31,12 +33,16 @@ const pageTitle = `${title} - Geo Engine`;
     </head>
 
     <body>
-        <NavBar />
+        {!noNav && <NavBar />}
         {!noHeader && <PageHeader>{title}</PageHeader>}
         <slot />
-        <div class="bg-black">
-            <Footer />
-        </div>
+        {
+            !noFooter && (
+                <div class="bg-black">
+                    <Footer />
+                </div>
+            )
+        }
         <!-- Preline UI -->
         <script>
             import 'preline/dist/preline.js';

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import {getCollection} from 'astro:content';
 import {Image} from 'astro:assets';
-import {mdExcerpt} from '../components/utils';
+import {mdExcerpt, pictureWidths} from '../components/utils';
 
 const p = useLocalePages(Astro.currentLocale);
 const t = useTranslations(Astro.currentLocale);
@@ -36,6 +36,7 @@ const data = await getCollection('data', (entry) => {
                                 class="rounded-2xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
                                 src={datum.data.exampleImage}
                                 alt={datum.data.title}
+                                widths={pictureWidths()}
                             />
                         </div>
 

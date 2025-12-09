@@ -1,0 +1,67 @@
+---
+import {Picture} from 'astro:assets';
+import {currentLanguage, useTranslations} from '../i18n/utils';
+import Scroller from '../layouts/Scroller.astro';
+import {getEntry} from 'astro:content';
+import {pictureWidths} from '../components/utils';
+import {Icon} from 'astro-icon/components';
+import Logo from '../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
+import {Image} from 'astro:assets';
+
+const pageLang = currentLanguage(Astro.currentLocale);
+const t = useTranslations(pageLang);
+
+const title = `${t('retrospective')} 2025`;
+
+const entry = await getEntry('scroller', '2025');
+const chapters = entry?.data ?? [];
+
+const tt = {
+    de: {
+        subheader: 'Rückblick auf das Jahr 2025',
+        intro: `Das Jahr 2025 hat für uns spannende Projekte, technologische Fortschritte und einen guten Austausch gebracht.`,
+        scroll: 'Zum Beginnen nach unten scrollen',
+        outro: 'Regt eines dieser Themen bei euch eine Projektidee an oder wollt ihr Details zu einem Punkt hören?<br>Dann <a href="/kontakt" target="_blank">meldet euch gerne bei uns</a>!',
+        website: 'Besucht unsere Webseite',
+    },
+    en: {
+        subheader: '2025 Year in Review',
+        intro: `The year 2025 has brought us exciting projects, technological advancements, and great collaboration.`,
+        scroll: 'Scroll to begin',
+        outro: 'Do any of these topics spark a project idea for you, or would you like to hear more details about a specific point?<br>Feel free to <a href="/en/contact/" target="_blank">reach out to us</a>!',
+        website: 'Visit Our Website',
+    },
+}[pageLang];
+---
+
+<Scroller title={title} description={title} chapters={chapters}>
+    <div id="header">
+        <h1><Image src={Logo} format="svg" alt="Geo Engine" /></h1>
+        <h2>{tt.subheader}</h2>
+        <p set:html={tt.intro} />
+        <p class="smaller">
+            {tt.scroll}
+        </p>
+        <p class="swipe"><br /><Icon name="mdi:gesture-swipe-down" class="animate-bounce" size="4rem" /></p>
+    </div>
+
+    <div id="features">
+        {
+            chapters.map((chapter, idx) => (
+                <div class="step" data-step={idx}>
+                    <h3>{chapter.title}</h3>
+                    <Picture src={chapter.image} alt={chapter.title} widths={pictureWidths()} />
+                    <p set:html={chapter.description[pageLang]} />
+                </div>
+            ))
+        }
+    </div>
+
+    <div id="footer">
+        <p set:html={tt.outro} />
+        <p>© 2025 Geo Engine GmbH</p>
+        <p>
+            <a href="https://geoengine.de" target="_blank">{tt.website}</a>
+        </p>
+    </div>
+</Scroller>

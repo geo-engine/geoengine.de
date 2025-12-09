@@ -14,24 +14,26 @@
         "@fontsource/poppins": "^5.2.7",
         "@jop-software/astro-cookieconsent": "^3.0.1",
         "@tailwindcss/vite": "^4.1.17",
-        "astro": "^5.15.5",
+        "astro": "^5.16.4",
         "astro-icon": "^1.1.5",
         "astro-pagefind": "^1.8.5",
+        "maplibre-gl": "^5.14.0",
         "preline": "^3.2.3",
-        "sass": "^1.94.0",
+        "sass": "^1.95.0",
+        "scrollama": "^3.2.0",
         "tailwindcss": "^4.1.17",
         "vanilla-cookieconsent": "^3.1.0"
     },
     "devDependencies": {
         "@iconify-json/gis": "^1.2.5",
         "@iconify-json/mdi": "^1.2.3",
-        "@typescript-eslint/eslint-plugin": "^8.46.4",
-        "@typescript-eslint/parser": "^8.46.4",
+        "@typescript-eslint/eslint-plugin": "^8.49.0",
+        "@typescript-eslint/parser": "^8.49.0",
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-astro": "^1.5.0",
-        "prettier": "^3.6.2",
+        "prettier": "^3.7.4",
         "prettier-plugin-astro": "^0.14.1",
-        "prettier-plugin-tailwindcss": "^0.7.1"
+        "prettier-plugin-tailwindcss": "^0.7.2"
     }
 }

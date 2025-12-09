@@ -1,0 +1,111 @@
+---
+import 'maplibre-gl/dist/maplibre-gl.css';
+import '../styles/scroller.css';
+
+import {useTranslations} from '../i18n/utils';
+import type {InferEntrySchema} from 'astro:content';
+
+interface Props {
+    title: string;
+    description?: string;
+    chapters: InferEntrySchema<'scroller'>;
+}
+
+const currentLocale = Astro.currentLocale;
+const t = useTranslations(currentLocale);
+
+const {title, description = t('header.slogan'), chapters} = Astro.props;
+
+if (!chapters) {
+    throw new Error('Must define `chapters` variable');
+}
+
+const pageTitle = `${title} - Geo Engine`;
+---
+
+<html lang={currentLocale}>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <title>{pageTitle}</title>
+    </head>
+
+    <div id="chapters" data-chapters={JSON.stringify(chapters)}></div>
+
+    <script>
+        import maplibregl from 'maplibre-gl';
+        import scrollama from 'scrollama';
+
+        const div = document.getElementById('chapters');
+        const property = div?.dataset.chapters;
+
+        const chapters = JSON.parse(property ?? '[]');
+
+        // --- 1. INITIALIZE MAP ---
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: {
+                version: 8,
+                sources: {
+                    'google-satellite': {
+                        type: 'raster',
+                        tiles: ['https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'],
+                        tileSize: 256,
+                        attribution: '&copy; Google Satellite',
+                    },
+                },
+                layers: [{id: 'google-layer', type: 'raster', source: 'google-satellite'}],
+            },
+            center: chapters[0].location.center,
+            zoom: chapters[0].location.zoom,
+            pitch: chapters[0].location.pitch,
+            bearing: chapters[0].location.bearing,
+            interactive: false,
+        });
+
+        // --- 2. SCROLL INTERACTION ---
+        const scroller = scrollama();
+
+        map.on('load', function () {
+            scroller
+                .setup({
+                    step: '.step',
+                    offset: 0.5, // Trigger slightly below middle
+                    debug: false,
+                })
+                .onStepEnter((response) => {
+                    const chapter = chapters[response.index];
+
+                    // Highlight active step
+                    document.querySelectorAll('.step').forEach((el) => el.classList.remove('active'));
+                    response.element.classList.add('active');
+
+                    // Fly to location
+                    map.flyTo({
+                        center: chapter.location.center,
+                        zoom: chapter.location.zoom,
+                        pitch: chapter.location.pitch,
+                        bearing: chapter.location.bearing,
+                        essential: true,
+                        speed: 0.6, // Smooth cinematic speed
+                        curve: 1.2,
+                    });
+                });
+        });
+
+        window.addEventListener('resize', scroller.resize);
+    </script>
+
+    <body>
+        <div id="map"></div>
+
+        <div id="story">
+            <slot />
+        </div>
+    </body>
+
+
+</html>

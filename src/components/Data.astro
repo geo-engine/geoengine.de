@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import {useLocalePages, useTranslations, type LocaleString} from '../i18n/utils';
 import type {DataEntryMap} from 'astro:content';
-import {mdExcerpt} from './utils';
+import {mdExcerpt, pictureWidths} from './utils';
 
 interface Props {
     datum: DataEntryMap['data'];
@@ -43,7 +43,7 @@ const t = useTranslations(lang);
 
 <Layout title={datum.title} description={mdExcerpt(pageBody, 200)}>
     <Section>
-        <Picture class="w-full rounded-xl object-cover" src={datum.exampleImage} alt={datum.title} />
+        <Picture class="w-full rounded-xl object-cover" src={datum.exampleImage} alt={datum.title} widths={pictureWidths()} />
         <div class="text-lg"><slot /></div>
     </Section>
     <Section bg="green" box>
@@ -68,7 +68,7 @@ const t = useTranslations(lang);
         <p>{datum.method}</p>
         <h4 class="mt-4 text-lg font-semibold">{t('data.quality')}</h4>
         <p>{datum.quality}</p>
-        {datum.qualityImage && <Picture src={datum.qualityImage} alt={t('data.quality')} />}
+        {datum.qualityImage && <Picture src={datum.qualityImage} alt={t('data.quality')} widths={pictureWidths()} />}
         <div class="mt-4">
             <h4 class="text-lg font-semibold">{t('data.properties')}</h4>
             <table class="border-main-lightgreen mt-4 w-full border-2">

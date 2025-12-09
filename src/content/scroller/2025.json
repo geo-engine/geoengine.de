@@ -1,0 +1,131 @@
+[
+    {
+        "id": "ai4wildlive",
+        "title": "AI4WildLIVE Phase II",
+        "image": "../../images/retrospective/2025/AI4WildLIVE.png",
+        "description": {
+            "de": "Wir haben mit der Entwicklung des WildLIVE-GIS in Phase II von AI4WildLIVE begonnen. Ein zentrales Ziel ist die Etablierung eines Analyse-Tools, das das WildLIVE-Portal von Senckenberg mit der Geo Engine verbindet.",
+            "en": "We started developing the WildLIVE-GIS in Phase II of AI4WildLIVE. A central goal is establishing an analysis tool that connects the Senckenberg WildLIVE portal with the Geo Engine."
+        },
+        "location": {
+            "center": [8.6821, 50.1109],
+            "zoom": 10,
+            "pitch": 30,
+            "bearing": 15
+        },
+        "date": "Januar 2025"
+    },
+    {
+        "id": "circular-valley",
+        "title": "Circular Valley Convention 2025",
+        "image": "../../images/posts/circular-valley-2025.jpg",
+        "description": {
+            "de": "Bei der Circular Valley Convention 2025 haben wir unsere Lösungen für datengetriebene Entscheidungen vorgestellt und diskutiert, wie man Nachhaltigkeit und Effizienz vereinen kann.",
+            "en": "At the Circular Valley Convention 2025, we presented our solutions for data-driven decisions and discussed how to combine sustainability and efficiency."
+        },
+        "location": {
+            "center": [6.7735, 51.2277],
+            "zoom": 11,
+            "pitch": 50,
+            "bearing": 45
+        },
+        "date": "März 2025"
+    },
+    {
+        "id": "ad-astra",
+        "title": "Ad Astra Summit",
+        "image": "../../images/retrospective/2025/Ad Astra Summit.jpg",
+        "description": {
+            "de": "Beim Ad Astra Summit haben wir gezeigt, wie sich Geodaten effizient für ESG-Reporting und automatisierte Analyseprozesse nutzen lassen. ",
+            "en": "At the Ad Astra Summit, we demonstrated how geodata can be used efficiently for ESG reporting and automated analysis processes."
+        },
+        "location": {
+            "center": [8.6512, 49.8728],
+            "zoom": 13,
+            "pitch": 20,
+            "bearing": 90
+        },
+        "date": "April 2025"
+    },
+    {
+        "id": "living-planet",
+        "title": "Living Planet Symposium (LPS)",
+        "image": "../../images/retrospective/2025/Living Planet Symposium.jpg",
+        "description": {
+            "de": "Beim Living Planet Symposium (LPS) haben wir unsere neuesten Arbeiten in zwei Vorträgen vorgestellt: zum einen über die deutsche EnMap-Mission und das CropHype-Projekt zur Feldfruchterkennung, zum anderen darüber, wie wir Machine-Learning-Modelle mit der Geo Engine operationalisieren. ",
+            "en": "At the Living Planet Symposium (LPS), we presented our latest work in two talks: one on the German EnMap mission and the CropHype project for crop detection, and the other on how we operationalize machine learning models with the Geo Engine."
+        },
+        "location": {
+            "center": [16.4138, 48.2163],
+            "zoom": 14,
+            "pitch": 60,
+            "bearing": 120
+        },
+        "date": "Juni 2025"
+    },
+    {
+        "id": "baumarten",
+        "title": "Dominant Tree Types in Germany",
+        "image": "../../images/posts/dominant-tree-types/image0.png",
+        "description": {
+            "de": "Mit der Baumarten-Klassifikation haben wir ein neues Datenprodukt veröffentlicht, das präzise Einblicke in die Waldzusammensetzung in Deutschland bietet.<br><br><a href=\"/posts/dominant-tree-types/\" target=\"_blank\">Zum Artikel</a>",
+            "en": "With the tree species classification, we released a new data product offering precise insights into forest composition in Germany.<br><br><a href=\"/en/posts/dominant-tree-types/\" target=\"_blank\">Read the article</a>"
+        },
+        "location": {
+            "center": [8.7562, 50.809],
+            "zoom": 12,
+            "pitch": 35,
+            "bearing": 75
+        },
+        "date": "13. Juni 2025"
+    },
+    {
+        "id": "gfoe-wuerzburg",
+        "title": "GfÖ-Jahrestagung 2025",
+        "image": "../../images/retrospective/2025/GfÖ.png",
+        "description": {
+            "de": "Bei der GfÖ-Jahrestagung 2025 in Würzburg veranstalteten wir einen Hands-on-Workshop (\"VAT & Geo Engine 4 ML\") zur Kombination von Biodiversitätsdaten mit Fernerkundung und maschinellem Lernen, bei dem wir Machine-Learning-Workflows im Rahmen von NFDI4Biodiversity gezeigt haben.",
+            "en": "At the GfÖ Annual Meeting 2025 in Würzburg, we hosted a hands-on workshop (\"VAT & Geo Engine 4 ML\") on combining biodiversity data with remote sensing and machine learning, showcasing machine learning workflows within the NFDI4Biodiversity framework."
+        },
+        "location": {
+            "center": [9.9534, 49.7913],
+            "zoom": 10,
+            "pitch": 45,
+            "bearing": 30
+        },
+        "date": "September 2025"
+    },
+    {
+        "id": "push-hessen",
+        "title": "push! Hessen",
+        "image": "../../images/retrospective/2025/push.png",
+        "description": {
+            "de": "Wir haben eine Förderung im push!-Hessen-Programm gewonnen und freuen uns, unsere Lösungen voranzubringen und Unternehmen bei ihren Nachhaltigkeitsberichtspflichten im Bereich Biodiversität zu unterstützen.",
+            "en": "We won funding in the push! Hessen program and look forward to advancing our solutions and supporting companies with their sustainability reporting obligations in the field of biodiversity."
+        },
+        "location": {
+            "center": [8.2398, 50.0782],
+            "zoom": 11,
+            "pitch": 25,
+            "bearing": 60
+        },
+        "date": "September 2025"
+    },
+    {
+        "id": "esa-bic",
+        "title": "ESA BIC Incubation",
+        "image": "../../images/posts/esa-bic-2025.png",
+        "description": {
+            "de": "Bei ESA BIC haben wir unsere Inkubationszeit erfolgreich abgeschlossen und dadurch neue Bausteine in unserer Infrastruktur geschaffen: eine Random-Forest-Pipeline, einen flexiblen ML-Operator und Modell-Blaupausen.<br><br><a href=\"https://youtu.be/1186CBUKm8Y\" target=\"_blank\" rel=\"noopener noreferrer\">Zum Video</a>",
+            "en": "We successfully completed our incubation period at ESA BIC, creating new building blocks in our infrastructure: a Random Forest pipeline, a flexible ML operator, and model blueprints.<br><br><a href=\"https://youtu.be/1186CBUKm8Y\" target=\"_blank\" rel=\"noopener noreferrer\">Watch the video</a>"
+        },
+        "video": "https://youtu.be/1186CBUKm8Y",
+        "location": {
+            "center": [8.6209, 49.8722],
+            "zoom": 14,
+            "pitch": 50,
+            "bearing": 150
+        },
+        "date": "15. Oktober 2025"
+    }
+]
