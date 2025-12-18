@@ -1,96 +1,13 @@
 ---
-import {getCollection} from 'astro:content';
-import {asLocale, slugToPostLink, useTranslations} from '../i18n/utils';
-import {Image} from 'astro:assets';
-import {mdExcerpt, pictureWidths} from '../components/utils';
-import Section from '../components/Section.astro';
+import {useTranslations} from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
+import News from '../components/News.astro';
 
 const t = useTranslations(Astro.currentLocale);
-
-const pageLang = Astro.currentLocale;
-
-const pages = await getCollection('posts', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
-    if (lang !== pageLang) {
-        return undefined;
-    }
-    return entry;
-});
-
-pages.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-const paths = pages.map((page) => {
-    const [lang, ...slug] = page.slug.split('/');
-    if (slug.length === 0) {
-        throw new Error(`Empty slug: ${page.slug}`);
-    }
-    return {params: {lang: asLocale(lang), slug: slug.join('/')}, props: page};
-});
-
-const newsItems: Array<{
-    title: string;
-    date: string;
-    image: ImageMetadata;
-    abstract: string;
-    link: string;
-}> = paths.map((page) => {
-    return {
-        title: page.props.data.title,
-        date: page.props.data.date.toLocaleDateString(pageLang, {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        }),
-        image: page.props.data.image,
-        abstract: mdExcerpt(page.props.body, 200),
-        link: slugToPostLink(page.params.lang, page.params.slug),
-    };
-});
 ---
 
 <Layout title={t('news.allPosts')} description={t('news.subtitle')}>
-    <Section>
-        <!-- Title -->
-        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-            <h1 class="text-3xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('news.allPosts')}</h1>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-                {t('news.subtitle')}
-            </p>
-        </div>
-        <!-- End Title -->
-
-        <!-- Grid -->
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Cards -->
-            {
-                newsItems.map((news) => (
-                    <a
-                        class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-                        href={news.link}
-                    >
-                        <Image
-                            class="aspect-video w-full rounded-xl object-cover"
-                            src={news.image}
-                            alt={news.title}
-                            widths={pictureWidths()}
-                        />
-                        <div class="my-6">
-                            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                                {news.title}
-                            </h3>
-                            <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>
-                        </div>
-                        <div class="mt-auto flex items-center gap-x-3">
-                            <div>
-                                <h5 class="text-sm text-gray-800 dark:text-neutral-200">{news.date}</h5>
-                            </div>
-                        </div>
-                    </a>
-                ))
-            }
-            <!-- End Cards -->
-        </div>
-        <!-- End Grid -->
-    </Section>
+    <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <News limit={999} />
+    </div>
 </Layout>
