@@ -32,7 +32,7 @@ const paths = pages
         }
         return {params: {lang: asLocale(lang), slug: slug.join('/')}, props: page};
     })
-    .slice(0, limit === undefined ? 3 : limit === null ? pages.length : limit); // Limit posts based on prop
+    .slice(0, limit); // Limit posts based on prop
 
 const newsItems: Array<{
     title: string;
