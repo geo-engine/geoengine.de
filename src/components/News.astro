@@ -1,11 +1,18 @@
 ---
 import {getCollection} from 'astro:content';
-import {asLocale, slugToPostLink, useTranslations} from '../i18n/utils';
+import {asLocale, slugToPostLink, useTranslations, useLocalePages} from '../i18n/utils';
 import {Image} from 'astro:assets';
 import {mdExcerpt, pictureWidths} from './utils';
 
+interface Props {
+    limit: number;
+}
+
+const {limit} = Astro.props;
+
 const pageLang = Astro.currentLocale;
 const t = useTranslations(pageLang);
+const p = useLocalePages(pageLang);
 
 const pages = await getCollection('posts', (entry) => {
     const [lang, ...slug] = entry.slug.split('/');
@@ -25,7 +32,7 @@ const paths = pages
         }
         return {params: {lang: asLocale(lang), slug: slug.join('/')}, props: page};
     })
-    .slice(0, 3); // Limit to 3 posts
+    .slice(0, limit); // Limit posts based on prop
 
 const newsItems: Array<{
     title: string;
@@ -48,43 +55,32 @@ const newsItems: Array<{
 });
 ---
 
-<!-- Card Blog -->
-<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    <!-- Title -->
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('news.title')}</h2>
-        <p class="mt-1 text-gray-600 dark:text-neutral-400">
-            {t('news.subtitle')}
-        </p>
-    </div>
-    <!-- End Title -->
-
-    <!-- Grid -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Card -->
-        {
-            newsItems.map((news) => (
-                <a
-                    class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-                    href={news.link}
-                >
-                    <Image class="aspect-video w-full rounded-xl object-cover" src={news.image} alt={news.title} widths={pictureWidths()} />
-                    <div class="my-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">{news.title}</h3>
-                        <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>
+<!-- Card Blog --><!-- Grid -->
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Card -->
+    {
+        newsItems.map((news) => (
+            <a
+                class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+                href={news.link}
+            >
+                <Image class="aspect-video w-full rounded-xl object-cover" src={news.image} alt={news.title} widths={pictureWidths()} />
+                <div class="my-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">{news.title}</h3>
+                    <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>
+                </div>
+                <div class="mt-auto flex items-center gap-x-3">
+                    <div>
+                        <h5 class="text-sm text-gray-800 dark:text-neutral-200">{news.date}</h5>
                     </div>
-                    <div class="mt-auto flex items-center gap-x-3">
-                        <div>
-                            <h5 class="text-sm text-gray-800 dark:text-neutral-200">{news.date}</h5>
-                        </div>
-                    </div>
-                </a>
-            ))
-        }
-        <!-- End Card -->
+                </div>
+            </a>
+        ))
+    }
+    <!-- End Card -->
 
-        <!-- Card -->
-        <!-- <a
+    <!-- Card -->
+    <!-- <a
             class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
             href="#"
         >
@@ -114,10 +110,10 @@ const newsItems: Array<{
                 </div>
             </div>
         </a> -->
-        <!-- End Card -->
+    <!-- End Card -->
 
-        <!-- Card -->
-        <!-- <a
+    <!-- Card -->
+    <!-- <a
             class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
             href="#"
         >
@@ -145,31 +141,11 @@ const newsItems: Array<{
                 </div>
             </div>
         </a> -->
-        <!-- End Card -->
-    </div>
-    <!-- End Grid -->
-
-    <!-- Card -->
-    <!-- <div class="mt-12 text-center">
-        <a
-            class="text-main-green dark:text-main-green inline-flex items-center gap-x-1 rounded-full border border-gray-200 bg-white px-4 py-3 text-sm font-medium shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-            href="#"
-        >
-            Read more
-            <svg
-                class="size-4 shrink-0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
-            >
-        </a>
-    </div> -->
     <!-- End Card -->
 </div>
+<!-- End Grid -->
+
+<!-- View All Posts Link -->
+
+<!-- End View All Posts Link -->
 <!-- End Card Blog -->

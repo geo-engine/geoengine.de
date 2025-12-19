@@ -1,0 +1,13 @@
+---
+import {useTranslations} from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+import News from '../components/News.astro';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout title={t('news.allPosts')} description={t('news.subtitle')}>
+    <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <News limit={999} />
+    </div>
+</Layout>

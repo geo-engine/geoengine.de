@@ -63,8 +63,11 @@ export const translations = {
         'references.title': 'Referenzen & Beispiele',
         'references.intro':
             'Hier finden Sie einige Beispiele für unsere Arbeit. Diese Projekte zeigen, wie wir Geodaten und Zeitreihenverarbeitung in verschiedenen Anwendungsfällen einsetzen.',
+        'news.nav': 'Neuigkeiten',
         'news.title': 'Neueste Beiträge',
         'news.subtitle': 'Bleiben Sie auf dem Laufenden mit unseren neuesten Nachrichten und Updates.',
+        'news.allPosts': 'Alle Beiträge',
+        'news.viewAll': 'Alle Beiträge anzeigen',
         'footer.info': 'Informationen',
         'footer.documentation': 'Dokumentation',
         'footer.privacyPolicy': 'Datenschutzerklärung',
@@ -146,8 +149,11 @@ export const translations = {
         'references.title': 'References & Examples',
         'references.intro':
             'Here you will find some examples of our work. These projects show how we use geodata and time series processing in various applications.',
+        'news.nav': 'News',
         'news.title': 'Latest Posts',
         'news.subtitle': 'Stay up to date with our latest news and updates.',
+        'news.allPosts': 'All Posts',
+        'news.viewAll': 'View all posts',
         'footer.info': 'Information',
         'footer.documentation': 'Documentation',
         'footer.privacyPolicy': 'Privacy Policy',
@@ -185,6 +191,7 @@ export const pages = {
         privacyPolicy: '/datenschutzerklaerung/',
         references: '/beispiele-referenzen/',
         services: '/services/',
+        news: '/neuigkeiten/',
         404: '/404/',
     },
     en: {
@@ -197,6 +204,7 @@ export const pages = {
         privacyPolicy: '/en/privacy-policy/',
         references: '/en/examples-references/',
         services: '/en/services/',
+        news: '/en/news/',
         404: '/en/404/',
     },
 } as const;
