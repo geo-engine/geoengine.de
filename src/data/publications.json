@@ -1,5 +1,12 @@
 [
     {
+        "authors": "Christian Beilschmidt, Dominik Brandenstein, Johannes Drönner, Michael Mattig, Bernhard Seeger",
+        "title": "Integrating AI into Research Data Workflows: Leveraging ONNX Models within Geo Engine for Analyzing Biodiversity Data",
+        "url": "https://doi.org/10.5281/zenodo.16736158",
+        "source": "2nd Conference on Research Data Infrastructure (CoRDI) 2025",
+        "id": 41
+    },
+    {
         "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "EO Workflows with ML Operators: Operationalizing ML application with Geo Engine’s processing engine",
         "url": "https://lps25.esa.int/lps25-presentations/presentations/1283/_1283.pdf",
