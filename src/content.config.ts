@@ -1,5 +1,6 @@
 // 1. Import utilities from `astro:content`
-import {defineCollection, z, reference} from 'astro:content';
+import {defineCollection, reference} from 'astro:content';
+import {z} from 'astro/zod';
 
 // 2. Import loader(s)
 import {glob, file} from 'astro/loaders';
@@ -12,13 +13,13 @@ const publications = defineCollection({
             id: z.number(), // mandatory
             authors: z.string().nonempty(),
             title: z.string().nonempty(),
-            url: z.string().url(),
+            url: z.url().nonempty(),
             source: z.string().nonempty(),
         }),
 });
 
 const posts = defineCollection({
-    // loader: glob({pattern: '{de,en}/*.md', base: './src/posts'}),
+    loader: glob({pattern: '{de,en}/*.md', base: './src/content/posts'}),
     schema: ({image}) =>
         z.object({
             title: z.string().nonempty(),
@@ -28,7 +29,7 @@ const posts = defineCollection({
 });
 
 const references = defineCollection({
-    // loader: glob({pattern: '{de,en}/*.md', base: './src/posts'}),
+    loader: glob({pattern: '{de,en}/*.md', base: './src/content/references'}),
     schema: ({image}) =>
         z.object({
             title: z.string().nonempty(),
@@ -37,7 +38,7 @@ const references = defineCollection({
 });
 
 const services = defineCollection({
-    // loader: glob({pattern: '{de,en}/*.md', base: './src/services'}),
+    loader: glob({pattern: '{de,en}/*.md', base: './src/content/services'}),
     schema: () =>
         z.object({
             title: z.string().nonempty().max(100),
@@ -65,6 +66,7 @@ const cookies = defineCollection({
 });
 
 const data = defineCollection({
+    loader: glob({pattern: '{de,en}/*.md', base: './src/content/data'}),
     schema: ({image}) =>
         z.object({
             title: z.string().nonempty().max(100),
@@ -84,7 +86,7 @@ const data = defineCollection({
 });
 
 const scroller = defineCollection({
-    type: 'data',
+    loader: glob({pattern: '*.json', base: './src/content/scroller'}),
     schema: ({image}) =>
         z.array(
             z.object({
@@ -96,8 +98,8 @@ const scroller = defineCollection({
                     en: z.string().nonempty(),
                 }),
                 location: z.object({
-                    center: z.array(z.number().finite()).length(2),
-                    zoom: z.number().finite().positive(),
+                    center: z.array(z.number()).length(2),
+                    zoom: z.number().positive(),
                     pitch: z.number().int().positive(),
                     bearing: z.number().int(),
                 }),

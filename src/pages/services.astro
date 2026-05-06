@@ -13,7 +13,7 @@ const t = useTranslations(Astro.currentLocale);
 const pageLang = Astro.currentLocale;
 
 const services = await getCollection('services', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
+    const [lang, ...slug] = entry.id.split('/');
     if (lang !== pageLang) {
         return undefined;
     }
@@ -40,7 +40,7 @@ for (const referenceRef of new Set(services.flatMap((service) => service.data.re
     {
         services.map((service) => (
             <>
-                <Section id={service.slug}>
+                <Section id={service.id}>
                     <h2 class="my-4 text-2xl font-semibold">{service.data.title}</h2>
                     <p>{service.body}</p>
                 </Section>
@@ -61,7 +61,7 @@ for (const referenceRef of new Set(services.flatMap((service) => service.data.re
                         {service.data.references
                             .map((referenceRef) => references.get(referenceRef))
                             .map((reference) => (
-                                <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${reference.slug}`}>
+                                <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${reference.id}`}>
                                     <Image
                                         class="size-40 w-full rounded-lg bg-gray-100 object-cover dark:bg-neutral-800"
                                         src={reference.data.image}

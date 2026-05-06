@@ -11,7 +11,7 @@ const t = useTranslations(Astro.currentLocale);
 const pageLang = Astro.currentLocale;
 
 const references = await getCollection('references', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
+    const [lang, ...slug] = entry.id.split('/');
     if (lang !== pageLang) {
         return undefined;
     }
@@ -57,12 +57,12 @@ function isNotLast<T>(arr: T[], index: number): boolean {
     {
         references.map((reference, i) => (
             <>
-                <Section id={reference.slug}>
+                <Section id={reference.id}>
                     <h2 class="mb-4 text-2xl font-semibold">{reference.data.title}</h2>
                     <div class="reference">
                         <Picture
                             src={reference.data.image}
-                            alt={reference.slug}
+                            alt={reference.id}
                             widths={pictureWidths()}
                             class="float-right mx-auto rounded-xl object-cover pb-4 md:w-1/2 md:pl-4"
                         />

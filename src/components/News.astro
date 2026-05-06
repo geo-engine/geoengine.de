@@ -15,7 +15,7 @@ const t = useTranslations(pageLang);
 const p = useLocalePages(pageLang);
 
 const pages = await getCollection('posts', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
+    const [lang, ...slug] = entry.id.split('/');
     if (lang !== pageLang) {
         return undefined;
     }
@@ -26,9 +26,9 @@ pages.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const paths = pages
     .map((page) => {
-        const [lang, ...slug] = page.slug.split('/');
+        const [lang, ...slug] = page.id.split('/');
         if (slug.length === 0) {
-            throw new Error(`Empty slug: ${page.slug}`);
+            throw new Error(`Empty slug: ${page.id}`);
         }
         return {params: {lang: asLocale(lang), slug: slug.join('/')}, props: page};
     })

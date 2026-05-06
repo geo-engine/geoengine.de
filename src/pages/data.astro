@@ -11,7 +11,7 @@ const t = useTranslations(Astro.currentLocale);
 const pageLang = Astro.currentLocale;
 
 const data = await getCollection('data', (entry) => {
-    const [lang, ..._slug] = entry.slug.split('/');
+    const [lang, ..._slug] = entry.id.split('/');
     if (lang !== pageLang) {
         return undefined;
     }
@@ -30,7 +30,7 @@ const data = await getCollection('data', (entry) => {
             <!-- Card -->
             {
                 data.map((datum) => (
-                    <a class="group flex flex-col focus:outline-hidden" href={slugToDataLink(datum.slug)}>
+                    <a class="group flex flex-col focus:outline-hidden" href={slugToDataLink(datum.id)}>
                         <div class="aspect-w-16 aspect-h-12 overflow-hidden rounded-2xl bg-gray-100 dark:bg-neutral-800">
                             <Image
                                 class="rounded-2xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
