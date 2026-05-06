@@ -1,4 +1,4 @@
-Wir sind ein eingespieltes Team, das Kompetenzen aus Geographie und Informatik einbringt, um Ihre Probleme fachlich korrekt und effizient zu lösen. Unser Beraterstab unterstützt uns dabei gezielt mit Expertise aus der Umwelt- und Klimaforschung, Fernerkundung, Modellierung und dem Internet of Things.
+Wir sind ein eingespieltes Team, das Kompetenzen aus Geographie und Informatik einbringt, um Ihre Probleme fachlich korrekt und effizient zu lösen. Unser Beirat unterstützt uns dabei gezielt mit Expertise aus der Umwelt- und Klimaforschung, Fernerkundung, Modellierung und dem Internet of Things.
 
 Die Vision des Geo Engine-Teams ist Geodaten und Zeitreihen unkompliziert in Analysen und Geschäftsprozessen einzubringen. Wir setzen dabei unsere selbstentwickelte Plattform **Geo Engine** ein, die vielfältige Datenquellen anbindet, robuste Prozessierungen liefert und viele Schnittstellen bereitstellt. Die Anwendungsfälle in Unternehmen sind damit vielfältig: als Web-UI und via Python-Bibliothek für Data Scientists, als API für Prozessintegration und als Reports für Entscheidungsträger.
 
