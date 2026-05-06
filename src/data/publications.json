@@ -1,5 +1,19 @@
 [
     {
+        "authors": "Seonyoung Park, Minji Koh, Haedam Baek, Minsu Cho, Byung-gil Kim, Zeyd Boukhers, Gyunam Park, Christian Beilschmidt, Johannes Drönner",
+        "title": "AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making",
+        "url": "https://doi.org/10.5194/egusphere-egu26-16158",
+        "source": "EGU General Assembly 2026, Vienna, Austria, 3–8 May 2026, EGU26-16158",
+        "id": 43
+    },
+    {
+        "authors": "Christian Beilschmidt, Johannes Drönner",
+        "title": "ML mit Satellitenbildern in der Geo Engine: Eine Operationalisierung von ML-Diensten",
+        "url": "https://pretalx.com/fossgis2026/talk/LKYU7Q/",
+        "source": "FOSSGIS 2026",
+        "id": 42
+    },
+    {
         "authors": "Christian Beilschmidt, Dominik Brandenstein, Johannes Drönner, Michael Mattig, Bernhard Seeger",
         "title": "Integrating AI into Research Data Workflows: Leveraging ONNX Models within Geo Engine for Analyzing Biodiversity Data",
         "url": "https://doi.org/10.5281/zenodo.16736158",
@@ -107,14 +121,14 @@
     {
         "authors": "Christian Beilschmidt, Johannes Drönner",
         "title": "Workflows in Geo Engine: Von der UI zum Python-Notebook und zurück",
-        "url": "https://av.tib.eu/media/56783",
+        "url": "https://doi.org/10.5446/56783",
         "source": "FOSSGIS 2022",
         "id": 26
     },
     {
         "authors": "Christian Beilschmidt, Johannes Drönner",
         "title": "Geoanwendungen und-verarbeitung in Rust: ein Einstieg in die GeoRust-Community",
-        "url": "https://av.tib.eu/media/56740",
+        "url": "https://doi.org/10.5446/56740",
         "source": "FOSSGIS 2022",
         "id": 25
     },
@@ -149,7 +163,7 @@
     {
         "authors": "Christian Beilschmidt, Johannes Drönner, Michael Mattig",
         "title": "Geo Engine: Explorative Datenanalyse mit raum-zeitlicher Workflowverarbeitung",
-        "url": "https://av.tib.eu/media/53871",
+        "url": "https://doi.org/10.5446/53871",
         "source": "FOSSGIS 2021",
         "id": 20
     },
