@@ -46,7 +46,7 @@ export const translations = {
             'Wir sind ein interdisziplinäres Team, das Expertise aus Informatik, Geographie vereint und viel Erfahrung in Datenverarbeitung mitbringt.',
         'team.link': 'Lernen Sie uns kennen!',
         'team.leadership': 'Führungsteam',
-        'team.advisors': 'Berater',
+        'team.advisors': 'Beirat',
         'team.publications': 'Publikationen',
         'technology.title': 'Die Geo Engine: Unser offener Technologiestack',
         'technology.text':

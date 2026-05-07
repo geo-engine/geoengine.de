@@ -14,7 +14,6 @@ import mattig from '../images/team/Mattig.png';
 import seeger from '../images/team/Seeger.jpg';
 import schweitzer from '../images/team/Schweitzer.png';
 import bendix from '../images/team/bendix.jpg';
-import koslowski from '../images/team/koslowski.jpeg';
 import kraemer from '../images/team/kraemer.jpeg';
 import meyer from '../images/team/meyer.jpeg';
 import wagner from '../images/team/wagner.jpeg';
@@ -27,7 +26,7 @@ const t = useTranslations(Astro.currentLocale);
 
 const Intro = language === 'de' ? deIntro : enIntro;
 
-const publications = await getCollection('publications');
+const publications = (await getCollection('publications')).sort((a, b) => b.data.id - a.data.id);
 ---
 
 <style>

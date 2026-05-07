@@ -8,7 +8,7 @@ const p = useLocalePages(Astro.currentLocale);
 const pageLang = Astro.currentLocale;
 
 const services = await getCollection('services', (entry) => {
-    const [lang, ...slug] = entry.slug.split('/');
+    const [lang, ...slug] = entry.id.split('/');
     if (lang !== pageLang) {
         return undefined;
     }

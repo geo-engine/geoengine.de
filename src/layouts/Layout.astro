@@ -45,7 +45,18 @@ const pageTitle = `${title} - Geo Engine`;
         }
         <!-- Preline UI -->
         <script>
-            import 'preline/dist/preline.js';
+            import {HSStaticMethods} from 'preline/dist/preline.js';
+
+            // Explicitly calling a method from the import prevents tree-shaking
+            const init = () => {
+                HSStaticMethods.autoInit();
+            };
+
+            // Standard Astro lifecycle event
+            document.addEventListener('astro:page-load', init);
+
+            // Re-init after transitions
+            document.addEventListener('astro:after-swap', init);
         </script>
     </body>
 </html>
