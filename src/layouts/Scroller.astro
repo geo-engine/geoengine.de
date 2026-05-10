@@ -1,6 +1,6 @@
 ---
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '../styles/scroller.css';
+import stylesUrl from '../styles/scroller.css?url';
 
 import {useTranslations} from '../i18n/utils';
 import type {InferEntrySchema} from 'astro:content';
@@ -98,6 +98,8 @@ const pageTitle = `${title} - Geo Engine`;
 
         window.addEventListener('resize', scroller.resize);
     </script>
+
+    <link rel="stylesheet" href={stylesUrl} />
 
     <body>
         <div id="map"></div>
