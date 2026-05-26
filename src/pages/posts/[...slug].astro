@@ -23,4 +23,11 @@ const page = Astro.props;
 const {Content} = await render(page);
 ---
 
-<Post date={page.data.date} title={page.data.title} pageBody={page.body} image={page.data.image} lang={defaultLang}><Content /></Post>
+<Post
+    date={page.data.date}
+    title={page.data.title}
+    pageBody={page.body ?? ''}
+    image={page.data.image}
+    imageAttribution={page.data.imageAttribution}
+    lang={defaultLang}><Content /></Post
+>
