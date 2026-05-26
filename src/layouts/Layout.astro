@@ -34,7 +34,7 @@ const pageTitle = `${title} - Geo Engine`;
 
     <body>
         {!noNav && <NavBar />}
-        {!noHeader && <PageHeader>{title}</PageHeader>}
+        {!noHeader && <PageHeader title={title} />}
         <slot />
         {
             !noFooter && (

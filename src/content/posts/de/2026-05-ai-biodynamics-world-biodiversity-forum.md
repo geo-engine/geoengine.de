@@ -1,7 +1,8 @@
 ---
-title: Vom AI‑BioDynamics‑Kick‑Off zum World Biodiversity Forum 2026
+title: Vom AI-BioDynamics-Kick-Off zum World Biodiversity Forum 2026
 date: 2026-05-18
 image: ../../../images/posts/AI-BioDynamics 2026.jpeg
+imageAttribution: "Foto von Zeyd Boukhers"
 ---
 
 Mit sich entwickelnden Vorschriften wie dem ESRS E4 der EU stehen Unternehmen vor einer großen Herausforderung:

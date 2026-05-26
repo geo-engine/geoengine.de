@@ -7,11 +7,12 @@ interface Props {
     date: Date;
     title: string;
     image: ImageMetadata;
+    imageAttribution?: string;
     lang: 'de' | 'en';
     pageBody: string;
 }
 
-const {date, title, image, lang, pageBody} = Astro.props;
+const {date, title, image, imageAttribution, lang, pageBody} = Astro.props;
 const formattedDate = date.toLocaleString(lang, {
     year: 'numeric',
     month: 'long',
@@ -56,7 +57,16 @@ const pageDescription = pageBody.slice(0, 200) + '…';
 <Layout title={title} description={pageDescription}>
     <Section>
         <div class="mx-auto w-full text-justify">
-            <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
+            <div class="relative">
+                <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
+                {
+                    imageAttribution && (
+                        <p class="absolute right-3 bottom-3 rounded-md bg-black/65 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                            {imageAttribution}
+                        </p>
+                    )
+                }
+            </div>
             <p class="my-8 text-xs text-gray-500 dark:text-neutral-500">
                 {formattedDate}
             </p>

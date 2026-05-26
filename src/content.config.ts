@@ -25,6 +25,7 @@ const posts = defineCollection({
             title: z.string().nonempty(),
             date: z.date(),
             image: image(),
+            imageAttribution: z.string().nonempty().optional(),
         }),
 });
 

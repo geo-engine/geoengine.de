@@ -1,9 +1,19 @@
 ---
 import Section from './Section.astro';
+
+interface Props {
+    title: string;
+}
+
+const {title} = Astro.props;
+
+if (title.includes('\u2011')) {
+    console.warn(`[PageHeader] Title contains non-breaking hyphen (U+2011): ${title}`);
+}
 ---
 
 <Section bg="beach">
     <h2 class="mx-auto my-16 text-3xl font-bold text-white uppercase text-shadow-lg/25 md:my-24 md:text-5xl">
-        <slot />
+        {title}
     </h2>
 </Section>

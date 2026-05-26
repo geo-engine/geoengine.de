@@ -2,6 +2,7 @@
 title: From the AI-BioDynamics Kick-Off to the World Biodiversity Forum 2026
 date: 2026-05-18
 image: ../../../images/posts/AI-BioDynamics 2026.jpeg
+imageAttribution: "Photo by Zeyd Boukhers"
 ---
 
 With evolving regulations like the EU's ESRS E4, companies face a massive challenge:
