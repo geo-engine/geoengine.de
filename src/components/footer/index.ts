@@ -1,5 +1,3 @@
----
 export {default as Footer} from './Footer.astro';
 export {default as FooterGridColumn} from './FooterGridColumn.astro';
 export {default as FooterGridLink} from './FooterGridLink.astro';
----

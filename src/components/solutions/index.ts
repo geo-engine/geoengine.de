@@ -1,5 +1,3 @@
----
 export {default as SolutionTabContent} from './SolutionTabContent.astro';
 export {default as Solutions} from './Solutions.astro';
 export {default as SolutionsTab} from './SolutionTab.astro';
----

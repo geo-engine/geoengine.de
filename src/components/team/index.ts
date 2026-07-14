@@ -1,4 +1,2 @@
----
 export {default as Team} from './team.astro';
 export {default as Person} from './person.astro';
----

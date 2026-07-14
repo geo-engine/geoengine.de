@@ -1,4 +1,2 @@
----
 export {default as Service} from './Service.astro';
 export {default as Services} from './Services.astro';
----

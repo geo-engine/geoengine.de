@@ -1,7 +1,7 @@
 ---
 import {getCollection} from 'astro:content';
 import {useLocalePages, useTranslations} from '../../i18n/utils';
-import {Service} from './index.astro';
+import Service from './Service.astro';
 
 const t = useTranslations(Astro.currentLocale);
 const p = useLocalePages(Astro.currentLocale);
