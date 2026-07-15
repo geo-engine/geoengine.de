@@ -2,7 +2,7 @@
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {currentLanguage, useTranslations, useLocalePages} from '../i18n/utils';
 import {Icon} from 'astro-icon/components';
-import Search from 'astro-pagefind/components/Search';
+import Search from 'astro-pagefind/components/Search.astro';
 
 import Logo from '../images/GeoEngine_Mainlogo_Line_Schutzraum_4c_weiss.svg';
 
@@ -20,6 +20,9 @@ const p = useLocalePages(Astro.currentLocale);
         max-height: 33vh;
         background-color: var(--color-white);
         overflow-y: auto;
+    }
+    :global(pagefind-searchbox) {
+        text-align: right !important;
     }
 </style>
 
@@ -136,7 +139,7 @@ const p = useLocalePages(Astro.currentLocale);
 
                     <!-- Button Group -->
                     <div
-                        class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-start-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
+                        class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-inset-s-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
                     >
                         <button
                             class="flex w-full cursor-pointer items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
@@ -158,8 +161,7 @@ const p = useLocalePages(Astro.currentLocale);
         </div>
         <!-- End Collapse -->
     </nav>
+    <aside class="pagefind-ui absolute top-full right-0 left-0 hidden">
+        <Search className="fixed w-full" searchboxOptions={{showImages: false}} />
+    </aside>
 </header>
-
-<aside class="pagefind-ui hidden">
-    <Search id="search" className="fixed w-full" uiOptions={{showImages: false}} />
-</aside>

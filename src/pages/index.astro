@@ -11,8 +11,8 @@ import geoEngineArchitecture from '../images/geoengine-architecture.svg';
 
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
-import {Solutions} from '../components/solutions/index.astro';
-import {Services} from '../components/services/index.astro';
+import {Solutions} from '../components/solutions';
+import {Services} from '../components/services';
 import {Image} from 'astro:assets';
 import Logos from '../components/Logos.astro';
 import News from '../components/News.astro';
@@ -80,7 +80,7 @@ const p = useLocalePages(Astro.currentLocale);
             </div>
             <div class="w-full">
                 <h2 class="text-3xl font-semibold">{t('team.title')}</h2>
-                <hr class="border-main-green my-8 w-16 border-1" />
+                <hr class="border-main-green my-8 w-16 border" />
                 <p class="mx-auto pb-8">{t('team.shortSlogan')}</p>
                 <p class="mx-auto">
                     <a

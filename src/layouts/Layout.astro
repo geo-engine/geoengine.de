@@ -3,7 +3,7 @@ import '../styles/global.css';
 
 import NavBar from '../components/NavBar.astro';
 import PageHeader from '../components/PageHeader.astro';
-import {Footer} from '../components/footer/index.astro';
+import {Footer} from '../components/footer';
 import {useTranslations} from '../i18n/utils';
 
 interface Props {
@@ -45,12 +45,15 @@ const pageTitle = `${title} - Geo Engine`;
         }
         <!-- Preline UI -->
         <script>
-            import {HSStaticMethods} from 'preline/dist/preline.js';
+            import {HSStaticMethods} from 'preline';
 
             // Explicitly calling a method from the import prevents tree-shaking
             const init = () => {
                 HSStaticMethods.autoInit();
             };
+
+            // Run once on initial load.
+            init();
 
             // Standard Astro lifecycle event
             document.addEventListener('astro:page-load', init);
