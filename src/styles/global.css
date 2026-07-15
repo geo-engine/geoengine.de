@@ -14,6 +14,8 @@
 
     --font-sans: 'Poppins', sans-serif;
     --font-serif: var(--font-sans); /* no serif font */
+
+    --max-w-85rem: 85rem; /* prevent Tailwind CSS IntelliSense from throwing `suggestCanonicalClasses` warning */
 }
 
 /* disable dark theme */
