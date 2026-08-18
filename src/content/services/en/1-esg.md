@@ -8,7 +8,7 @@ benefits:
         'Benefit from our expertise in processing biodiversity data and time series.',
         'Get customized indicators tailored to your questions.',
     ]
-references: ['1-respect', '9-eurocrops', '2-ebv-analyzer']
+references: ['en/1-respect', 'en/9-eurocrops', 'en/2-ebv-analyzer']
 ---
 
 We offer you the possibility to calculate and provide ESG indicators.

@@ -10,7 +10,7 @@ benefits:
         'We bring connectors to external data providers, e.g. STAC.',
         'Connected external data can always be used up-to-date.',
     ]
-references: ['2-ebv-analyzer', '1-respect', '4-crophype']
+references: ['en/2-ebv-analyzer', 'en/1-respect', 'en/4-crophype']
 ---
 
 We integrate and combine your internal geodata for you and provide you with access to external data pools. We realize this in the form of a data mesh, so that the respective specialist teams can access a wide variety of data sources in a uniform and transparent manner.

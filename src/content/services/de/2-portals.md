@@ -8,7 +8,7 @@ benefits:
         'Wir haben langjährige Erfahrung in der Erstellung interaktiver Datenportale für verschiedene Zielgruppen.',
         'Unsere Portale bauen auf einem starken Fundament auf und Erweiterungen sind einfach umzusetzen.',
     ]
-references: ['7-vat', '2-ebv-analyzer', '1-respect', '3-gdo']
+references: ['de/7-vat', 'de/2-ebv-analyzer', 'de/1-respect', 'de/3-gdo']
 ---
 
 Wir erstellen gemeinsam mit Ihnen passgenaue Datenportale.

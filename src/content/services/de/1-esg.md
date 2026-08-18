@@ -8,7 +8,7 @@ benefits:
         'Profitieren Sie von unserer Expertise in der Verarbeitung von Biodiversitätsdaten und Zeitreihen.',
         'Erhalten Sie maßgeschneiderte Indikatoren, die auf Ihre Fragestellungen zugeschnitten sind.',
     ]
-references: ['1-respect', '9-eurocrops', '2-ebv-analyzer']
+references: ['de/1-respect', 'de/9-eurocrops', 'de/2-ebv-analyzer']
 ---
 
 Wir bieten Ihnen die Möglichkeit, ESG-Indikatoren zu berechnen und bereitzustellen. Diese Indikatoren sind wichtig für die Bewertung Ihres Unternehmens und Ihrer Nachhaltigkeit.

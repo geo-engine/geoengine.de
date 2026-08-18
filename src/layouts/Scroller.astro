@@ -36,7 +36,7 @@ const pageTitle = `${title} - Geo Engine`;
     <div id="chapters" data-chapters={JSON.stringify(chapters)}></div>
 
     <script>
-        import maplibregl from 'maplibre-gl';
+        import {Map} from 'maplibre-gl';
         import scrollama from 'scrollama';
 
         const div = document.getElementById('chapters');
@@ -45,7 +45,7 @@ const pageTitle = `${title} - Geo Engine`;
         const chapters = JSON.parse(property ?? '[]');
 
         // --- 1. INITIALIZE MAP ---
-        const map = new maplibregl.Map({
+        const map = new Map({
             container: 'map',
             style: {
                 version: 8,

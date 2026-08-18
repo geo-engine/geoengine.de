@@ -8,7 +8,7 @@ benefits:
         'We have many years of experience in creating interactive data portals for various target groups.',
         'Our portals are built on a strong foundation and extensions are easy to implement.',
     ]
-references: ['7-vat', '2-ebv-analyzer', '1-respect', '3-gdo']
+references: ['en/7-vat', 'en/2-ebv-analyzer', 'en/1-respect', 'en/3-gdo']
 ---
 
 We create custom-fit data portals with and for you.
