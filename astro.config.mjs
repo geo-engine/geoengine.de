@@ -12,6 +12,16 @@ export default defineConfig({
 
     vite: {
         plugins: [tailwindcss()],
+        build: {
+            chunkSizeWarningLimit: 1000, // Raises limit to 1000 kB (1 MB) – maplibre-gl is a big library and already exceeds the default limit of 500 kB
+            rollupOptions: {
+                output: {
+                    manualChunks(id) {
+                        if (['maplibre-gl', 'scrollama'].some((lib) => id.includes(lib))) return 'scroller-libs';
+                    },
+                },
+            },
+        },
     },
 
     integrations: [

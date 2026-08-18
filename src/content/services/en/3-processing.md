@@ -10,7 +10,7 @@ benefits:
         'Our workflow processing is transparent, flexible and expandable.',
         'If required, we bring data and user management directly to you.',
     ]
-references: ['8-climate-polygons', '5-ndvi', '6-ai-weather']
+references: ['en/8-climate-polygons', 'en/5-ndvi', 'en/6-ai-weather']
 ---
 
 We realize data and AI pipelines for you.

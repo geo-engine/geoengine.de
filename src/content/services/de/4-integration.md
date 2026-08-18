@@ -10,7 +10,7 @@ benefits:
         'Wir bringen Konnektoren zu externen Datenprovidern, z.B. STAC, mit.',
         'Angebundene externe Daten sind immer up-to-date nutzbar.',
     ]
-references: ['2-ebv-analyzer', '1-respect', '4-crophype']
+references: ['de/2-ebv-analyzer', 'de/1-respect', 'de/4-crophype']
 ---
 
 Wir integrieren und kombinieren für Sie Ihre internen Geodaten und verschaffen Ihnen Zugang zu externen Daten-Pools.
