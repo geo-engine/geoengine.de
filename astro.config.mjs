@@ -4,6 +4,7 @@ import pagefind from 'astro-pagefind';
 import icon from 'astro-icon';
 import cookieconsent from '@jop-software/astro-cookieconsent';
 import equalPageNameValidator from './src/integrations/equal-page-name-validator';
+import {generateFavicons} from './plugins/favicon';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,16 @@ export default defineConfig({
     output: 'static',
 
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [
+            tailwindcss(),
+            generateFavicons({
+                name: 'Geo Engine',
+                shortName: 'Geo Engine',
+                description: 'Geo Engine',
+                themeColor: '#d7e4a5',
+                backgroundColor: '#d7e4a5',
+            }),
+        ],
         build: {
             chunkSizeWarningLimit: 1000, // Raises limit to 1000 kB (1 MB) – maplibre-gl is a big library and already exceeds the default limit of 500 kB
             rollupOptions: {
