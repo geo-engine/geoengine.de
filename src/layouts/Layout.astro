@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 
+import Favicons from '../components/Favicons.astro';
 import NavBar from '../components/NavBar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import {Footer} from '../components/footer';
@@ -25,8 +26,7 @@ const pageTitle = `${title} - Geo Engine`;
 <html lang={currentLocale}>
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <Favicons />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description} />
