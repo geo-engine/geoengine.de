@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import {Icon} from 'astro-icon/components';
+import {Image} from 'astro:assets';
+import logoIcon from '../images/GeoEngine_Bildmarke.svg';
+---
+
+<Layout title="Links" description="Geo Engine links and profiles" noHeader noNav>
+    <Section bg="beach">
+        <div class="mx-auto w-full max-w-xl">
+            <div class="mb-10 text-center text-shadow-lg/25">
+                <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                    <Image src={logoIcon} alt="Geo Engine" class="h-12 w-12 object-contain" />
+                </div>
+                <p class="text-xs font-semibold tracking-[0.3em] text-white/80 uppercase">Geo Engine</p>
+                <h1 class="mt-3 text-4xl font-bold text-white sm:text-5xl">Links</h1>
+            </div>
+
+            <div class="space-y-4">
+                <a
+                    href="https://www.geoengine.de"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group bg-main-green/80 hover:bg-main-green/90 flex items-center justify-between gap-4 rounded-xl border border-white/20 p-5 text-left text-white shadow-xl backdrop-blur-md transition hover:border-white/40"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-white shadow-inner">
+                            <Icon name="mdi:earth" class="size-6" />
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold tracking-[0.2em] text-white/75 uppercase">Website</div>
+                            <div class="mt-1 text-lg font-semibold sm:text-xl">www.geoengine.de</div>
+                        </div>
+                    </div>
+                    <span class="text-xl text-white/80 transition group-hover:translate-x-1">→</span>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/company/geoengine-de"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group bg-main-green/80 hover:bg-main-green/90 flex items-center justify-between gap-4 rounded-xl border border-white/20 p-5 text-left text-white shadow-xl backdrop-blur-md transition hover:border-white/40"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-white shadow-inner">
+                            <Icon name="mdi:linkedin" class="size-6" />
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold tracking-[0.2em] text-white/75 uppercase">LinkedIn</div>
+                            <div class="mt-1 text-lg font-semibold sm:text-xl">Geo Engine</div>
+                        </div>
+                    </div>
+                    <span class="text-xl text-white/80 transition group-hover:translate-x-1">→</span>
+                </a>
+
+                <a
+                    href="https://www.geoengine.io"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group bg-main-green/80 hover:bg-main-green/90 flex items-center justify-between gap-4 rounded-xl border border-white/20 p-5 text-left text-white shadow-xl backdrop-blur-md transition hover:border-white/40"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-white shadow-inner">
+                            <Icon name="mdi:source-branch" class="size-6" />
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold tracking-[0.2em] text-white/75 uppercase">Open Source</div>
+                            <div class="mt-1 text-lg font-semibold sm:text-xl">Geo Engine</div>
+                        </div>
+                    </div>
+                    <span class="text-xl text-white/80 transition group-hover:translate-x-1">→</span>
+                </a>
+
+                <a
+                    href="https://biois.app.geoengine.io/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group bg-main-green/80 hover:bg-main-green/90 flex items-center justify-between gap-4 rounded-xl border border-white/20 p-5 text-left text-white shadow-xl backdrop-blur-md transition hover:border-white/40"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-white shadow-inner">
+                            <Icon name="mdi:leaf" class="size-6" />
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold tracking-[0.2em] text-white/75 uppercase">Platform</div>
+                            <div class="mt-1 text-lg font-semibold sm:text-xl">BioIS</div>
+                        </div>
+                    </div>
+                    <span class="text-xl text-white/80 transition group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+        </div>
+    </Section>
+</Layout>
