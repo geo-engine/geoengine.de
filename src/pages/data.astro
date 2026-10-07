@@ -36,6 +36,7 @@ const data = await getCollection('data', (entry) => {
                                 class="rounded-2xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-focus:scale-105"
                                 src={datum.data.exampleImage}
                                 alt={datum.data.title}
+                                title={datum.data.title}
                                 widths={pictureWidths()}
                             />
                         </div>
