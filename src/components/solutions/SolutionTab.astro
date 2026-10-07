@@ -29,11 +29,11 @@ const idLink = `${idPrefix}-content`;
         name={icon}
     />
     <span class="sm:mt-5">
-        <span
-            class="hs-tab-active:text-main-green dark:hs-tab-active:text-main-green block font-semibold text-gray-800 dark:text-neutral-200"
-        >
+        <span class="hs-tab-active:text-main-green dark:hs-tab-active:text-main-green block font-semibold text-gray-800 dark:text-neutral-200">
             {heading}
         </span>
-        <span class="mt-2 hidden text-gray-800 lg:block dark:text-neutral-200"><slot /></span>
+        <span class="mt-2 hidden text-gray-800 lg:block dark:text-neutral-200">
+            <slot />
+        </span>
     </span>
 </button>

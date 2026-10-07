@@ -55,34 +55,33 @@ const newsItems: Array<{
 });
 ---
 
-<!-- Card Blog --><!-- Grid -->
+<!-- Card Blog -->
+<!-- Grid -->
 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <!-- Card -->
-    {
-        newsItems.map((news) => (
-            <a
-                class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-                href={news.link}
-            >
-                <Image
-                    class="aspect-video w-full rounded-xl object-cover"
-                    src={news.image}
-                    alt={news.title}
-                    title={news.title}
-                    widths={pictureWidths()}
-                />
-                <div class="my-6">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">{news.title}</h3>
-                    <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>
+    {newsItems.map((news) => (
+        <a
+            class="group flex h-full flex-col rounded-xl border border-gray-200 p-5 transition duration-300 hover:border-transparent hover:shadow-lg focus:border-transparent focus:shadow-lg focus:outline-hidden dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+            href={news.link}
+        >
+            <Image
+                class="aspect-video w-full rounded-xl object-cover"
+                src={news.image}
+                alt={news.title}
+                title={news.title}
+                widths={pictureWidths()}
+            />
+            <div class="my-6">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">{news.title}</h3>
+                <p class="mt-5 text-gray-600 dark:text-neutral-400">{news.abstract}</p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+                <div>
+                    <h5 class="text-sm text-gray-800 dark:text-neutral-200">{news.date}</h5>
                 </div>
-                <div class="mt-auto flex items-center gap-x-3">
-                    <div>
-                        <h5 class="text-sm text-gray-800 dark:text-neutral-200">{news.date}</h5>
-                    </div>
-                </div>
-            </a>
-        ))
-    }
+            </div>
+        </a>
+    ))}
     <!-- End Card -->
 </div>
 <!-- End Grid -->

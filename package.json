@@ -7,6 +7,7 @@
         "preview": "astro build && astro preview",
         "astro": "astro",
         "check": "prettier --check . && eslint 'src/**/*.{ts,js,astro}'",
+        "fix": "prettier --write . && eslint --fix 'src/**/*.{ts,js,astro}'",
         "prettier": "prettier"
     },
     "dependencies": {

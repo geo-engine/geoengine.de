@@ -19,20 +19,27 @@ import claInfo from '../data/cla.json';
         </p>
         <h3 class="text-md my-4 font-semibold">Schnelle Links</h3>
         <p>
-            Externe Website (wo Beitragende die Vereinbarung lesen und unterschreiben können):<br />
-            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+            Externe Website (wo Beitragende die Vereinbarung lesen und unterschreiben können):
+            <br />
+            <a class="text-main-green hover:underline" href={claInfo.link}>
+                {claInfo.link}
+            </a>
         </p>
         <h3 class="text-md my-4 font-semibold">Wie unterzeichne ich das CLA?</h3>
         <p>
             Sobald ein Pull-Request in einem Geo Engine-Repository gestellt wird, überprüft unsere Continuous-Integration, ob der
             beitragende User das CLA unterzeichnet hat. Es ist dann lediglich notwendig, dem Link
-            <a class="text-main-green hover:underline" href={claInfo.link}>{claInfo.link}</a>
+            <a class="text-main-green hover:underline" href={claInfo.link}>
+                {claInfo.link}
+            </a>
             zu folgen und dies elektronisch zu unterzeichnen.
         </p>
         <p class="mt-2">
             Alternativ zur Nutzung des Links können Beitragende oder Organisationen das ausgefüllte und unterschriebene Formular gerne auch
             an
-            <a class="text-main-green hover:underline" href={'mailto:' + claInfo.eMail}>{claInfo.eMail}</a>
+            <a class="text-main-green hover:underline" href={'mailto:' + claInfo.eMail}>
+                {claInfo.eMail}
+            </a>
             senden.
         </p>
         <h3 class="text-md my-4 font-semibold">Warum haben wir überhaupt eine CLA?</h3>
@@ -44,7 +51,10 @@ import claInfo from '../data/cla.json';
         <p>
             Unser CLA basiert auf den Informationen der Seite:
             <br />
-            <a class="text-main-green hover:underline" href={claInfo.basis}>{claInfo.basis}</a>.
+            <a class="text-main-green hover:underline" href={claInfo.basis}>
+                {claInfo.basis}
+            </a>
+            .
         </p>
     </Section>
 </Layout>

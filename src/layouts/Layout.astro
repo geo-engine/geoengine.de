@@ -37,13 +37,11 @@ const pageTitle = `${title} - Geo Engine`;
         {!noNav && <NavBar />}
         {!noHeader && <PageHeader title={title} />}
         <slot />
-        {
-            !noFooter && (
-                <div class="bg-black">
-                    <Footer />
-                </div>
-            )
-        }
+        {!noFooter && (
+            <div class="bg-black">
+                <Footer />
+            </div>
+        )}
         <!-- Preline UI -->
         <script>
             import {HSStaticMethods} from 'preline/non-auto';

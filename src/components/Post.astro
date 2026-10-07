@@ -74,17 +74,13 @@ const pageDescription = pageBody.slice(0, 200) + '…';
         <div class="mx-auto w-full text-justify">
             <div class="relative">
                 <Picture class="w-full rounded-xl object-cover" src={image} alt={title} />
-                {
-                    imageAttribution && (
-                        <p class="absolute right-3 bottom-3 rounded-md bg-black/65 px-2 py-1 text-xs text-white backdrop-blur-sm">
-                            {imageAttribution}
-                        </p>
-                    )
-                }
+                {imageAttribution && (
+                    <p class="absolute right-3 bottom-3 rounded-md bg-black/65 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                        {imageAttribution}
+                    </p>
+                )}
             </div>
-            <p class="my-8 text-xs text-gray-500 dark:text-neutral-500">
-                {formattedDate}
-            </p>
+            <p class="my-8 text-xs text-gray-500 dark:text-neutral-500">{formattedDate}</p>
             <div class="space-y-4 text-base">
                 <slot />
             </div>

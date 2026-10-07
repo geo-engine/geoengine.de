@@ -26,36 +26,30 @@ const {name, title, image, linkedin, twitter, website} = Astro.props;
 
         <!-- Social Brands -->
         <div class="mt-2 space-x-2.5 sm:mt-auto">
-            {
-                linkedin && (
-                    <a
-                        class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                        href={linkedin}
-                    >
-                        <Icon name="mdi:linkedin" class="size-3.5 shrink-0" />
-                    </a>
-                )
-            }
-            {
-                twitter && (
-                    <a
-                        class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                        href={twitter}
-                    >
-                        <Icon name="mdi:twitter" class="size-3.5 shrink-0" />
-                    </a>
-                )
-            }
-            {
-                website && (
-                    <a
-                        class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                        href={website}
-                    >
-                        <Icon name="mdi:web" class="size-3.5 shrink-0" />
-                    </a>
-                )
-            }
+            {linkedin && (
+                <a
+                    class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                    href={linkedin}
+                >
+                    <Icon name="mdi:linkedin" class="size-3.5 shrink-0" />
+                </a>
+            )}
+            {twitter && (
+                <a
+                    class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                    href={twitter}
+                >
+                    <Icon name="mdi:twitter" class="size-3.5 shrink-0" />
+                </a>
+            )}
+            {website && (
+                <a
+                    class="inline-flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800 focus:text-gray-800 focus:outline-hidden dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                    href={website}
+                >
+                    <Icon name="mdi:web" class="size-3.5 shrink-0" />
+                </a>
+            )}
         </div>
         <!-- End Social Brands -->
     </div>

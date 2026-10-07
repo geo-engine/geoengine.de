@@ -60,12 +60,11 @@ const p = useLocalePages(Astro.currentLocale);
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        ><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line
-                            x1="3"
-                            x2="21"
-                            y1="18"
-                            y2="18"></line></svg
                     >
+                        <line x1="3" x2="21" y1="6" y2="6"></line>
+                        <line x1="3" x2="21" y1="12" y2="12"></line>
+                        <line x1="3" x2="21" y1="18" y2="18"></line>
+                    </svg>
                     <svg
                         class="hs-collapse-open:block hidden size-4 shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +75,11 @@ const p = useLocalePages(Astro.currentLocale);
                         stroke="currentColor"
                         stroke-width="2"
                         stroke-linecap="round"
-                        stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+                        stroke-linejoin="round"
                     >
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
                     <span class="sr-only">Toggle navigation</span>
                 </button>
             </div>
@@ -91,9 +93,7 @@ const p = useLocalePages(Astro.currentLocale);
             class="hs-collapse hidden grow basis-full overflow-hidden font-semibold transition-all duration-300 md:block"
             aria-labelledby="hs-base-header-collapse"
         >
-            <div
-                class="max-h-[75vh] overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700"
-            >
+            <div class="max-h-[75vh] overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700">
                 <div class="flex flex-col gap-0.5 py-2 md:flex-row md:items-center md:justify-end md:gap-1 md:py-0">
                     <a
                         class="flex items-center p-2 text-sm text-white focus:text-white focus:outline-hidden"
@@ -138,9 +138,7 @@ const p = useLocalePages(Astro.currentLocale);
                     </a>
 
                     <!-- Button Group -->
-                    <div
-                        class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-inset-s-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5"
-                    >
+                    <div class="relative mt-1 flex flex-wrap items-center gap-x-1.5 before:absolute before:-inset-s-px before:top-1/2 before:block before:h-4 before:w-px before:-translate-y-1/2 before:bg-white/30 md:ms-1.5 md:mt-0 md:ps-2.5">
                         <button
                             class="flex w-full cursor-pointer items-center p-2 text-sm text-white/80 hover:text-white focus:text-white focus:outline-hidden"
                             onclick="

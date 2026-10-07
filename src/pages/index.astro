@@ -27,9 +27,7 @@ const p = useLocalePages(Astro.currentLocale);
     <Hero />
     <Services />
     <Section bg="beach">
-        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">
-            {t('contact.slogan')}
-        </p>
+        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
         <p class="mx-auto">
             <a
                 href={p('contact')}
@@ -135,9 +133,7 @@ const p = useLocalePages(Astro.currentLocale);
         <!-- Title -->
         <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
             <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('news.title')}</h2>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-                {t('news.subtitle')}
-            </p>
+            <p class="mt-1 text-gray-600 dark:text-neutral-400">{t('news.subtitle')}</p>
         </div>
         <News limit={3} />
         <div class="mt-12 text-center">
@@ -151,9 +147,7 @@ const p = useLocalePages(Astro.currentLocale);
     </div>
     <Logos />
     <Section bg="lightblue">
-        <p class="mx-auto -mt-16 pb-8 text-2xl font-medium text-white text-shadow-lg">
-            {t('contact.slogan2')}
-        </p>
+        <p class="mx-auto -mt-16 pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan2')}</p>
         <p class="mx-auto -mb-16">
             <a
                 href={p('contact')}
