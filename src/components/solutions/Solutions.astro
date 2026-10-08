@@ -33,9 +33,9 @@ const t = useTranslations(Astro.currentLocale);
 
     <!-- Tab Content -->
     <div class="mt-12 md:mt-16">
-        <SolutionTabContent idPrefix="solutions-tab-1" image={AppImage} selectedInitially />
-        <SolutionTabContent idPrefix="solutions-tab-2" image={MLImage} />
-        <SolutionTabContent idPrefix="solutions-tab-3" image={PipelineImage} />
+        <SolutionTabContent idPrefix="solutions-tab-1" image={AppImage} imageAlt={t('solutions.dashboards.heading')} selectedInitially />
+        <SolutionTabContent idPrefix="solutions-tab-2" image={MLImage} imageAlt={t('solutions.ml.heading')} />
+        <SolutionTabContent idPrefix="solutions-tab-3" image={PipelineImage} imageAlt={t('solutions.dataproducts.heading')} />
     </div>
     <!-- End Tab Content -->
 </div>

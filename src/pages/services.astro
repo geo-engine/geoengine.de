@@ -37,59 +37,58 @@ for (const referenceRef of new Set(services.flatMap((service) => service.data.re
 ---
 
 <Layout title={t('services.title')} description={t('services.intro')}>
-    {
-        services.map((service) => (
-            <>
-                <Section id={service.id}>
-                    <h2 class="my-4 text-2xl font-semibold">{service.data.title}</h2>
-                    <p>{service.body}</p>
-                </Section>
-                <Section bg="lightblue" box>
-                    <h3 class="my-4 text-xl font-semibold">{t('services.advantages')}</h3>
-                    <ul class="space-y-3">
-                        {service.data.benefits.map((benefit) => (
-                            <li class="flex gap-x-3">
-                                <Icon name="mdi:check-bold" class="text-main-green mt-0.5 size-4 shrink-0 dark:text-white" />
-                                <span class="text-gray-800 dark:text-white">{benefit}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </Section>
-                <Section>
-                    <h3 class="my-4 text-xl font-semibold">{t('references.title')}</h3>
-                    <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                        {service.data.references
-                            .map((referenceRef) => references.get(referenceRef))
-                            .map((reference) => (
-                                <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${reference.id}`}>
-                                    <Image
-                                        class="size-40 w-full rounded-lg bg-gray-100 object-cover dark:bg-neutral-800"
-                                        src={reference.data.image}
-                                        alt={reference.data.title}
-                                        widths={pictureWidths()}
-                                    />
-                                    <div class="absolute end-1 bottom-1 opacity-0 transition group-hover:opacity-100">
-                                        <div class="flex items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
-                                            <Icon name="mdi:magnify-expand" class="size-3 shrink-0" />
-                                            <span class="text-xs">{reference.data.title}</span>
-                                        </div>
+    {services.map((service) => (
+        <>
+            <Section id={service.id}>
+                <h2 class="my-4 text-2xl font-semibold">{service.data.title}</h2>
+                <p>{service.body}</p>
+            </Section>
+            <Section bg="lightblue" box>
+                <h3 class="my-4 text-xl font-semibold">{t('services.advantages')}</h3>
+                <ul class="space-y-3">
+                    {service.data.benefits.map((benefit) => (
+                        <li class="flex gap-x-3">
+                            <Icon name="mdi:check-bold" class="text-main-green mt-0.5 size-4 shrink-0 dark:text-white" />
+                            <span class="text-gray-800 dark:text-white">{benefit}</span>
+                        </li>
+                    ))}
+                </ul>
+            </Section>
+            <Section>
+                <h3 class="my-4 text-xl font-semibold">{t('references.title')}</h3>
+                <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    {service.data.references
+                        .map((referenceRef) => references.get(referenceRef))
+                        .map((reference) => (
+                            <a class="group relative block overflow-hidden rounded-lg" href={p('references') + `#${reference.id}`}>
+                                <Image
+                                    class="size-40 w-full rounded-lg bg-gray-100 object-cover dark:bg-neutral-800"
+                                    src={reference.data.image}
+                                    alt={reference.data.title}
+                                    title={reference.data.title}
+                                    widths={pictureWidths()}
+                                />
+                                <div class="absolute end-1 bottom-1 opacity-0 transition group-hover:opacity-100">
+                                    <div class="flex items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+                                        <Icon name="mdi:magnify-expand" class="size-3 shrink-0" />
+                                        <span class="text-xs">{reference.data.title}</span>
                                     </div>
-                                </a>
-                            ))}
-                    </div>
-                </Section>
-                <Section bg="beach">
-                    <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
-                    <p class="mx-auto">
-                        <a
-                            href={p('contact')}
-                            class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
-                        >
-                            {t('contact.button')}
-                        </a>
-                    </p>
-                </Section>
-            </>
-        ))
-    }
+                                </div>
+                            </a>
+                        ))}
+                </div>
+            </Section>
+            <Section bg="beach">
+                <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
+                <p class="mx-auto">
+                    <a
+                        href={p('contact')}
+                        class="text-main-green hover:text-second-torquise inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-white p-4 text-sm font-medium focus:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:p-5"
+                    >
+                        {t('contact.button')}
+                    </a>
+                </p>
+            </Section>
+        </>
+    ))}
 </Layout>

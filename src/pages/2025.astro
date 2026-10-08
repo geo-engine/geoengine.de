@@ -36,32 +36,35 @@ const tt = {
 
 <Scroller title={title} description={title} chapters={chapters}>
     <div id="header">
-        <h1><Image src={Logo} format="svg" alt="Geo Engine" /></h1>
+        <h1>
+            <Image src={Logo} format="svg" alt="Geo Engine Logo" title="Geo Engine Logo" />
+        </h1>
         <h2>{tt.subheader}</h2>
         <p set:html={tt.intro} />
-        <p class="smaller">
-            {tt.scroll}
+        <p class="smaller">{tt.scroll}</p>
+        <p class="swipe">
+            <br />
+            <Icon name="mdi:gesture-swipe-down" class="animate-bounce" size="4rem" />
         </p>
-        <p class="swipe"><br /><Icon name="mdi:gesture-swipe-down" class="animate-bounce" size="4rem" /></p>
     </div>
 
     <div id="features">
-        {
-            chapters.map((chapter, idx) => (
-                <div class="step" data-step={idx}>
-                    <h3>{chapter.title}</h3>
-                    <Picture src={chapter.image} alt={chapter.title} widths={pictureWidths()} />
-                    <p set:html={chapter.description[pageLang]} />
-                </div>
-            ))
-        }
+        {chapters.map((chapter, idx) => (
+            <div class="step" data-step={idx}>
+                <h3>{chapter.title}</h3>
+                <Picture src={chapter.image} alt={chapter.title} widths={pictureWidths()} />
+                <p set:html={chapter.description[pageLang]} />
+            </div>
+        ))}
     </div>
 
     <div id="footer">
         <p set:html={tt.outro} />
         <p>© 2025 Geo Engine GmbH</p>
         <p>
-            <a href="https://geoengine.de" target="_blank">{tt.website}</a>
+            <a href="https://geoengine.de" target="_blank">
+                {tt.website}
+            </a>
         </p>
     </div>
 </Scroller>

@@ -27,9 +27,7 @@ const p = useLocalePages(Astro.currentLocale);
     <Hero />
     <Services />
     <Section bg="beach">
-        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">
-            {t('contact.slogan')}
-        </p>
+        <p class="mx-auto pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan')}</p>
         <p class="mx-auto">
             <a
                 href={p('contact')}
@@ -50,31 +48,36 @@ const p = useLocalePages(Astro.currentLocale);
                 <Image
                     class="col-span-2 col-start-2 inline-block size-32 rounded-full"
                     src={beilschmidtAvatar}
-                    alt="Christian Beilschmidt"
+                    alt="Christian Beilschmidt, Mitbegründer und Projektleiter bei Geo Engine"
+                    title="Christian Beilschmidt, Mitbegründer und Projektleiter bei Geo Engine"
                     widths={pictureWidths()}
                 />
                 <Image
                     class="col-span-2 inline-block size-32 rounded-full"
                     src={droennerAvatar}
-                    alt="Johannes Drönner"
+                    alt="Johannes Drönner, Co-Founder bei Geo Engine"
+                    title="Johannes Drönner, Co-Founder bei Geo Engine"
                     widths={pictureWidths()}
                 />
                 <Image
                     class="col-span-2 inline-block size-32 rounded-full"
                     src={mattigAvatar}
-                    alt="Michael Mattig"
+                    alt="Michael Mattig, Produkt- und Machine-Learning-Experte bei Geo Engine"
+                    title="Michael Mattig, Produkt- und Machine-Learning-Experte bei Geo Engine"
                     widths={pictureWidths()}
                 />
                 <Image
                     class="col-span-2 inline-block size-32 rounded-full"
                     src={schweitzerAvatar}
-                    alt="Philip Schweitzer"
+                    alt="Philip Schweitzer, Experte für Infrastruktur und Plattform-Engineering bei Geo Engine"
+                    title="Philip Schweitzer, Experte für Infrastruktur und Plattform-Engineering bei Geo Engine"
                     widths={pictureWidths()}
                 />
                 <Image
                     class="col-span-2 inline-block size-32 rounded-full"
                     src={seegerAvatar}
-                    alt="Bernhard Seeger"
+                    alt="Bernhard Seeger, Experte für Datenmanagement und Forschung bei Geo Engine"
+                    title="Bernhard Seeger, Experte für Datenmanagement und Forschung bei Geo Engine"
                     widths={pictureWidths()}
                 />
             </div>
@@ -96,7 +99,12 @@ const p = useLocalePages(Astro.currentLocale);
     <Section bg="blue" box>
         <h2 class="mx-auto mb-16 text-3xl font-semibold">{t('technology.title')}</h2>
         <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            <Image class="inline-block" src={geoEngineArchitecture} alt="Geo Engine Architecture" />
+            <Image
+                class="inline-block"
+                src={geoEngineArchitecture}
+                alt="Geo Engine Data Science Plattform Architektur"
+                title="Geo Engine Data Science Plattform Architektur"
+            />
             <div class="w-full">
                 <p class="mx-auto pb-8">{t('technology.text')}</p>
                 <p class="mx-auto pb-4 font-bold">{t('technology.keyFeatures')}:</p>
@@ -125,9 +133,7 @@ const p = useLocalePages(Astro.currentLocale);
         <!-- Title -->
         <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
             <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('news.title')}</h2>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-                {t('news.subtitle')}
-            </p>
+            <p class="mt-1 text-gray-600 dark:text-neutral-400">{t('news.subtitle')}</p>
         </div>
         <News limit={3} />
         <div class="mt-12 text-center">
@@ -141,9 +147,7 @@ const p = useLocalePages(Astro.currentLocale);
     </div>
     <Logos />
     <Section bg="lightblue">
-        <p class="mx-auto -mt-16 pb-8 text-2xl font-medium text-white text-shadow-lg">
-            {t('contact.slogan2')}
-        </p>
+        <p class="mx-auto -mt-16 pb-8 text-2xl font-medium text-white text-shadow-lg">{t('contact.slogan2')}</p>
         <p class="mx-auto -mb-16">
             <a
                 href={p('contact')}

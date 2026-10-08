@@ -41,6 +41,7 @@ export const translations = {
         'contact.phone': 'Per Telefon',
         'contact.meeting': 'Beratungstermin vereinbaren',
         'contact.bookHere': 'Hier kostenlos einen Termin buchen',
+        'contact.team': 'Geo-Engine-Team und Kontakt für Geodaten- und Data-Science-Projekte',
         'team.title': 'Unser Team',
         'team.shortSlogan':
             'Wir sind ein interdisziplinäres Team, das Expertise aus Informatik, Geographie vereint und viel Erfahrung in Datenverarbeitung mitbringt.',
@@ -127,6 +128,7 @@ export const translations = {
         'contact.phone': 'By phone',
         'contact.meeting': 'Arrange a consultation appointment',
         'contact.bookHere': 'Book a free appointment here',
+        'contact.team': 'Geo Engine team and contact for geodata and data science projects',
         'team.title': 'Our team',
         'team.shortSlogan':
             'We are an interdisciplinary team combining expertise from computer science, geography and business administration.',

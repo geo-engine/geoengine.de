@@ -44,25 +44,27 @@ const t = useTranslations(lang);
 <Layout title={datum.title} description={mdExcerpt(pageBody, 200)}>
     <Section>
         <Picture class="w-full rounded-xl object-cover" src={datum.exampleImage} alt={datum.title} widths={pictureWidths()} />
-        <div class="text-lg"><slot /></div>
+        <div class="text-lg">
+            <slot />
+        </div>
     </Section>
     <Section bg="green" box>
         <h3 class="mt-6 mb-4 text-xl font-semibold">{t('data.specs')}</h3>
-        {
-            datum.classes && (
-                <>
-                    <h4 class="mt-4 text-lg font-semibold">{t('data.classes')}</h4>
-                    <ul class="list-disc pl-6">
-                        {datum.classes.map((className) => (
-                            <li>{className}</li>
-                        ))}
-                    </ul>
-                </>
-            )
-        }
+        {datum.classes && (
+            <>
+                <h4 class="mt-4 text-lg font-semibold">{t('data.classes')}</h4>
+                <ul class="list-disc pl-6">
+                    {datum.classes.map((className) => (
+                        <li>{className}</li>
+                    ))}
+                </ul>
+            </>
+        )}
         <h4 class="mt-4 text-lg font-semibold">{t('data.dataSources')}</h4>
         <ul class="list-disc pl-6">
-            {datum.dataSources.map((source) => <li>{source}</li>)}
+            {datum.dataSources.map((source) => (
+                <li>{source}</li>
+            ))}
         </ul>
         <h4 class="mt-4 text-lg font-semibold">{t('data.method')}</h4>
         <p>{datum.method}</p>

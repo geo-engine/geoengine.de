@@ -27,13 +27,11 @@ const services = await getCollection('services', (entry) => {
             </div>
 
             <div class="space-y-6 lg:space-y-10">
-                {
-                    services.map((service) => (
-                        <Service icon={service.data.icon} heading={service.data.title}>
-                            {service.data.description}
-                        </Service>
-                    ))
-                }
+                {services.map((service) => (
+                    <Service icon={service.data.icon} heading={service.data.title}>
+                        {service.data.description}
+                    </Service>
+                ))}
             </div>
         </div>
         <!-- End Grid -->

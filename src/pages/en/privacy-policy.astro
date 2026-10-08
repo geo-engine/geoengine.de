@@ -173,12 +173,12 @@ const cookies = await getCollection('cookies');
             <p>35041 Marburg</p>
             <p>Germany</p>
             <p>4964213801770</p>
-            <p></p><p>
-                E-Mail:&nbsp;<span style="display: none !important;">2SzmTMAjftG6tBG</span>info<span style="display: none !important;"
-                    >PJAUapdXvdPT7sQ</span
-                >@<span style="display: none !important;">HMimZ5eGOrHQiER</span>geoengine.de<span style="display: none !important;"
-                    >AkHPhMEWWUHZu1G</span
-                >
+            <p></p>
+            <p>
+                E-Mail:&nbsp;<span style="display: none !important;">2SzmTMAjftG6tBG</span>info
+                <span style="display: none !important;">PJAUapdXvdPT7sQ</span>@
+                <span style="display: none !important;">HMimZ5eGOrHQiER</span>geoengine.de
+                <span style="display: none !important;">AkHPhMEWWUHZu1G</span>
             </p>
             <p>(USt.-Id) DE344571875</p>
             <h4>Cookies / SessionStorage / LocalStorage</h4>
@@ -289,10 +289,10 @@ const cookies = await getCollection('cookies');
             <p>
                 For comments, the Gravatar service from Auttomatic is used. Gravatar matches your email address and maps - if you are
                 registered - your avatar image next to the comment. If you are not registered, no image will be displayed. It should be
-                noted that all registered WordPress users are automatically registered with Gravatar. Details of Gravatar: <a
-                    href="https://de.gravatar.com"
-                    target="blank">https://en.gravatar.com</a
-                >
+                noted that all registered WordPress users are automatically registered with Gravatar. Details of Gravatar:{' '}
+                <a href="https://de.gravatar.com" target="blank">
+                    https://en.gravatar.com
+                </a>
             </p>
             <h4>Routine erasure and blocking of personal data</h4>
             <p>
@@ -534,17 +534,19 @@ const cookies = await getCollection('cookies');
                 provide any other service, the processing is based on Article 6(1)lit. b GDPR. The same applies to such processing
                 operations which are necessary for carrying out pre-contractual measures, for example in the case of inquiries concerning
                 our products or services. Is our company subject to a legal obligation by which processing of personal data is required,
-                such as for the fulfillment of tax obligations, the processing is based on Art. 6(1)lit. c GDPR.<br />
-                In rare cases, the processing of personal data may be necessary to protect the vital interests of the data subject or of another
-                natural person. This would be the case, for example, if a visitor were injured in our company and his name, age, health insurance
-                data or other vital information would have to be passed on to a doctor, hospital or other third party. Then the processing would
-                be based on Art. 6(1)lit. d GDPR.<br />
-                Finally, processing operations could be based on Article 6(1)lit. f GDPR. This legal basis is used for processing operations which
-                are not covered by any of the abovementioned legal grounds, if processing is necessary for the purposes of the legitimate interests
-                pursued by our company or by a third party, except where such interests are overridden by the interests or fundamental rights
-                and freedoms of the data subject which require protection of personal data. Such processing operations are particularly permissible
-                because they have been specifically mentioned by the European legislator. He considered that a legitimate interest could be assumed
-                if the data subject is a client of the controller (Recital 47 Sentence 2 GDPR).
+                such as for the fulfillment of tax obligations, the processing is based on Art. 6(1)lit. c GDPR.
+                <br />
+                In rare cases, the processing of personal data may be necessary to protect the vital interests of the data subject or of
+                another natural person. This would be the case, for example, if a visitor were injured in our company and his name, age,
+                health insurance data or other vital information would have to be passed on to a doctor, hospital or other third party. Then
+                the processing would be based on Art. 6(1)lit. d GDPR.
+                <br />
+                Finally, processing operations could be based on Article 6(1)lit. f GDPR. This legal basis is used for processing operations
+                which are not covered by any of the abovementioned legal grounds, if processing is necessary for the purposes of the
+                legitimate interests pursued by our company or by a third party, except where such interests are overridden by the interests
+                or fundamental rights and freedoms of the data subject which require protection of personal data. Such processing operations
+                are particularly permissible because they have been specifically mentioned by the European legislator. He considered that a
+                legitimate interest could be assumed if the data subject is a client of the controller (Recital 47 Sentence 2 GDPR).
             </p>
             <h4>The legitimate interests pursued by the controller or by a third party</h4>
             <p>
@@ -591,15 +593,13 @@ const cookies = await getCollection('cookies');
                         <th>Purpose</th>
                         <th>Validity</th>
                     </tr>
-                    {
-                        cookies.map((cookie) => (
-                            <tr>
-                                <td>{cookie.data.id}</td>
-                                <td class="p-2">{cookie.data.en.purpose}</td>
-                                <td>{cookie.data.en.validity}</td>
-                            </tr>
-                        ))
-                    }
+                    {cookies.map((cookie) => (
+                        <tr>
+                            <td>{cookie.data.id}</td>
+                            <td class="p-2">{cookie.data.en.purpose}</td>
+                            <td>{cookie.data.en.validity}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

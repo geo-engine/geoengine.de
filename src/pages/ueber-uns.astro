@@ -156,18 +156,16 @@ const publications = (await getCollection('publications')).sort((a, b) => b.data
     <Section>
         <h2 class="mb-8 text-2xl font-semibold">{t('team.publications')}</h2>
         <ul class="list-disc pl-16">
-            {
-                publications.map((publication) => (
-                    <li class="py-1">
-                        {publication.data.authors}:<br />
-                        <a href={publication.data.url} target="_blank" class="text-main-green hover:underline">
-                            {publication.data.title}
-                        </a>
-                        <br />
-                        {publication.data.source}
-                    </li>
-                ))
-            }
+            {publications.map((publication) => (
+                <li class="py-1">
+                    {publication.data.authors}:<br />
+                    <a href={publication.data.url} target="_blank" class="text-main-green hover:underline">
+                        {publication.data.title}
+                    </a>
+                    <br />
+                    {publication.data.source}
+                </li>
+            ))}
         </ul>
     </Section>
 </Layout>

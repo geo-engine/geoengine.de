@@ -13,7 +13,11 @@ const homeLink = getRelativeLocaleUrl(currentLang, '/');
 <Layout title={t('404.title')} description={t('404.description')}>
     <Section>
         <p class="text-center text-xl">{t('404.description')}</p>
-        <p class="my-8 text-center text-xl"><a class="text-main-green hover:underline" href={homeLink}>{t('404.back')}</a></p>
+        <p class="my-8 text-center text-xl">
+            <a class="text-main-green hover:underline" href={homeLink}>
+                {t('404.back')}
+            </a>
+        </p>
         <Icon name="404" class="text-main-lightgreen m-auto text-[25vw]" />
     </Section>
 </Layout>
