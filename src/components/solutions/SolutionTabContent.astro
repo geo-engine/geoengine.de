@@ -6,9 +6,10 @@ interface Props {
     selectedInitially?: boolean;
     image: ImageMetadata;
     imageMobile?: ImageMetadata;
+    imageAlt: string;
 }
 
-const {idPrefix, image, selectedInitially = false, imageMobile = image} = Astro.props;
+const {idPrefix, image, selectedInitially = false, imageMobile = image, imageAlt} = Astro.props;
 
 const id = `${idPrefix}-content`;
 const idLink = `${idPrefix}-tab`;
@@ -21,12 +22,7 @@ const hidden = !selectedInitially;
         <!-- Mobile Device -->
         <figure class="absolute start-0 bottom-0 z-2 ms-20 mb-20 hidden h-auto w-60 max-w-full lg:block">
             <div class="rounded-3xl bg-gray-100 p-1.5 shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(45_55_75_/_20%),_0_2rem_4rem_-2rem_rgb(45_55_75_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(45_55_75_/_20%)] dark:bg-neutral-700 dark:shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(0_0_0_/_20%),_0_2rem_4rem_-2rem_rgb(0_0_0_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(0_0_0_/_20%)]">
-                <Image
-                    class="h-auto max-w-full rounded-[1.25rem]"
-                    src={image}
-                    alt="Geo Engine Data Science Plattform Architektur"
-                    title="Geo Engine Data Science Plattform Architektur"
-                />
+                <Image class="h-auto max-w-full rounded-[1.25rem]" src={image} alt={imageAlt} title={imageAlt} />
             </div>
         </figure>
         <!-- End Mobile Device -->
@@ -45,12 +41,7 @@ const hidden = !selectedInitially;
             </div>
 
             <div class="rounded-b-lg bg-gray-800">
-                <Image
-                    class="h-auto max-w-full rounded-b-lg"
-                    src={imageMobile}
-                    alt="Geo Engine Data Science Plattform Architektur – mobile Ansicht"
-                    title="Geo Engine Data Science Plattform Architektur – mobile Ansicht"
-                />
+                <Image class="h-auto max-w-full rounded-b-lg" src={imageMobile} alt={imageAlt} title={imageAlt} />
             </div>
         </figure>
         <!-- End Browser Device -->
