@@ -64,6 +64,9 @@ const pageDescription = pageBody.slice(0, 200) + '…';
         color: color-mix(in srgb, var(--color-main-green) 12%, black);
         font-style: italic;
     }
+    div :global(blockquote > * + *) {
+        margin-top: 1rem;
+    }
     div :global(pre) {
         padding: 1rem;
     }
