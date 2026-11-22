@@ -8,6 +8,7 @@ on:
 
 permissions:
     contents: read
+    pull-requests: write
 
 jobs:
     test:
@@ -37,3 +38,41 @@ jobs:
                   path: dist
                   if-no-files-found: error
                   retention-days: 14
+
+            - name: Checkout preview repository
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              uses: actions/checkout@v7
+              with:
+                  repository: geo-engine/geoengine.de-previews
+                  ssh-key: ${{ secrets.PREVIEW_DEPLOY_KEY }}
+                  path: previews
+
+            - name: Publish pull request preview
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              id: publish-preview
+              working-directory: previews
+              env:
+                  PREVIEW_NUMBER: ${{ github.event.pull_request.number }}
+              run: |
+                  preview_dir="pr-$PREVIEW_NUMBER"
+                  rm -rf "$preview_dir"
+                  mkdir -p "$preview_dir"
+                  cp -a "${GITHUB_WORKSPACE}/dist/." "$preview_dir/"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git add -A
+                  if git diff --cached --quiet; then
+                      echo "Preview $preview_dir is unchanged"
+                  else
+                      git commit -m "Update preview for PR #$PREVIEW_NUMBER"
+                      git push
+                  fi
+
+            - name: Comment pull request preview link
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  PREVIEW_NUMBER: ${{ github.event.pull_request.number }}
+                  PREVIEW_URL: https://geo-engine.github.io/geoengine.de-previews/pr-${{ github.event.pull_request.number }}/
+              run: |
+                  gh pr comment "$PREVIEW_NUMBER" --repo "${GITHUB_REPOSITORY}" --body "Website preview: $PREVIEW_URL"
