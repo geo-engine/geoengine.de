@@ -6,20 +6,34 @@ on:
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
+permissions:
+    contents: read
+
 jobs:
     test:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
             - name: Setup Node.js
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v7
               with:
-                  node-version: '22'
+                  node-version: '26'
+                  cache: npm
             - name: Install
-              run: npm install
+              run: npm ci
             - name: Check formatting and lints
               run: npm run check
             - name: Build
+              env:
+                  ASTRO_BASE: ${{ github.event_name == 'pull_request' && format('/geoengine.de-previews/pr-{0}/', github.event.pull_request.number) || '/' }}
               run: npm run build
+            - name: Upload pull request preview
+              if: github.event_name == 'pull_request'
+              uses: actions/upload-artifact@v4
+              with:
+                  name: preview-${{ github.event.pull_request.number }}
+                  path: dist
+                  if-no-files-found: error
+                  retention-days: 14

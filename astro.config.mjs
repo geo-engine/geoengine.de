@@ -9,6 +9,7 @@ import {generateFavicons} from './plugins/favicon';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://www.geoengine.de',
+    base: process.env.ASTRO_BASE || '/',
     output: 'static',
 
     vite: {
