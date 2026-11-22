@@ -1,6 +1,6 @@
 ---
 import {Picture} from 'astro:assets';
-import {currentLanguage, useTranslations} from '../i18n/utils';
+import {currentLanguage, useTranslations, withBase} from '../i18n/utils';
 import Scroller from '../layouts/Scroller.astro';
 import {getEntry} from 'astro:content';
 import {pictureWidths} from '../components/utils';
@@ -21,14 +21,14 @@ const tt = {
         subheader: 'Rückblick auf das Jahr 2025',
         intro: `Das Jahr 2025 hat für uns spannende Projekte, technologische Fortschritte und einen guten Austausch gebracht.`,
         scroll: 'Zum Beginnen nach unten scrollen',
-        outro: 'Regt eines dieser Themen bei euch eine Projektidee an oder wollt ihr Details zu einem Punkt hören?<br>Dann <a href="/kontakt" target="_blank">meldet euch gerne bei uns</a>!',
+        outro: `Regt eines dieser Themen bei euch eine Projektidee an oder wollt ihr Details zu einem Punkt hören?<br>Dann <a href="${withBase('/kontakt/')}" target="_blank">meldet euch gerne bei uns</a>!`,
         website: 'Besucht unsere Webseite',
     },
     en: {
         subheader: '2025 Year in Review',
         intro: `The year 2025 has brought us exciting projects, technological advancements, and great collaboration.`,
         scroll: 'Scroll to begin',
-        outro: 'Do any of these topics spark a project idea for you, or would you like to hear more details about a specific point?<br>Feel free to <a href="/en/contact/" target="_blank">reach out to us</a>!',
+        outro: `Do any of these topics spark a project idea for you, or would you like to hear more details about a specific point?<br>Feel free to <a href="${withBase('/en/contact/')}" target="_blank">reach out to us</a>!`,
         website: 'Visit Our Website',
     },
 }[pageLang];

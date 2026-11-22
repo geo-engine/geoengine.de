@@ -1,18 +1,20 @@
 ---
+import {withBase} from '../i18n/utils';
+
 // Favicon links for the website.
 // This component is used in the <head> of the HTML document to provide various favicon formats for different devices and browsers.
 ---
 
 <!-- Modern scalable vector icon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
 
 <!-- PNG fallbacks -->
-<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="64x64" href={withBase('/favicon-64x64.png')} />
+<link rel="icon" type="image/png" sizes="32x32" href={withBase('/favicon-32x32.png')} />
+<link rel="icon" type="image/png" sizes="16x16" href={withBase('/favicon-16x16.png')} />
 
 <!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href={withBase('/apple-touch-icon.png')} />
 
 <!-- Web App Manifest -->
-<link rel="manifest" href="manifest.json" />
+<link rel="manifest" href={withBase('/manifest.json')} />

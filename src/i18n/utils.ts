@@ -1,6 +1,17 @@
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {translations, defaultLang, pages} from './translations';
 
+export function withBase(path: string): string {
+    if (/^(?:https?:|mailto:|tel:|#)/.test(path)) return path;
+
+    const base = import.meta.env.BASE_URL || '/';
+    if (base === '/') return path;
+
+    const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+    const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${normalizedBase}${normalizedPath}`;
+}
+
 // export function getLangFromUrl(url: URL) {
 //     const [, lang] = url.pathname.split('/');
 //     if (lang in translations) return lang as keyof typeof translations;
@@ -25,7 +36,7 @@ export function useTranslations(astro_current_locale: string | undefined) {
 export function useLocalePages(astro_current_locale: string | undefined) {
     const lang = currentLanguage(astro_current_locale);
     return function p(key: keyof (typeof pages)[typeof defaultLang]) {
-        return pages[lang][key] || pages[defaultLang][key];
+        return withBase(pages[lang][key] || pages[defaultLang][key]);
     };
 }
 
@@ -35,6 +46,12 @@ export function useLocalePages(astro_current_locale: string | undefined) {
  * If the page cannot be looked up, it returns the URL of the root page in the given locale.
  */
 export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
+    // Strip the configured preview/hosting base before matching site routes.
+    const base = import.meta.env.BASE_URL || '/';
+    if (base !== '/' && currentPath.startsWith(base)) {
+        currentPath = currentPath.substring(base.length - 1);
+    }
+
     // normalize the path
     if (!currentPath.endsWith('/')) {
         currentPath += '/';
@@ -52,7 +69,7 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
     }
 
     if (key) {
-        return pages[lang][key];
+        return withBase(pages[lang][key]);
     }
 
     console.warn(`Could not find page for path ${currentPath} in locale ${lang}. Trying to swap locale in path instead.`);
@@ -60,7 +77,7 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
     if (path.startsWith('/en/')) {
         path = path.substring(4); // remove /en/
     }
-    return getRelativeLocaleUrl(lang, path);
+    return withBase(getRelativeLocaleUrl(lang, path));
 }
 
 function localePagePrefix(lang: LocaleString): string {
@@ -68,7 +85,7 @@ function localePagePrefix(lang: LocaleString): string {
 }
 
 export function slugToPostLink(lang: LocaleString, slug: string) {
-    return `${localePagePrefix(lang)}/posts/${slug}`;
+    return withBase(`${localePagePrefix(lang)}/posts/${slug}`);
 }
 
 export function slugToDataLink(slugWithLang: string) {
