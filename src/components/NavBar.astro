@@ -1,5 +1,4 @@
 ---
-import {getRelativeLocaleUrl} from 'astro:i18n';
 import {currentLanguage, useTranslations, useLocalePages} from '../i18n/utils';
 import {Icon} from 'astro-icon/components';
 import Search from 'astro-pagefind/components/Search.astro';
@@ -32,7 +31,7 @@ const p = useLocalePages(Astro.currentLocale);
         <div class="flex items-center justify-between">
             <a
                 class="flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-hidden"
-                href={getRelativeLocaleUrl(currentLang, '/')}
+                href={p('.')}
                 aria-label="Geo Engine"
             >
                 <Logo height={logoHeightPx} width={logoWidthPx} />

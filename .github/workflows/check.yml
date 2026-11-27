@@ -6,20 +6,84 @@ on:
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
+permissions:
+    contents: read
+    pull-requests: write
+
 jobs:
     test:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
             - name: Setup Node.js
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v7
               with:
-                  node-version: '22'
+                  node-version: '26'
+                  cache: npm
             - name: Install
-              run: npm install
+              run: npm ci
             - name: Check formatting and lints
               run: npm run check
             - name: Build
+              env:
+                  ASTRO_BASE: ${{ github.event_name == 'pull_request' && format('/geoengine.de-previews/pr-{0}/', github.event.pull_request.number) || '/' }}
               run: npm run build
+            - name: Upload pull request preview
+              if: github.event_name == 'pull_request'
+              uses: actions/upload-artifact@v4
+              with:
+                  name: preview-${{ github.event.pull_request.number }}
+                  path: dist
+                  if-no-files-found: error
+                  retention-days: 14
+
+            - name: Checkout preview repository
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              uses: actions/checkout@v7
+              with:
+                  repository: geo-engine/geoengine.de-previews
+                  ssh-key: ${{ secrets.PREVIEW_DEPLOY_KEY }}
+                  path: previews
+
+            - name: Publish pull request preview
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              id: publish-preview
+              working-directory: previews
+              env:
+                  PREVIEW_NUMBER: ${{ github.event.pull_request.number }}
+              run: |
+                  preview_dir="pr-$PREVIEW_NUMBER"
+                  rm -rf "$preview_dir"
+                  mkdir -p "$preview_dir"
+                  cp -a "${GITHUB_WORKSPACE}/dist/." "$preview_dir/"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git add -A
+                  if git diff --cached --quiet; then
+                      echo "Preview $preview_dir is unchanged"
+                  else
+                      git commit -m "Update preview for PR #$PREVIEW_NUMBER"
+                      preview_branch="$(git branch --show-current)"
+                      for attempt in 1 2 3; do
+                          if git push origin "HEAD:refs/heads/$preview_branch"; then
+                              break
+                          fi
+                          if [ "$attempt" -eq 3 ]; then
+                              echo "Failed to publish preview after $attempt attempts" >&2
+                              exit 1
+                          fi
+                          git fetch origin "$preview_branch"
+                          git rebase FETCH_HEAD
+                      done
+                  fi
+
+            - name: Comment pull request preview link
+              if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  PREVIEW_NUMBER: ${{ github.event.pull_request.number }}
+                  PREVIEW_URL: https://geo-engine.github.io/geoengine.de-previews/pr-${{ github.event.pull_request.number }}/
+              run: |
+                  gh pr comment "$PREVIEW_NUMBER" --repo "${GITHUB_REPOSITORY}" --body "Website preview: $PREVIEW_URL"
