@@ -65,7 +65,18 @@ jobs:
                       echo "Preview $preview_dir is unchanged"
                   else
                       git commit -m "Update preview for PR #$PREVIEW_NUMBER"
-                      git push
+                      preview_branch="$(git branch --show-current)"
+                      for attempt in 1 2 3; do
+                          if git push origin "HEAD:refs/heads/$preview_branch"; then
+                              break
+                          fi
+                          if [ "$attempt" -eq 3 ]; then
+                              echo "Failed to publish preview after $attempt attempts" >&2
+                              exit 1
+                          fi
+                          git fetch origin "$preview_branch"
+                          git rebase FETCH_HEAD
+                      done
                   fi
 
             - name: Comment pull request preview link
