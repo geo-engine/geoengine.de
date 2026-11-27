@@ -77,7 +77,7 @@ export function pageInOtherLocale(lang: LocaleString, currentPath: string) {
     if (path.startsWith('/en/')) {
         path = path.substring(4); // remove /en/
     }
-    return withBase(getRelativeLocaleUrl(lang, path));
+    return getRelativeLocaleUrl(lang, path);
 }
 
 function localePagePrefix(lang: LocaleString): string {
